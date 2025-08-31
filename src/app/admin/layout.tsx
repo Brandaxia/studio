@@ -14,7 +14,7 @@ const navItems = [
   { href: '/admin/programs', label: 'Programas', icon: Book },
   { href: '/admin/instructors', label: 'Instructores', icon: Users },
   { href: '/admin/testimonials', label: 'Testimonios', icon: MessageSquareQuote },
-  { href: '#', label: 'FAQ', icon: HelpCircle, disabled: true },
+  { href: '/admin/faq', label: 'FAQ', icon: HelpCircle },
 ];
 
 export default function AdminLayout({
@@ -61,9 +61,8 @@ export default function AdminLayout({
               variant="ghost"
               className="justify-start gap-2"
               asChild
-              disabled={item.disabled}
             >
-              <Link href={item.disabled ? '#' : item.href}>
+              <Link href={item.href}>
                 <item.icon className="h-4 w-4" />
                 {item.label}
               </Link>

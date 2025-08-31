@@ -60,7 +60,9 @@ export default function AdminDashboardPage() {
           <CardContent>
             <div className="text-2xl font-bold">4</div>
             <p className="text-xs text-muted-foreground">Preguntas frecuentes</p>
-            <Button size="sm" className="mt-4" variant="outline" disabled>Gestionar</Button>
+            <Button size="sm" className="mt-4" asChild>
+              <Link href="/admin/faq">Gestionar</Link>
+            </Button>
           </CardContent>
         </Card>
       </div>
