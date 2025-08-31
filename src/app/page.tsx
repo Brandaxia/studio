@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero";
 import { Programs } from "@/components/programs";
 import { AiSummary } from "@/components/ai-summary";
 import { Instructors } from "@/components/instructors";
-import { NotebookEmbed } from "@/components/notebook-embed";
+import { NotebookPreview } from "@/components/notebook-preview";
 import { Testimonials } from "@/components/testimonials";
 import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
@@ -19,7 +19,7 @@ export default function Home() {
         <Programs />
         <AiSummary />
         <Instructors />
-        <NotebookEmbed />
+        <NotebookPreview />
         <Testimonials />
         <Faq />
         <Contact />
