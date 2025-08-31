@@ -1,0 +1,52 @@
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Card, CardContent } from '@/components/ui/card';
+
+const instructors = [
+  {
+    name: 'Elara Vex',
+    title: 'Maestra de Cosmología Antigua',
+    avatar: 'https://picsum.photos/100/100?random=4',
+    aiHint: 'wise woman',
+  },
+  {
+    name: 'Orion Kael',
+    title: 'Guía de Realidades Cuánticas',
+    avatar: 'https://picsum.photos/100/100?random=5',
+    aiHint: 'thoughtful man',
+  },
+  {
+    name: 'Lyra Solara',
+    title: 'Arquitecta de Geometría Sagrada',
+    avatar: 'https://picsum.photos/100/100?random=6',
+    aiHint: 'creative artist',
+  },
+];
+
+export function Instructors() {
+  return (
+    <section id="instructores" className="w-full bg-primary/5 py-16 md:py-24">
+      <div className="container">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-headline text-3xl font-bold md:text-4xl">Conoce a los Guías</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Mentores iluminados que te acompañarán en tu ascenso.
+          </p>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {instructors.map((instructor) => (
+            <Card key={instructor.name} className="border-0 bg-transparent text-center shadow-none">
+              <CardContent className="flex flex-col items-center p-6">
+                <Avatar className="h-24 w-24 border-4 border-background shadow-md">
+                  <AvatarImage src={instructor.avatar} alt={instructor.name} data-ai-hint={instructor.aiHint}/>
+                  <AvatarFallback>{instructor.name.charAt(0)}</AvatarFallback>
+                </Avatar>
+                <h3 className="mt-4 font-headline text-xl font-semibold">{instructor.name}</h3>
+                <p className="mt-1 text-primary">{instructor.title}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
