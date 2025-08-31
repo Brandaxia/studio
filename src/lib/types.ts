@@ -35,6 +35,15 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface Student {
+  id: string;
+  name: string;
+  email: string;
+  enrolledDate: string;
+  avatar: string;
+  aiHint: string;
+}
+
 export interface AppContent {
   programs: Program[];
   instructors: Instructor[];
