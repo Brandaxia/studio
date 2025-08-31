@@ -9,29 +9,13 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import type { Program } from '@/lib/types';
 
-const programs = [
-  {
-    title: 'Fundamentos de la Sabiduría Antigua',
-    description: 'Un viaje a través de textos y filosofías milenarias que han moldeado el pensamiento humano.',
-    image: 'https://picsum.photos/600/400?random=1',
-    aiHint: 'ancient library'
-  },
-  {
-    title: 'Alquimia Cuántica',
-    description: 'Fusiona la física cuántica con principios alquímicos para una transformación personal profunda.',
-    image: 'https://picsum.photos/600/400?random=2',
-    aiHint: 'quantum physics'
-  },
-  {
-    title: 'Geometría Sagrada Aplicada',
-    description: 'Descubre y aplica los patrones universales de la creación en tu vida diaria y proyectos creativos.',
-    image: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'sacred geometry'
-  },
-];
+interface ProgramsProps {
+  programs: Program[];
+}
 
-export function Programs() {
+export function Programs({ programs }: ProgramsProps) {
   return (
     <section id="programas" className="w-full py-16 md:py-24">
       <div className="container px-6">
@@ -42,8 +26,8 @@ export function Programs() {
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {programs.map((program, index) => (
-            <Card key={index} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+          {programs.map((program) => (
+            <Card key={program.id} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
               <CardHeader className="p-0">
                 <div className="relative h-56 w-full">
                   <Image

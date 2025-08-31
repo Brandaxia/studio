@@ -1,32 +1,13 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import type { Testimonial } from '@/lib/types';
 
-const testimonials = [
-  {
-    quote: "Este curso abrió portales de percepción que no sabía que existían. Una experiencia verdaderamente transformadora.",
-    name: 'Anaïs',
-    program: 'Alquimia Cuántica',
-    avatar: 'https://picsum.photos/100/100?random=7',
-    aiHint: 'happy person'
-  },
-  {
-    quote: "La claridad y profundidad de las enseñanzas son incomparables. Ascenso Ainsophic es un faro en la oscuridad.",
-    name: 'Leo',
-    program: 'Fundamentos de la Sabiduría Antigua',
-    avatar: 'https://picsum.photos/100/100?random=8',
-    aiHint: 'smiling student'
-  },
-  {
-    quote: "Apliqué la geometría sagrada en mi arte y los resultados han sido asombrosos. Mi creatividad ha florecido.",
-    name: 'Iris',
-    program: 'Geometría Sagrada Aplicada',
-    avatar: 'https://picsum.photos/100/100?random=9',
-    aiHint: 'joyful woman'
-  },
-];
+interface TestimonialsProps {
+  testimonials: Testimonial[];
+}
 
-export function Testimonials() {
+export function Testimonials({ testimonials }: TestimonialsProps) {
   return (
     <section id="testimonials" className="w-full py-16 md:py-24">
       <div className="container">
@@ -41,8 +22,8 @@ export function Testimonials() {
           className="mx-auto mt-12 w-full max-w-4xl"
         >
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            {testimonials.map((testimonial) => (
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card className="h-full rounded-2xl shadow-lg">
                     <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">

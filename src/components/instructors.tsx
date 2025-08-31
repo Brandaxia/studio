@@ -1,28 +1,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
+import type { Instructor } from '@/lib/types';
 
-const instructors = [
-  {
-    name: 'Elara Vex',
-    title: 'Maestra de Cosmología Antigua',
-    avatar: 'https://picsum.photos/100/100?random=4',
-    aiHint: 'wise woman',
-  },
-  {
-    name: 'Orion Kael',
-    title: 'Guía de Realidades Cuánticas',
-    avatar: 'https://picsum.photos/100/100?random=5',
-    aiHint: 'thoughtful man',
-  },
-  {
-    name: 'Lyra Solara',
-    title: 'Arquitecta de Geometría Sagrada',
-    avatar: 'https://picsum.photos/100/100?random=6',
-    aiHint: 'creative artist',
-  },
-];
+interface InstructorsProps {
+  instructors: Instructor[];
+}
 
-export function Instructors() {
+export function Instructors({ instructors }: InstructorsProps) {
   return (
     <section id="instructores" className="w-full bg-primary/5 py-16 md:py-24">
       <div className="container">
@@ -34,7 +18,7 @@ export function Instructors() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {instructors.map((instructor) => (
-            <Card key={instructor.name} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+            <Card key={instructor.id} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
               <CardContent className="flex flex-col items-center p-6 text-center">
                 <Avatar className="h-24 w-24 border-4 border-background shadow-md">
                   <AvatarImage src={instructor.avatar} alt={instructor.name} data-ai-hint={instructor.aiHint}/>
