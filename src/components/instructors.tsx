@@ -34,8 +34,8 @@ export function Instructors() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {instructors.map((instructor) => (
-            <Card key={instructor.name} className="border-0 bg-transparent text-center shadow-none">
-              <CardContent className="flex flex-col items-center p-6">
+            <Card key={instructor.name} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+              <CardContent className="flex flex-col items-center p-6 text-center">
                 <Avatar className="h-24 w-24 border-4 border-background shadow-md">
                   <AvatarImage src={instructor.avatar} alt={instructor.name} data-ai-hint={instructor.aiHint}/>
                   <AvatarFallback>{instructor.name.charAt(0)}</AvatarFallback>
