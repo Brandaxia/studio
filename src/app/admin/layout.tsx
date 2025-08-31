@@ -13,8 +13,8 @@ const navItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/programs', label: 'Programas', icon: Book },
   { href: '/admin/instructors', label: 'Instructores', icon: Users },
-  { href: '/admin/testimonials', label: 'Testimonios', icon: MessageSquareQuote },
-  { href: '/admin/faqs', label: 'FAQ', icon: HelpCircle },
+  { href: '#', label: 'Testimonios', icon: MessageSquareQuote, disabled: true },
+  { href: '#', label: 'FAQ', icon: HelpCircle, disabled: true },
 ];
 
 export default function AdminLayout({
@@ -56,8 +56,14 @@ export default function AdminLayout({
         </div>
         <nav className="flex flex-1 flex-col gap-2">
           {navItems.map((item) => (
-            <Button key={item.href} variant="ghost" className="justify-start gap-2" asChild>
-              <Link href={item.href}>
+             <Button
+              key={item.href}
+              variant="ghost"
+              className="justify-start gap-2"
+              asChild
+              disabled={item.disabled}
+            >
+              <Link href={item.disabled ? '#' : item.href}>
                 <item.icon className="h-4 w-4" />
                 {item.label}
               </Link>
