@@ -34,7 +34,9 @@ export default function AdminDashboardPage() {
           <CardContent>
             <div className="text-2xl font-bold">3</div>
             <p className="text-xs text-muted-foreground">Instructores registrados</p>
-             <Button size="sm" className="mt-4" variant="outline" disabled>Gestionar</Button>
+             <Button size="sm" className="mt-4" asChild>
+                <Link href="/admin/instructors">Gestionar</Link>
+             </Button>
           </CardContent>
         </Card>
         <Card>
@@ -45,7 +47,9 @@ export default function AdminDashboardPage() {
           <CardContent>
             <div className="text-2xl font-bold">3</div>
             <p className="text-xs text-muted-foreground">Testimonios publicados</p>
-             <Button size="sm" className="mt-4" variant="outline" disabled>Gestionar</Button>
+             <Button size="sm" className="mt-4" asChild>
+                <Link href="/admin/testimonials">Gestionar</Link>
+             </Button>
           </CardContent>
         </Card>
         <Card>
@@ -63,4 +67,3 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
-

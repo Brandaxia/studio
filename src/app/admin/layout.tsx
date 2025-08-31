@@ -13,7 +13,7 @@ const navItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/programs', label: 'Programas', icon: Book },
   { href: '/admin/instructors', label: 'Instructores', icon: Users },
-  { href: '#', label: 'Testimonios', icon: MessageSquareQuote, disabled: true },
+  { href: '/admin/testimonials', label: 'Testimonios', icon: MessageSquareQuote },
   { href: '#', label: 'FAQ', icon: HelpCircle, disabled: true },
 ];
 
