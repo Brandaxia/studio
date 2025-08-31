@@ -22,8 +22,14 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Ascenso Ainsophic. Todos los derechos reservados.</p>
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} Ascenso Ainsophic. Todos los derechos reservados.
+          </p>
+          <div className="flex gap-4 text-sm text-muted-foreground">
+            <a href="/privacy" className="hover:text-foreground">Política de Privacidad</a>
+            <a href="/terms" className="hover:text-foreground">Términos y Condiciones</a>
+          </div>
         </div>
       </div>
     </footer>
