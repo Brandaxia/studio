@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/testimonials";
 import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
+import { CookieBanner } from "@/components/cookie-banner";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 }
