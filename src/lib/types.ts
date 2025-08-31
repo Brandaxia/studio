@@ -2,14 +2,28 @@
  * @fileOverview Defines the core data structures for the Ainsophic Academy application.
  */
 
+export interface LearningPath {
+  id: string;
+  title: string;
+  description: string;
+  programIds: string[];
+}
+
 export interface Program {
   id: string;
   title: string;
   description: string;
   image: string;
   aiHint: string;
-  syllabus?: string[];
+  courseIds?: string[];
   moodleCourseId?: number;
+}
+
+export interface Course {
+  id: string;
+  title: string;
+  description: string;
+  programId: string;
 }
 
 export interface Instructor {

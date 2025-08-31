@@ -54,6 +54,7 @@ export function ProgramForm({ program, onSave, onCancel }: ProgramFormProps) {
   const onSubmit = (values: ProgramFormValues) => {
     onSave({
         id: program?.id || Date.now().toString(),
+        courseIds: program?.courseIds || [],
         ...values
     });
   };

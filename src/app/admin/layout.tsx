@@ -4,14 +4,16 @@
 import { useAuth } from '@/contexts/auth-context';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { Loader2, LayoutDashboard, Book, Users, MessageSquareQuote, HelpCircle, LogOut, GraduationCap } from 'lucide-react';
+import { Loader2, LayoutDashboard, Book, Users, MessageSquareQuote, HelpCircle, LogOut, GraduationCap, SwatchBook, GitMerge } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 
 const navItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/admin/learning-paths', label: 'Rutas de Aprendizaje', icon: GitMerge },
   { href: '/admin/programs', label: 'Programas', icon: Book },
+  { href: '/admin/courses', label: 'Cursos', icon: SwatchBook },
   { href: '/admin/instructors', label: 'Instructores', icon: Users },
   { href: '/admin/students', label: 'Alumnos', icon: GraduationCap },
   { href: '/admin/testimonials', label: 'Testimonios', icon: MessageSquareQuote },
