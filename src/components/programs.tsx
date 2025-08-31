@@ -34,7 +34,7 @@ const programs = [
 export function Programs() {
   return (
     <section id="programas" className="w-full py-16 md:py-24">
-      <div className="container">
+      <div className="container px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold md:text-4xl">Nuestros Programas</h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -43,7 +43,7 @@ export function Programs() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {programs.map((program, index) => (
-            <Card key={index} className="flex flex-col overflow-hidden rounded-lg shadow-2xl transition-transform hover:scale-105">
+            <Card key={index} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
               <CardHeader className="p-0">
                 <div className="relative h-56 w-full">
                   <Image
@@ -60,7 +60,7 @@ export function Programs() {
                 <CardDescription className="mt-2 flex-1">{program.description}</CardDescription>
               </CardContent>
               <CardFooter>
-                <Button variant="link" className="p-0 text-primary">
+                <Button variant="link" className="p-0 text-primary hover:text-primary/80">
                   Saber más <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardFooter>
