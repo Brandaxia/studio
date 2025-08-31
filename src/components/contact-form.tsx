@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -8,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail } from "lucide-react";
+import { Mail, Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
@@ -18,6 +19,8 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -28,14 +31,41 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Simulation of an API submission
-    console.log("Form submitted:", values);
-    toast({
-      title: "Mensaje Enviado",
-      description: "Gracias por contactarnos. Te responderemos pronto.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    setSubmissionError(false);
+    
+    try {
+      // In a real app, this would be process.env.NEXT_PUBLIC_API_URL
+      const apiUrl = '/api/contact'; 
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        // This will be caught by the catch block
+        throw new Error("Network response was not ok");
+      }
+      
+      toast({
+        title: "Mensaje Enviado",
+        description: "Gracias por contactarnos. Te responderemos pronto.",
+      });
+      form.reset();
+
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmissionError(true);
+      toast({
+        title: "Error al enviar",
+        description: "No se pudo enviar tu mensaje. Por favor, inténtalo por correo electrónico.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -81,13 +111,21 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full">
-            Enviar Mensaje
+          <Button type="submit" className="w-full" disabled={isSubmitting}>
+            {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
           </Button>
         </form>
       </Form>
+      
       <div className="mt-6 text-center text-sm text-muted-foreground">
-        <p>Si prefieres, también puedes enviarnos un correo electrónico.</p>
+        {submissionError ? (
+            <p>
+                O si prefieres, envíanos un correo directamente.
+            </p>
+        ) : (
+            <p>Si prefieres, también puedes enviarnos un correo electrónico.</p>
+        )}
         <a
           href="mailto:contacto@ascensoainsophic.com"
           className="mt-1 inline-flex items-center text-primary underline-offset-4 hover:underline"
