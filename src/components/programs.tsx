@@ -10,6 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import type { Program } from '@/lib/types';
+import Link from 'next/link';
 
 interface ProgramsProps {
   programs: Program[];
@@ -44,8 +45,10 @@ export function Programs({ programs }: ProgramsProps) {
                 <CardDescription className="mt-2 flex-1">{program.description}</CardDescription>
               </CardContent>
               <CardFooter>
-                <Button variant="link" className="p-0 text-primary hover:text-primary/80">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                 <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
+                  <Link href={`/programs/${program.id}`}>
+                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
