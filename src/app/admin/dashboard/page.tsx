@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { BookOpen, Users, MessageSquareQuote, HelpCircle, GraduationCap, GitMerge, SwatchBook, Puzzle } from "lucide-react";
+import { initialCourses, initialLearningPaths, initialPrograms } from "@/lib/data";
 
 export default function AdminDashboardPage() {
   return (
@@ -19,7 +20,7 @@ export default function AdminDashboardPage() {
             <GitMerge className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">3</div>
+            <div className="text-2xl font-bold">{initialLearningPaths.length}</div>
             <p className="text-xs text-muted-foreground">Active paths</p>
             <Button size="sm" className="mt-4" asChild>
               <Link href="/admin/learning-paths">Manage</Link>
@@ -32,7 +33,7 @@ export default function AdminDashboardPage() {
             <BookOpen className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">4</div>
+            <div className="text-2xl font-bold">{initialPrograms.length}</div>
             <p className="text-xs text-muted-foreground">Active programs</p>
             <Button size="sm" className="mt-4" asChild>
               <Link href="/admin/programs">Manage</Link>
@@ -45,7 +46,7 @@ export default function AdminDashboardPage() {
             <SwatchBook className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">13</div>
+            <div className="text-2xl font-bold">{initialCourses.length}</div>
             <p className="text-xs text-muted-foreground">Available courses</p>
             <Button size="sm" className="mt-4" asChild>
               <Link href="/admin/courses">Manage</Link>
