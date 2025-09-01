@@ -456,6 +456,12 @@ export const initialIntegrations: Integration[] = [
     apiKey: 'moodle-token-xxxxxxxxxxxxxx',
     enabled: false,
   },
+  {
+    id: '3',
+    name: 'n8n',
+    apiKey: 'n8n-token-xxxxxxxxxxxxxxxx',
+    enabled: false,
+  }
 ];
 
 export const initialApiKeys: AcademyApiKey[] = [
@@ -473,3 +479,4 @@ export const initialApiKeys: AcademyApiKey[] = [
     },
 ];
 
+    

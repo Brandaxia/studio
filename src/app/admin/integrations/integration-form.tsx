@@ -5,20 +5,20 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import type { Integration } from '@/lib/types';
 import { useEffect } from 'react';
-import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 
 interface IntegrationFormProps {
   integration: Integration | null;
-  onSave: (integration: Integration) => void;
+  onSave: (integration: Omit<Integration, 'id'> | Integration) => void;
   onCancel: () => void;
 }
 
 const formSchema = z.object({
+  name: z.string().min(2, { message: 'Service name is required.' }),
   apiKey: z.string().min(1, { message: 'API Key cannot be empty.' }),
   enabled: z.boolean(),
 });
@@ -29,6 +29,7 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
   const form = useForm<IntegrationFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      name: '',
       apiKey: '',
       enabled: false,
     },
@@ -37,8 +38,15 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
   useEffect(() => {
     if (integration) {
         form.reset({
+            name: integration.name,
             apiKey: integration.apiKey,
             enabled: integration.enabled,
+        });
+    } else {
+        form.reset({
+            name: '',
+            apiKey: '',
+            enabled: false,
         });
     }
   }, [integration, form]);
@@ -50,12 +58,30 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
             ...integration,
             ...values,
         });
+    } else {
+        onSave(values);
     }
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+         <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Service Name</FormLabel>
+              <FormControl>
+                <Input placeholder="e.g., Zapier" {...field} disabled={!!integration}/>
+              </FormControl>
+              <FormDescription>
+                The name of the third-party service.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="apiKey"
@@ -63,7 +89,7 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
             <FormItem>
               <FormLabel>API Key</FormLabel>
               <FormControl>
-                <Input placeholder="Enter the new API key" {...field} />
+                <Input placeholder="Enter the service's API key" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -97,3 +123,5 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
     </Form>
   );
 }
+
+    

@@ -15,7 +15,7 @@ import {
   DialogFooter,
   DialogClose,
 } from '@/components/ui/dialog';
-import { MoreHorizontal, PlusCircle, KeyRound, Copy, Check } from 'lucide-react';
+import { MoreHorizontal, PlusCircle, Copy, Check } from 'lucide-react';
 import type { Integration, AcademyApiKey } from '@/lib/types';
 import { IntegrationForm } from './integration-form';
 import { Badge } from '@/components/ui/badge';
@@ -29,7 +29,6 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { initialIntegrations, initialApiKeys } from '@/lib/data';
-import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 
 export default function AdminIntegrationsPage() {
@@ -43,19 +42,33 @@ export default function AdminIntegrationsPage() {
   const [isApiKeyDialogOpen, setIsApiKeyDialogOpen] = useState(false);
   const [newlyGeneratedKey, setNewlyGeneratedKey] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
-  const { toast } = useToast();
 
   // Handlers for third-party integrations
-  const handleSaveIntegration = (integration: Integration) => {
-    setIntegrations(integrations.map(i => i.id === integration.id ? integration : i));
-    setSelectedIntegration(null);
+  const handleSaveIntegration = (integrationData: Omit<Integration, 'id'> | Integration) => {
+    if ('id' in integrationData) {
+      // Editing existing integration
+      setIntegrations(integrations.map(i => i.id === integrationData.id ? integrationData : i));
+    } else {
+      // Adding new integration
+      const newIntegration: Integration = {
+        id: `int-${Date.now()}`,
+        ...integrationData
+      };
+      setIntegrations([...integrations, newIntegration]);
+    }
     setIsFormOpen(false);
+    setSelectedIntegration(null);
   };
   
   const handleEdit = (integration: Integration) => {
     setSelectedIntegration(integration);
     setIsFormOpen(true);
   }
+  
+  const handleAddNew = () => {
+    setSelectedIntegration(null);
+    setIsFormOpen(true);
+  };
 
   const handleToggleIntegration = (id: string, enabled: boolean) => {
     setIntegrations(integrations.map(i => i.id === id ? { ...i, enabled } : i));
@@ -107,20 +120,26 @@ export default function AdminIntegrationsPage() {
               <CardTitle>Third-Party Integrations</CardTitle>
               <CardDescription>Manage connections to external services like Google AI and Moodle.</CardDescription>
             </div>
-            <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-              <DialogContent className="sm:max-w-[425px]">
-                <DialogHeader>
-                  <DialogTitle>Edit Integration</DialogTitle>
-                  <DialogDescription>
-                    Update the settings for {selectedIntegration?.name}.
-                  </DialogDescription>
-                </DialogHeader>
-                <IntegrationForm 
-                  integration={selectedIntegration}
-                  onSave={handleSaveIntegration}
-                  onCancel={() => setIsFormOpen(false)}
-                />
-              </DialogContent>
+             <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
+                <DialogTrigger asChild>
+                    <Button size="sm" className="gap-1" onClick={handleAddNew}>
+                        <PlusCircle className="h-3.5 w-3.5" />
+                        Add Integration
+                    </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                    <DialogTitle>{selectedIntegration ? 'Edit Integration' : 'Add New Integration'}</DialogTitle>
+                    <DialogDescription>
+                        {selectedIntegration ? `Update the settings for ${selectedIntegration.name}.` : 'Connect a new third-party service.'}
+                    </DialogDescription>
+                    </DialogHeader>
+                    <IntegrationForm 
+                    integration={selectedIntegration}
+                    onSave={handleSaveIntegration}
+                    onCancel={() => setIsFormOpen(false)}
+                    />
+                </DialogContent>
             </Dialog>
           </div>
         </CardHeader>
@@ -294,3 +313,5 @@ export default function AdminIntegrationsPage() {
     </div>
   );
 }
+
+    
