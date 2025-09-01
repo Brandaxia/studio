@@ -77,23 +77,32 @@ export const initialCourses: Course[] = [
 // These are curated sequences of programs designed for specific career goals and audiences.
 
 export const initialLearningPaths: LearningPath[] = [
+  // --- Introductory Level ---
   { 
     id: 'lp1', 
     title: 'AI Literacy for All', 
     description: 'For the general public, students, and non-technical professionals. This path demystifies AI, focusing on core concepts, real-world applications, and ethical considerations without requiring programming knowledge. Ideal for anyone curious about the AI revolution. (Introductory)', 
-    programIds: ['p4', 'p2'] 
-  },
-  { 
-    id: 'lp2', 
-    title: 'Data Scientist with AI', 
-    description: 'For aspiring data scientists and analysts. This path provides a robust foundation in machine learning and NLP, equipping you to extract insights, build predictive models, and work with complex text data. (Professional)', 
-    programIds: ['p1', 'p2'] 
+    programIds: ['p4'] 
   },
   {
-    id: 'lp3',
+    id: 'lp2',
     title: 'AI for Business & Product Leaders',
     description: 'For managers, executives, and entrepreneurs. This path focuses on the strategic implications of AI, how to identify opportunities for innovation, and how to lead AI-driven projects without getting lost in the technical weeds. (Introductory / Strategic)',
     programIds: ['p1', 'p4']
+  },
+  {
+    id: 'lp8',
+    title: 'AI for Creatives & Artists',
+    description: 'A path for artists, designers, writers, and marketers. Learn to use generative AI tools for text, image, and sound creation. This path focuses on practical application and creative workflows, not deep coding. (Introductory / Creative)',
+    programIds: ['p4', 'p3']
+  },
+  
+  // --- Professional / Engineering Level ---
+  { 
+    id: 'lp3', 
+    title: 'Data Scientist with AI Specialization', 
+    description: 'For aspiring data scientists and analysts. This path provides a robust foundation in machine learning and NLP, equipping you to extract insights, build predictive models, and work with complex text data. (Professional)', 
+    programIds: ['p1', 'p2'] 
   },
   {
     id: 'lp4',
@@ -101,6 +110,14 @@ export const initialLearningPaths: LearningPath[] = [
     description: 'A specialized, high-demand track for a broad audience. It provides a deep dive into prompt design, context optimization, and the architecture of LLM-powered applications, from simple chatbots to complex agents. (All Levels)',
     programIds: ['p2', 'p4']
   },
+  {
+    id: 'lp9',
+    title: 'Specialist in MLOps',
+    description: 'A highly technical path for engineers focused on the operational lifecycle of machine learning. Covers CI/CD for models, automated monitoring, infrastructure as code, and ensuring the reliability of AI systems in production. (Advanced / Engineering)',
+    programIds: ['p1']
+  },
+
+  // --- Advanced / Specialization Level ---
   {
     id: 'lp5',
     title: 'AI Architect (Computer Vision Focus)',
