@@ -9,7 +9,7 @@ export function Hero() {
         <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
           Master the Future of AI
         </h1>
-        <p className="mt-4 max-w-2xl text-base text-muted-foreground md:text-xl">
+        <p className="mt-4 max-w-2xl text-base text-primary-foreground/80 md:text-xl">
           Explore the frontiers of Artificial Intelligence with our expert-led programs, designed to build the next generation of AI leaders.
         </p>
         <Button size="lg" className="mt-8 bg-primary-foreground text-background transition-all hover:bg-primary-foreground/90" asChild>

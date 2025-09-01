@@ -12,7 +12,7 @@ export default function AdminDashboardPage() {
         Welcome to the control center for Ainsophic Academy. Manage content and users from here.
       </p>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
          <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Learning Paths</CardTitle>

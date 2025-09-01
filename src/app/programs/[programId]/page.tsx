@@ -69,7 +69,7 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
     <div className="flex min-h-screen w-full flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="relative h-[30vh] min-h-[250px] w-full md:h-[40vh] md:min-h-[300px]">
+        <section className="relative h-[30vh] min-h-[250px] w-full md:h-[40vh]">
             <div className="absolute inset-0 bg-black/50" />
             <Image 
                 src={program.image}
@@ -92,7 +92,7 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
                     <h2 className="text-2xl font-bold tracking-tight">About this Program</h2>
                     <p className="mt-4 text-base text-muted-foreground md:text-lg">{program.description}</p>
                 </div>
-                <div className="md:col-span-1">
+                <div className="space-y-8 md:col-span-1">
                     <Card>
                         <CardHeader>
                             <CardTitle>Courses Included</CardTitle>
