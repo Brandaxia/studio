@@ -39,6 +39,30 @@ export const initialPrograms: Program[] = [
     aiHint: 'generative ai',
     courseIds: ['c11', 'c12', 'c13'],
   },
+  {
+    id: 'p5',
+    title: 'AI Ethics & Governance',
+    description: 'A critical program for a new generation of responsible AI practitioners. It covers frameworks for fairness, accountability, transparency, and the societal impact of AI systems, preparing students to lead and implement responsible AI policies. Audience: Ethicists, policy makers, product managers, AI engineers.',
+    image: 'https://picsum.photos/600/400?random=15',
+    aiHint: 'ethics governance',
+    courseIds: ['c14', 'c15', 'c16'],
+  },
+  {
+    id: 'p6',
+    title: 'Reinforcement Learning (RL)',
+    description: 'Master the science of building agents that learn to make optimal decisions through trial and error. This program covers everything from foundational Markov Decision Processes to deep RL algorithms like DQN and PPO. Audience: AI researchers, robotics engineers, game developers.',
+    image: 'https://picsum.photos/600/400?random=16',
+    aiHint: 'reinforcement learning',
+    courseIds: ['c17', 'c18', 'c19'],
+  },
+  {
+    id: 'p7',
+    title: 'AI for Finance (FinTech)',
+    description: 'A specialized program applying AI to the financial industry. It covers algorithmic trading, credit scoring, fraud detection, and risk management using machine learning and time-series analysis. Audience: Financial analysts, data scientists, FinTech developers.',
+    image: 'https://picsum.photos/600/400?random=17',
+    aiHint: 'ai finance',
+    courseIds: ['c20', 'c21'],
+  },
 ];
 
 
@@ -68,6 +92,20 @@ export const initialCourses: Course[] = [
   { id: 'c11', programId: 'p4', title: 'C11: Theory of Generative Models (VAEs & GANs)', description: 'Understand the mathematical principles behind generative AI, including Variational Autoencoders and Generative Adversarial Networks. (Intermediate)'},
   { id: 'c12', programId: 'p4', title: 'C12: LLM Architecture & In-Context Learning', description: 'A detailed look at the internal workings of large-scale models like GPT, including training strategies, scaling laws, and the mechanics of in-context learning. (Advanced)'},
   { id: 'c13', programId: 'p4', title: 'C13: Prompt Engineering & LLM Application Design', description: 'Master the art and science of crafting effective prompts and design patterns for building reliable and powerful applications on top of LLMs. (Intermediate)'},
+
+  // P5: AI Ethics & Governance
+  { id: 'c14', programId: 'p5', title: 'C14: Foundations of AI Ethics', description: 'Explore the philosophical and practical foundations of ethical AI, including bias, fairness, and accountability. (Introductory)'},
+  { id: 'c15', programId: 'p5', title: 'C15: Auditing & Mitigating Algorithmic Bias', description: 'Learn technical methods to detect and mitigate bias in datasets and models to ensure equitable outcomes. (Advanced)'},
+  { id: 'c16', programId: 'p5', title: 'C16: AI Governance & Regulatory Frameworks', description: 'Understand the global landscape of AI regulation, risk management, and how to implement governance structures within an organization. (Intermediate)'},
+
+  // P6: Reinforcement Learning (RL)
+  { id: 'c17', programId: 'p6', title: 'C17: Markov Decision Processes & Dynamic Programming', description: 'Master the mathematical framework that underpins modern RL, including value and policy iteration. (Intermediate)'},
+  { id: 'c18', programId: 'p6', title: 'C18: Deep Q-Networks (DQN) and Policy Gradients', description: 'Implement foundational deep reinforcement learning algorithms to solve complex control tasks. (Advanced)'},
+  { id: 'c19', programId: 'p6', title: 'C19: Advanced RL: Actor-Critic Methods & Multi-Agent Systems', description: 'Explore state-of-the-art actor-critic models (A2C, PPO) and delve into the complexities of multi-agent reinforcement learning. (Advanced)'},
+
+  // P7: AI for Finance (FinTech)
+  { id: 'c20', programId: 'p7', title: 'C20: Time-Series Analysis & Forecasting for Finance', description: 'Apply statistical and machine learning models (ARIMA, LSTMs) to predict financial market trends. (Intermediate)'},
+  { id: 'c21', programId: 'p7', title: 'C21: ML for Algorithmic Trading & Fraud Detection', description: 'Design and backtest trading strategies and build robust systems to detect fraudulent financial activities using machine learning. (Advanced)'},
 ];
 
 
@@ -82,7 +120,7 @@ export const initialLearningPaths: LearningPath[] = [
     id: 'lp1', 
     title: 'AI Literacy for All', 
     description: 'For the general public, students, and non-technical professionals. This path demystifies AI, focusing on core concepts, real-world applications, and ethical considerations without requiring programming knowledge. Ideal for anyone curious about the AI revolution. (Introductory)', 
-    programIds: ['p4'] 
+    programIds: ['p4', 'p5'] 
   },
   {
     id: 'lp2',
@@ -116,6 +154,12 @@ export const initialLearningPaths: LearningPath[] = [
     description: 'A highly technical path for engineers focused on the operational lifecycle of machine learning. Covers CI/CD for models, automated monitoring, infrastructure as code, and ensuring the reliability of AI systems in production. (Advanced / Engineering)',
     programIds: ['p1']
   },
+  {
+    id: 'lp12',
+    title: 'AI Engineer for FinTech',
+    description: 'A career-focused path for developers aiming to enter the financial technology sector. This route combines core ML engineering with specialized financial applications, preparing you for high-impact roles. (Professional / Specialization)',
+    programIds: ['p1', 'p7'],
+  },
 
   // --- Advanced / Specialization Level ---
   {
@@ -134,8 +178,20 @@ export const initialLearningPaths: LearningPath[] = [
     id: 'lp7',
     title: 'AI Research Scientist',
     description: 'For academics, graduate students, and R&D professionals. This path delves into the theoretical underpinnings of NLP and Generative AI, focusing on model architecture, training methodologies, and areas of active research. (Advanced / Academic)',
-    programIds: ['p2', 'p4']
-  }
+    programIds: ['p2', 'p4', 'p6']
+  },
+  {
+    id: 'lp10',
+    title: 'AI Ethics & Risk Officer',
+    description: 'For professionals in governance, risk, and compliance. This path combines foundational ML and NLP with a deep dive into ethical frameworks, bias auditing, and governance, preparing leaders to navigate the complex landscape of responsible AI. (Advanced / Strategic)',
+    programIds: ['p1', 'p2', 'p5'],
+  },
+  {
+    id: 'lp11',
+    title: 'Reinforcement Learning Specialist',
+    description: 'A deep specialization for engineers and researchers focused on building intelligent agents. This path combines general ML engineering with advanced RL theory and application, ideal for fields like robotics, gaming, and optimization. (Advanced / Research)',
+    programIds: ['p1', 'p6'],
+  },
 ];
 
 // =================================================================
