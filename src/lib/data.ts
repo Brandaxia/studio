@@ -1,5 +1,5 @@
 
-import type { Program, Course, LearningPath, Instructor, Testimonial, FaqItem, Student } from './types';
+import type { Program, Course, LearningPath, Instructor, Testimonial, FaqItem, Student, Integration, AcademyApiKey } from './types';
 
 // =================================================================
 // 1. PROGRAMS OF STUDY
@@ -443,4 +443,33 @@ export const initialStudents: Student[] = [
   },
 ];
 
-    
+export const initialIntegrations: Integration[] = [
+  {
+    id: '1',
+    name: 'Google AI Studio',
+    apiKey: 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx1234',
+    enabled: true,
+  },
+  {
+    id: '2',
+    name: 'Moodle',
+    apiKey: 'moodle-token-xxxxxxxxxxxxxx',
+    enabled: false,
+  },
+];
+
+export const initialApiKeys: AcademyApiKey[] = [
+    {
+      id: 'key-1',
+      key: `secret_live_123...xyz`,
+      createdAt: '2023-10-01',
+      status: 'active',
+    },
+     {
+      id: 'key-2',
+      key: `secret_test_456...abc`,
+      createdAt: '2024-01-15',
+      status: 'inactive',
+    },
+];
+

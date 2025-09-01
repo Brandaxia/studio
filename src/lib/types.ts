@@ -65,6 +65,13 @@ export interface Integration {
   enabled: boolean;
 }
 
+export interface AcademyApiKey {
+  id: string;
+  key: string;
+  createdAt: string;
+  status: 'active' | 'inactive';
+}
+
 
 export interface AppContent {
   programs: Program[];
