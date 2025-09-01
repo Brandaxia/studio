@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, GitMerge } from 'lucide-react';
 import type { LearningPath, Program } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 
 interface LearningPathsProps {
   learningPaths: LearningPath[];
@@ -54,8 +55,10 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
                  </div>
               </CardContent>
               <CardFooter>
-                <Button variant="link" className="p-0 text-primary hover:text-primary/80">
-                  View Full Path <ArrowRight className="ml-2 h-4 w-4" />
+                 <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
+                  <Link href={`/learning-paths/${path.id}`}>
+                    View Full Path <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
