@@ -1,7 +1,17 @@
+
+'use client';
+
 import { Logo } from "./logo";
 import { Twitter, Youtube, Instagram } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Footer() {
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="w-full border-t bg-background">
       <div className="container py-8">
@@ -24,7 +34,7 @@ export function Footer() {
         </div>
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Ainsophic Academy. All rights reserved.
+            &copy; {currentYear} Ainsophic Academy. All rights reserved.
           </p>
           <div className="flex gap-4 text-sm text-muted-foreground">
             <a href="/privacy" className="hover:text-foreground">Privacy Policy</a>
