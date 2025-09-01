@@ -25,7 +25,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <Logo />
-        <nav className="ml-10 hidden items-center gap-6 md:flex">
+        <nav className="ml-10 mr-auto hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -36,7 +36,7 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <div className="ml-auto hidden md:flex">
+        <div className="hidden md:flex">
           <Button asChild>
             <Link href="/login">
               <LogIn className="mr-2 h-4 w-4" />
