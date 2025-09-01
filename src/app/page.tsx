@@ -24,7 +24,7 @@ export default function Home() {
         <AiSummary />
         <Instructors instructors={initialInstructors} />
         <NotebookPreview />
-        <Testimonials testimonials={initialTestimonials} />
+        <Testimonials testimonials={initialTestimonials} programs={initialPrograms} />
         <Faq faqs={initialFaqs} />
         <Contact />
       </main>

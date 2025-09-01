@@ -2,16 +2,16 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import type { Testimonial } from '@/lib/types';
-import { initialPrograms } from '@/lib/data';
+import type { Testimonial, Program } from '@/lib/types';
 
 interface TestimonialsProps {
   testimonials: Testimonial[];
+  programs: Program[];
 }
 
-export function Testimonials({ testimonials }: TestimonialsProps) {
+export function Testimonials({ testimonials, programs }: TestimonialsProps) {
   const getProgramTitle = (programId: string) => {
-    return initialPrograms.find(p => p.id === programId)?.title || 'Related Program';
+    return programs.find(p => p.id === programId)?.title || 'Related Program';
   };
   return (
     <section id="testimonials" className="w-full py-16 md:py-24">
