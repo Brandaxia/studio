@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider } from "@/contexts/auth-context";
 
 export const metadata: Metadata = {
-  title: "AI Academy",
-  description: "Master the future of Artificial Intelligence.",
+  title: "Ainsophic Academy",
+  description: "Master the future of Artificial Intelligence with Ainsophic Academy.",
 };
 
 export default function RootLayout({

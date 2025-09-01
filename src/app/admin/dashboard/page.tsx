@@ -9,7 +9,7 @@ export default function AdminDashboardPage() {
     <div>
       <h1 className="text-3xl font-bold tracking-tight">Admin Dashboard</h1>
       <p className="mt-2 text-muted-foreground">
-        Welcome to the control center for the AI Academy. Manage content and users from here.
+        Welcome to the control center for Ainsophic Academy. Manage content and users from here.
       </p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">

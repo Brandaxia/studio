@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
           <div className="prose prose-lg mx-auto max-w-4xl text-foreground">
             <h1 className="font-headline text-4xl font-bold">Privacy Policy</h1>
             <p className="lead">
-              At AI Academy, your privacy is a manifestation of our commitment to respect and trust. This policy details how we protect the information you entrust to us.
+              At Ainsophic Academy, your privacy is a manifestation of our commitment to respect and trust. This policy details how we protect the information you entrust to us.
             </p>
 
             <h2>1. The Information We Receive</h2>

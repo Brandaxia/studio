@@ -52,7 +52,7 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Academy Access</CardTitle>
+        <CardTitle>Ainsophic Academy Access</CardTitle>
         <CardDescription>Enter your credentials to continue.</CardDescription>
       </CardHeader>
       <CardContent>

@@ -8,9 +8,9 @@ import { NotebookPreview } from "@/components/notebook-preview";
 import { Testimonials } from "@/components/testimonials";
 import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
-import { Footer } from "@/components/footer";
 import { CookieBanner } from "@/components/cookie-banner";
 import type { Program, Instructor, Testimonial, FaqItem, LearningPath } from "@/lib/types";
+import { Footer } from "@/components/footer";
 
 const programsData: Program[] = [
   {
@@ -76,7 +76,7 @@ const testimonialsData: Testimonial[] = [
   },
   {
     id: '2',
-    quote: "The foundational knowledge from the ML course is invaluable. AI Academy is a beacon for aspiring engineers.",
+    quote: "The foundational knowledge from the ML course is invaluable. Ainsophic Academy is a beacon for aspiring engineers.",
     name: 'Brenda K.',
     program: 'Machine Learning Foundations',
     avatar: 'https://picsum.photos/100/100?random=8',
@@ -95,8 +95,8 @@ const testimonialsData: Testimonial[] = [
 const faqsData: FaqItem[] = [
   {
     id: '1',
-    question: 'What is "AI Academy"?',
-    answer: 'AI Academy is a learning platform dedicated to providing cutting-edge education in Artificial Intelligence, from foundational concepts to advanced specializations.',
+    question: 'What is "Ainsophic Academy"?',
+    answer: 'Ainsophic Academy is a learning platform dedicated to providing cutting-edge education in Artificial Intelligence, from foundational concepts to advanced specializations.',
   },
   {
     id: '2',

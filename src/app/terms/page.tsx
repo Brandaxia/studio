@@ -10,7 +10,7 @@ export default function TermsAndConditionsPage() {
           <div className="prose prose-lg mx-auto max-w-4xl text-foreground">
             <h1 className="font-headline text-4xl font-bold">Terms and Conditions of Use</h1>
             <p className="lead">
-              Welcome to AI Academy. By accessing our academy, you agree to be bound by these terms, which constitute a pact for the advancement of collective knowledge.
+              Welcome to Ainsophic Academy. By accessing our academy, you agree to be bound by these terms, which constitute a pact for the advancement of collective knowledge.
             </p>
 
             <h2>1. Use of the Platform</h2>
@@ -20,7 +20,7 @@ export default function TermsAndConditionsPage() {
 
             <h2>2. Intellectual Property</h2>
             <p>
-              All content in the academy, including courses, texts, graphics, logos, and software, is the property of AI Academy or its licensors and is protected by intellectual property laws. Reproduction, distribution, or modification without our explicit consent is not permitted.
+              All content in the academy, including courses, texts, graphics, logos, and software, is the property of Ainsophic Academy or its licensors and is protected by intellectual property laws. Reproduction, distribution, or modification without our explicit consent is not permitted.
             </p>
 
             <h2>3. User Accounts</h2>

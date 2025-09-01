@@ -127,11 +127,11 @@ export function ContactForm() {
             <p>If you prefer, you can also send us an email.</p>
         )}
         <a
-          href="mailto:contact@ai-academy.com"
+          href="mailto:contact@ainsophic.com"
           className="mt-1 inline-flex items-center text-primary underline-offset-4 hover:underline"
         >
           <Mail className="mr-2 h-4 w-4" />
-          contact@ai-academy.com
+          contact@ainsophic.com
         </a>
       </div>
     </div>

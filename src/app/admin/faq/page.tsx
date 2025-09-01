@@ -29,8 +29,8 @@ import { FaqForm } from './faq-form';
 const initialFaqs: FaqItem[] = [
   {
     id: '1',
-    question: 'What is "AI Academy"?',
-    answer: 'AI Academy is a learning platform dedicated to providing cutting-edge education in Artificial Intelligence, from foundational concepts to advanced specializations.',
+    question: 'What is "Ainsophic Academy"?',
+    answer: 'Ainsophic Academy is a learning platform dedicated to providing cutting-edge education in Artificial Intelligence, from foundational concepts to advanced specializations.',
   },
   {
     id: '2',

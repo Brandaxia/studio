@@ -38,7 +38,7 @@ const initialTestimonials: Testimonial[] = [
     },
     {
       id: '2',
-      quote: "The foundational knowledge from the ML course is invaluable. AI Academy is a beacon for aspiring engineers.",
+      quote: "The foundational knowledge from the ML course is invaluable. Ainsophic Academy is a beacon for aspiring engineers.",
       name: 'Brenda K.',
       program: 'Machine Learning Foundations',
       avatar: 'https://picsum.photos/100/100?random=8',
