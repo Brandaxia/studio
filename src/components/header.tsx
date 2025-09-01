@@ -1,11 +1,13 @@
 
 'use client';
 
-import { Menu, X } from 'lucide-react';
+import { Menu, X, LogIn } from 'lucide-react';
 import { useState } from 'react';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import Link from 'next/link';
+import { Separator } from './ui/separator';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -21,9 +23,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center justify-between">
+      <div className="container flex h-14 items-center">
         <Logo />
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="ml-10 hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -34,7 +36,15 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <div className="md:hidden">
+        <div className="ml-auto hidden md:flex">
+          <Button asChild>
+            <Link href="/login">
+              <LogIn className="mr-2 h-4 w-4" />
+              Login
+            </Link>
+          </Button>
+        </div>
+        <div className="ml-auto md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -51,7 +61,7 @@ export function Header() {
                     <span className="sr-only">Close menu</span>
                   </Button>
                 </div>
-                <nav className="mt-6 flex flex-col gap-4">
+                <nav className="mt-6 flex flex-1 flex-col gap-4">
                   {navLinks.map((link) => (
                     <a
                       key={link.href}
@@ -63,6 +73,15 @@ export function Header() {
                     </a>
                   ))}
                 </nav>
+                <Separator />
+                <div className="mt-4">
+                    <Button asChild className="w-full">
+                        <Link href="/login" onClick={() => setIsOpen(false)}>
+                            <LogIn className="mr-2 h-4 w-4" />
+                            Login / Register
+                        </Link>
+                    </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
