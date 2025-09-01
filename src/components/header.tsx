@@ -24,6 +24,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
+        {/* Desktop Navigation */}
         <div className="hidden items-center gap-10 md:flex">
           <Logo />
           <nav className="flex items-center gap-6">
@@ -47,11 +48,9 @@ export function Header() {
           </Button>
         </div>
         
-        {/* Mobile Menu */}
-        <div className="flex items-center md:hidden">
-            <Logo />
-        </div>
-        <div className="ml-auto flex items-center md:hidden">
+        {/* Mobile Menu & Header */}
+        <div className="flex w-full items-center justify-between md:hidden">
+          <Logo />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
