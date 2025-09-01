@@ -24,11 +24,11 @@ export function Footer() {
         </div>
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Ascenso Ainsophic. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} AI Academy. All rights reserved.
           </p>
           <div className="flex gap-4 text-sm text-muted-foreground">
-            <a href="/privacy" className="hover:text-foreground">Política de Privacidad</a>
-            <a href="/terms" className="hover:text-foreground">Términos y Condiciones</a>
+            <a href="/privacy" className="hover:text-foreground">Privacy Policy</a>
+            <a href="/terms" className="hover:text-foreground">Terms & Conditions</a>
           </div>
         </div>
       </div>

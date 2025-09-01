@@ -8,48 +8,48 @@ export default function PrivacyPolicyPage() {
       <main className="flex-1">
         <div className="container py-16 md:py-24">
           <div className="prose prose-lg mx-auto max-w-4xl text-foreground">
-            <h1 className="font-headline text-4xl font-bold">Política de Privacidad</h1>
+            <h1 className="font-headline text-4xl font-bold">Privacy Policy</h1>
             <p className="lead">
-              En Ascenso Ainsophic, tu privacidad es una manifestación de nuestro compromiso con el respeto y la confianza. Esta política detalla cómo custodiamos la información que nos confías.
+              At AI Academy, your privacy is a manifestation of our commitment to respect and trust. This policy details how we protect the information you entrust to us.
             </p>
 
-            <h2>1. La Información que Recibimos</h2>
+            <h2>1. The Information We Receive</h2>
             <p>
-              Recopilamos información que nos proporcionas directamente, como cuando te registras en un curso, te pones en contacto con nosotros o participas en nuestra comunidad. Esto puede incluir tu nombre, correo electrónico e historial de aprendizaje. También recopilamos datos técnicos automáticamente, como tu dirección IP y tipo de navegador, para asegurar la integridad de nuestra plataforma.
+              We collect information you provide to us directly, such as when you register for a course, contact us, or participate in our community. This may include your name, email, and learning history. We also automatically collect technical data, such as your IP address and browser type, to ensure the integrity of our platform.
             </p>
 
-            <h2>2. Cómo Elevamos el Conocimiento con tus Datos</h2>
+            <h2>2. How We Use Your Data</h2>
             <p>
-              Utilizamos tu información para personalizar tu viaje de aprendizaje, ofrecerte soporte, procesar tus inscripciones y comunicarnos contigo sobre nuestros programas. Los datos también nos ayudan a mejorar y optimizar nuestra plataforma para toda la comunidad de ascendentes.
+              We use your information to personalize your learning journey, provide support, process your enrollments, and communicate with you about our programs. The data also helps us improve and optimize our platform for the entire community of learners.
             </p>
 
-            <h2>3. Compartiendo la Sabiduría, no tus Datos</h2>
+            <h2>3. Sharing Knowledge, Not Your Data</h2>
             <p>
-              No vendemos ni alquilamos tu información personal. Podemos compartir datos con proveedores de servicios de confianza que nos asisten en la operación de la academia (como procesadores de pago o plataformas de análisis), siempre bajo estrictos acuerdos de confidencialidad. También podemos divulgar información si es requerido por ley.
+              We do not sell or rent your personal information. We may share data with trusted service providers who assist us in operating the academy (such as payment processors or analytics platforms), always under strict confidentiality agreements. We may also disclose information if required by law.
             </p>
 
-            <h2>4. Cookies y Tecnologías de Conexión</h2>
+            <h2>4. Cookies and Connection Technologies</h2>
             <p>
-              Utilizamos cookies para mantener tu sesión, recordar tus preferencias y entender cómo interactúas con nuestra plataforma. Estas pequeñas balizas de luz nos permiten ofrecerte una experiencia fluida y coherente. Puedes gestionar tus preferencias de cookies a través de la configuración de tu navegador.
+              We use cookies to maintain your session, remember your preferences, and understand how you interact with our platform. These small beacons of light allow us to offer you a smooth and consistent experience. You can manage your cookie preferences through your browser settings.
             </p>
 
-            <h2>5. La Seguridad de tu Ascenso</h2>
+            <h2>5. The Security of Your Learning</h2>
             <p>
-              Implementamos medidas de seguridad técnicas y organizativas para proteger tu información contra el acceso no autorizado, la alteración o la destrucción. Tu confianza es la base de nuestra academia, y la protegemos con la máxima diligencia.
+              We implement technical and organizational security measures to protect your information against unauthorized access, alteration, or destruction. Your trust is the foundation of our academy, and we protect it with the utmost diligence.
             </p>
 
-            <h2>6. Tus Derechos y Elecciones</h2>
+            <h2>6. Your Rights and Choices</h2>
             <p>
-              Tienes derecho a acceder, corregir o eliminar tu información personal. También puedes oponerte al procesamiento de tus datos. Para ejercer estos derechos, por favor contáctanos a través de los canales proporcionados en nuestra página de contacto.
+              You have the right to access, correct, or delete your personal information. You can also object to the processing of your data. To exercise these rights, please contact us through the channels provided on our contact page.
             </p>
 
-            <h2>7. Actualizaciones de esta Política</h2>
+            <h2>7. Updates to this Policy</h2>
             <p>
-              A medida que nuestra academia evolucione, también lo hará nuestra política de privacidad. Te notificaremos sobre cualquier cambio significativo. La fecha de la última actualización se reflejará al final de esta página.
+              As our academy evolves, so will our privacy policy. We will notify you of any significant changes. The date of the last update will be reflected at the end of this page.
             </p>
 
             <p className="text-sm text-muted-foreground">
-              Última actualización: {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
           </div>
         </div>

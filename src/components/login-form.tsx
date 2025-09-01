@@ -14,8 +14,8 @@ import { useAuth } from "@/contexts/auth-context";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
-  email: z.string().email({ message: "Por favor, introduce un correo electrónico válido." }),
-  password: z.string().min(6, { message: "La contraseña debe tener al menos 6 caracteres." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
 });
 
 export function LoginForm() {
@@ -36,14 +36,14 @@ export function LoginForm() {
 
     if (success) {
       toast({
-        title: "Inicio de Sesión Correcto",
-        description: "Bienvenido de nuevo.",
+        title: "Login Successful",
+        description: "Welcome back.",
       });
-      router.push("/"); // Redirect to home or a dashboard page
+      router.push("/admin"); 
     } else {
       toast({
-        title: "Error de Autenticación",
-        description: "El correo o la contraseña son incorrectos.",
+        title: "Authentication Error",
+        description: "Email or password incorrect.",
         variant: "destructive",
       });
     }
@@ -52,8 +52,8 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Acceso a la Academia</CardTitle>
-        <CardDescription>Introduce tus credenciales para continuar.</CardDescription>
+        <CardTitle>Academy Access</CardTitle>
+        <CardDescription>Enter your credentials to continue.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -63,9 +63,9 @@ export function LoginForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Correo Electrónico</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="tu@email.com" {...field} />
+                    <Input type="email" placeholder="your@email.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -76,7 +76,7 @@ export function LoginForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Contraseña</FormLabel>
+                  <FormLabel>Password</FormLabel>
                   <FormControl>
                     <Input type="password" placeholder="********" {...field} />
                   </FormControl>
@@ -90,7 +90,7 @@ export function LoginForm() {
               ) : (
                 <LogIn className="mr-2 h-4 w-4" />
               )}
-              {loading ? "Accediendo..." : "Acceder"}
+              {loading ? "Logging in..." : "Log In"}
             </Button>
           </form>
         </Form>

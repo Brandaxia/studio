@@ -15,9 +15,9 @@ export function Faq({ faqs }: FaqProps) {
     <section id="faq" className="w-full py-16 md:py-24">
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">Preguntas Frecuentes</h2>
+          <h2 className="font-headline text-3xl font-bold md:text-4xl">Frequently Asked Questions</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Respuestas a las dudas que orbitan tu curiosidad.
+            Answers to common questions about our AI programs.
           </p>
         </div>
         <div className="mx-auto mt-12 max-w-3xl">

@@ -15,103 +15,103 @@ import type { Program, Instructor, Testimonial, FaqItem, LearningPath } from "@/
 const programsData: Program[] = [
   {
     id: '1',
-    title: 'Fundamentos de la Sabiduría Antigua',
-    description: 'Un viaje a través de textos y filosofías milenarias que han moldeado el pensamiento humano.',
+    title: 'Machine Learning Foundations',
+    description: 'Explore core ML concepts, from supervised learning to neural networks.',
     image: 'https://picsum.photos/600/400?random=1',
-    aiHint: 'ancient library'
+    aiHint: 'machine learning'
   },
   {
     id: '2',
-    title: 'Alquimia Cuántica',
-    description: 'Fusiona la física cuántica con principios alquímicos para una transformación personal profunda.',
+    title: 'Natural Language Processing',
+    description: 'Build models that understand, process, and generate human language.',
     image: 'https://picsum.photos/600/400?random=2',
-    aiHint: 'quantum physics'
+    aiHint: 'natural language processing'
   },
   {
     id: '3',
-    title: 'Geometría Sagrada Aplicada',
-    description: 'Descubre y aplica los patrones universales de la creación en tu vida diaria y proyectos creativos.',
+    title: 'Computer Vision',
+    description: 'Teach computers to see and interpret the visual world with deep learning.',
     image: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'sacred geometry'
+    aiHint: 'computer vision'
   },
 ];
 
 const learningPathsData: LearningPath[] = [
-  { id: 'lp1', title: 'Iniciación a la Sabiduría', description: 'Un primer paso en el conocimiento esotérico, comenzando con los fundamentos.', programIds: ['1'] },
-  { id: 'lp2', title: 'Maestría Transformadora', description: 'Combina la ciencia de vanguardia y la espiritualidad ancestral para una evolución integral.', programIds: ['2', '3'] },
+  { id: 'lp1', title: 'AI Engineer Path', description: 'A comprehensive path to becoming an AI Engineer, covering ML, NLP, and deployment.', programIds: ['1', '2'] },
+  { id: 'lp2', title: 'Data Scientist with Python', description: 'Master the skills to extract insights from data, combining ML and data analysis.', programIds: ['1'] },
 ];
 
 const instructorsData: Instructor[] = [
   {
     id: '1',
-    name: 'Elara Vex',
-    title: 'Maestra de Cosmología Antigua',
+    name: 'Dr. Evelyn Reed',
+    title: 'Principal AI Scientist',
     avatar: 'https://picsum.photos/100/100?random=4',
-    aiHint: 'wise woman',
+    aiHint: 'female scientist',
   },
   {
     id: '2',
-    name: 'Orion Kael',
-    title: 'Guía de Realidades Cuánticas',
+    name: 'Dr. Kenji Tanaka',
+    title: 'Head of NLP Research',
     avatar: 'https://picsum.photos/100/100?random=5',
-    aiHint: 'thoughtful man',
+    aiHint: 'male researcher',
   },
   {
     id: '3',
-    name: 'Lyra Solara',
-    title: 'Arquitecta de Geometría Sagrada',
+    name: 'Dr. Lena Petrova',
+    title: 'Computer Vision Architect',
     avatar: 'https://picsum.photos/100/100?random=6',
-    aiHint: 'creative artist',
+    aiHint: 'creative technologist',
   },
 ];
 
 const testimonialsData: Testimonial[] = [
   {
     id: '1',
-    quote: "Este curso abrió portales de percepción que no sabía que existían. Una experiencia verdaderamente transformadora.",
-    name: 'Anaïs',
-    program: 'Alquimia Cuántica',
+    quote: "The NLP course opened my eyes to the power of language models. Truly transformational.",
+    name: 'Alex C.',
+    program: 'Natural Language Processing',
     avatar: 'https://picsum.photos/100/100?random=7',
     aiHint: 'happy person'
   },
   {
     id: '2',
-    quote: "La claridad y profundidad de las enseñanzas son incomparables. Ascenso Ainsophic es un faro en la oscuridad.",
-    name: 'Leo',
-    program: 'Fundamentos de la Sabiduría Antigua',
+    quote: "The foundational knowledge from the ML course is invaluable. AI Academy is a beacon for aspiring engineers.",
+    name: 'Brenda K.',
+    program: 'Machine Learning Foundations',
     avatar: 'https://picsum.photos/100/100?random=8',
     aiHint: 'smiling student'
   },
   {
     id: '3',
-    quote: "Apliqué la geometría sagrada en mi arte y los resultados han sido asombrosos. Mi creatividad ha florecido.",
-    name: 'Iris',
-    program: 'Geometría Sagrada Aplicada',
+    quote: "I applied the computer vision concepts to my startup and the results are amazing. My creativity has flourished.",
+    name: 'Carlos M.',
+    program: 'Computer Vision',
     avatar: 'https://picsum.photos/100/100?random=9',
-    aiHint: 'joyful woman'
+    aiHint: 'joyful man'
   },
 ];
 
 const faqsData: FaqItem[] = [
   {
     id: '1',
-    question: '¿Qué es "Ainsophic"?',
-    answer: 'Ainsophic se deriva de "Ein Sof", un término cabalístico que significa "el infinito" o "sin fin". Representa la naturaleza ilimitada del conocimiento y el potencial que buscamos desbloquear en nuestros estudiantes.',
+    question: 'What is "AI Academy"?',
+    answer: 'AI Academy is a learning platform dedicated to providing cutting-edge education in Artificial Intelligence, from foundational concepts to advanced specializations.',
   },
   {
     id: '2',
-    question: '¿Necesito conocimientos previos para inscribirme?',
-    answer: 'La mayoría de nuestros programas fundamentales están diseñados para ser accesibles a todos, independientemente de su experiencia previa. Algunos cursos avanzados pueden tener prerrequisitos, los cuales se especifican claramente en su descripción.',
+    question: 'Do I need a background in programming to enroll?',
+    answer: 'While our foundational courses are designed to be accessible, a basic understanding of Python is recommended to get the most out of the material. We offer prep courses for beginners.',
   },
   {
     id: '3',
-    question: '¿Los programas son en línea o presenciales?',
-    answer: 'Actualmente, todos nuestros programas se ofrecen en un formato en línea flexible, permitiendo a estudiantes de todo el mundo unirse. Utilizamos una combinación de contenido grabado, sesiones en vivo y cuadernos interactivos.',
+    question: 'Are the programs online or in-person?',
+    answer: 'Currently, all our programs are offered in a flexible online format, allowing students from around the world to join. We use a combination of recorded content, live sessions, and interactive notebooks.',
   },
   {
     id: '4',
-    question: '¿Qué tipo de soporte recibo como estudiante?',
-    answer: 'Ofrecemos soporte integral a través de foros de comunidad, sesiones de preguntas y respuestas con instructores y acceso a un mentor personal para guiarte en tu viaje de aprendizaje.',
+    question: 'What kind of support do I get as a student?',
+    answer: 'We offer comprehensive support through community forums, Q&A sessions with instructors, and access to a personal mentor to guide you on your learning journey.',
   },
 ];
 

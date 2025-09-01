@@ -12,9 +12,9 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
     <section id="testimonials" className="w-full py-16 md:py-24">
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">Voces de la Ascensión</h2>
+          <h2 className="font-headline text-3xl font-bold md:text-4xl">Voices from the Field</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Historias de transformación de nuestros estudiantes.
+            Success stories from our students.
           </p>
         </div>
         <Carousel

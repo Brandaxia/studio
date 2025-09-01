@@ -28,17 +28,17 @@ import { CourseForm } from './course-form';
 import { Badge } from '@/components/ui/badge';
 
 const initialPrograms: Program[] = [
-  { id: '1', title: 'Fundamentos de la Sabiduría Antigua', description: 'desc', image: 'url', aiHint: '' },
-  { id: '2', title: 'Alquimia Cuántica', description: 'desc', image: 'url', aiHint: '' },
-  { id: '3', title: 'Geometría Sagrada Aplicada', description: 'desc', image: 'url', aiHint: '' },
+  { id: '1', title: 'Machine Learning Foundations', description: 'desc', image: 'url', aiHint: '' },
+  { id: '2', title: 'Natural Language Processing', description: 'desc', image: 'url', aiHint: '' },
+  { id: '3', title: 'Computer Vision', description: 'desc', image: 'url', aiHint: '' },
 ];
 
 const initialCourses: Course[] = [
-  { id: 'c1', programId: '1', title: 'Introducción a los Textos Herméticos', description: 'Análisis de textos clásicos.'},
-  { id: 'c2', programId: '1', title: 'Filosofía Védica', description: 'Estudio de los Vedas y Upanishads.'},
-  { id: 'c3', programId: '2', title: 'Principios de Superposición', description: 'Aplicación cuántica a la conciencia.'},
-  { id: 'c4', programId: '2', title: 'Transmutación Energética', description: 'Técnicas de cambio interior.'},
-  { id: 'c5', programId: '3', title: 'La Flor de la Vida', description: 'Análisis y aplicación del patrón.'},
+  { id: 'c1', programId: '1', title: 'Introduction to Supervised Learning', description: 'Learn about regression and classification.'},
+  { id: 'c2', programId: '1', title: 'Unsupervised Learning Techniques', description: 'Explore clustering and dimensionality reduction.'},
+  { id: 'c3', programId: '2', title: 'Transformers and Attention Mechanism', description: 'Deep dive into the architecture that powers modern LLMs.'},
+  { id: 'c4', programId: '2', title: 'Text Generation and Summarization', description: 'Build models that can write and summarize.'},
+  { id: 'c5', programId: '3', title: 'Convolutional Neural Networks (CNNs)', description: 'Understand the building blocks of image recognition.'},
 ];
 
 export default function AdminCoursesPage() {
@@ -48,7 +48,7 @@ export default function AdminCoursesPage() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   
   const getProgramName = (programId: string) => {
-    return programs.find(p => p.id === programId)?.title || 'Desconocido';
+    return programs.find(p => p.id === programId)?.title || 'Unknown';
   }
 
   const handleSaveCourse = (course: Course) => {
@@ -80,21 +80,21 @@ export default function AdminCoursesPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Cursos</CardTitle>
-            <CardDescription>Gestiona los cursos individuales de cada programa.</CardDescription>
+            <CardTitle>Courses</CardTitle>
+            <CardDescription>Manage individual courses within each program.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Añadir Curso
+                Add Course
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedCourse ? 'Editar' : 'Añadir'} Curso</DialogTitle>
+                <DialogTitle>{selectedCourse ? 'Edit' : 'Add'} Course</DialogTitle>
                 <DialogDescription>
-                  {selectedCourse ? 'Edita los detalles del curso.' : 'Crea un nuevo curso para un programa.'}
+                  {selectedCourse ? 'Edit the course details.' : 'Create a new course for a program.'}
                 </DialogDescription>
               </DialogHeader>
               <CourseForm 
@@ -111,11 +111,11 @@ export default function AdminCoursesPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Título del Curso</TableHead>
-              <TableHead>Programa</TableHead>
-              <TableHead className="hidden md:table-cell">Descripción</TableHead>
+              <TableHead>Course Title</TableHead>
+              <TableHead>Program</TableHead>
+              <TableHead className="hidden md:table-cell">Description</TableHead>
               <TableHead>
-                <span className="sr-only">Acciones</span>
+                <span className="sr-only">Actions</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -136,26 +136,26 @@ export default function AdminCoursesPage() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(course)}>Editar</DropdownMenuItem>
+                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(course)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
+                            <DialogTitle>Are you sure?</DialogTitle>
                             <DialogDescription>
-                              Esta acción no se puede deshacer. Esto eliminará permanentemente el curso.
+                              This action cannot be undone. This will permanently delete the course.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
+                              <Button variant="outline">Cancel</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(course.id)}>
-                                 Eliminar
+                                 Delete
                                </Button>
                             </DialogClose>
                           </DialogFooter>

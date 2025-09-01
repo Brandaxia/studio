@@ -29,23 +29,23 @@ import { FaqForm } from './faq-form';
 const initialFaqs: FaqItem[] = [
   {
     id: '1',
-    question: '¿Qué es "Ainsophic"?',
-    answer: 'Ainsophic se deriva de "Ein Sof", un término cabalístico que significa "el infinito" o "sin fin". Representa la naturaleza ilimitada del conocimiento y el potencial que buscamos desbloquear en nuestros estudiantes.',
+    question: 'What is "AI Academy"?',
+    answer: 'AI Academy is a learning platform dedicated to providing cutting-edge education in Artificial Intelligence, from foundational concepts to advanced specializations.',
   },
   {
     id: '2',
-    question: '¿Necesito conocimientos previos para inscribirme?',
-    answer: 'La mayoría de nuestros programas fundamentales están diseñados para ser accesibles a todos, independientemente de su experiencia previa. Algunos cursos avanzados pueden tener prerrequisitos, los cuales se especifican claramente en su descripción.',
+    question: 'Do I need a background in programming to enroll?',
+    answer: 'While our foundational courses are designed to be accessible, a basic understanding of Python is recommended to get the most out of the material. We offer prep courses for beginners.',
   },
   {
     id: '3',
-    question: '¿Los programas son en línea o presenciales?',
-    answer: 'Actualmente, todos nuestros programas se ofrecen en un formato en línea flexible, permitiendo a estudiantes de todo el mundo unirse. Utilizamos una combinación de contenido grabado, sesiones en vivo y cuadernos interactivos.',
+    question: 'Are the programs online or in-person?',
+    answer: 'Currently, all our programs are offered in a flexible online format, allowing students from around the world to join. We use a combination of recorded content, live sessions, and interactive notebooks.',
   },
   {
     id: '4',
-    question: '¿Qué tipo de soporte recibo como estudiante?',
-    answer: 'Ofrecemos soporte integral a través de foros de comunidad, sesiones de preguntas y respuestas con instructores y acceso a un mentor personal para guiarte en tu viaje de aprendizaje.',
+    question: 'What kind of support do I get as a student?',
+    answer: 'We offer comprehensive support through community forums, Q&A sessions with instructors, and access to a personal mentor to guide you on your learning journey.',
   },
 ];
 
@@ -84,21 +84,21 @@ export default function AdminFaqPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Preguntas Frecuentes</CardTitle>
-            <CardDescription>Gestiona las preguntas y respuestas frecuentes.</CardDescription>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+            <CardDescription>Manage the FAQs for the academy.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Añadir FAQ
+                Add FAQ
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedFaq ? 'Editar' : 'Añadir'} FAQ</DialogTitle>
+                <DialogTitle>{selectedFaq ? 'Edit' : 'Add'} FAQ</DialogTitle>
                 <DialogDescription>
-                  {selectedFaq ? 'Edita los detalles de la pregunta.' : 'Añade una nueva pregunta frecuente.'}
+                  {selectedFaq ? 'Edit the question details.' : 'Add a new frequently asked question.'}
                 </DialogDescription>
               </DialogHeader>
               <FaqForm 
@@ -114,10 +114,10 @@ export default function AdminFaqPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Pregunta</TableHead>
-              <TableHead className="hidden md:table-cell">Respuesta</TableHead>
+              <TableHead>Question</TableHead>
+              <TableHead className="hidden md:table-cell">Answer</TableHead>
               <TableHead>
-                <span className="sr-only">Acciones</span>
+                <span className="sr-only">Actions</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -135,26 +135,26 @@ export default function AdminFaqPage() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(faq)}>Editar</DropdownMenuItem>
+                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(faq)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
+                            <DialogTitle>Are you sure?</DialogTitle>
                             <DialogDescription>
-                              Esta acción no se puede deshacer. Esto eliminará permanentemente la pregunta.
+                              This action cannot be undone. This will permanently delete the question.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
+                              <Button variant="outline">Cancel</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(faq.id)}>
-                                 Eliminar
+                                 Delete
                                </Button>
                             </DialogClose>
                           </DialogFooter>

@@ -7,87 +7,87 @@ import { BookOpen, Users, MessageSquareQuote, HelpCircle, GraduationCap, GitMerg
 export default function AdminDashboardPage() {
   return (
     <div>
-      <h1 className="text-3xl font-bold tracking-tight">Panel de Administración</h1>
+      <h1 className="text-3xl font-bold tracking-tight">Admin Dashboard</h1>
       <p className="mt-2 text-muted-foreground">
-        Bienvenido al centro de control de Ascenso Ainsophic. Desde aquí puedes gestionar el contenido y los usuarios de la academia.
+        Welcome to the control center for the AI Academy. Manage content and users from here.
       </p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
          <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Rutas de Aprendizaje</CardTitle>
+            <CardTitle className="text-sm font-medium">Learning Paths</CardTitle>
             <GitMerge className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">2</div>
-            <p className="text-xs text-muted-foreground">Rutas activas</p>
+            <p className="text-xs text-muted-foreground">Active paths</p>
             <Button size="sm" className="mt-4" asChild>
-              <Link href="/admin/learning-paths">Gestionar</Link>
+              <Link href="/admin/learning-paths">Manage</Link>
             </Button>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Programas</CardTitle>
+            <CardTitle className="text-sm font-medium">Programs</CardTitle>
             <BookOpen className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">3</div>
-            <p className="text-xs text-muted-foreground">Programas activos</p>
+            <p className="text-xs text-muted-foreground">Active programs</p>
             <Button size="sm" className="mt-4" asChild>
-              <Link href="/admin/programs">Gestionar</Link>
+              <Link href="/admin/programs">Manage</Link>
             </Button>
           </CardContent>
         </Card>
          <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Cursos</CardTitle>
+            <CardTitle className="text-sm font-medium">Courses</CardTitle>
             <SwatchBook className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">12</div>
-            <p className="text-xs text-muted-foreground">Cursos disponibles</p>
+            <div className="text-2xl font-bold">5</div>
+            <p className="text-xs text-muted-foreground">Available courses</p>
             <Button size="sm" className="mt-4" asChild>
-              <Link href="/admin/courses">Gestionar</Link>
+              <Link href="/admin/courses">Manage</Link>
             </Button>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Instructores</CardTitle>
+            <CardTitle className="text-sm font-medium">Instructors</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">3</div>
-            <p className="text-xs text-muted-foreground">Instructores registrados</p>
+            <p className="text-xs text-muted-foreground">Registered instructors</p>
              <Button size="sm" className="mt-4" asChild>
-                <Link href="/admin/instructors">Gestionar</Link>
+                <Link href="/admin/instructors">Manage</Link>
              </Button>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Alumnos</CardTitle>
+            <CardTitle className="text-sm font-medium">Students</CardTitle>
             <GraduationCap className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">125</div>
-            <p className="text-xs text-muted-foreground">Alumnos inscritos</p>
+            <p className="text-xs text-muted-foreground">Enrolled students</p>
              <Button size="sm" className="mt-4" asChild>
-                <Link href="/admin/students">Gestionar</Link>
+                <Link href="/admin/students">Manage</Link>
              </Button>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Testimonios</CardTitle>
+            <CardTitle className="text-sm font-medium">Testimonials</CardTitle>
             <MessageSquareQuote className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">3</div>
-            <p className="text-xs text-muted-foreground">Testimonios publicados</p>
+            <p className="text-xs text-muted-foreground">Published testimonials</p>
              <Button size="sm" className="mt-4" asChild>
-                <Link href="/admin/testimonials">Gestionar</Link>
+                <Link href="/admin/testimonials">Manage</Link>
              </Button>
           </CardContent>
         </Card>
@@ -98,9 +98,9 @@ export default function AdminDashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">4</div>
-            <p className="text-xs text-muted-foreground">Preguntas frecuentes</p>
+            <p className="text-xs text-muted-foreground">Frequently asked questions</p>
             <Button size="sm" className="mt-4" asChild>
-              <Link href="/admin/faq">Gestionar</Link>
+              <Link href="/admin/faq">Manage</Link>
             </Button>
           </CardContent>
         </Card>

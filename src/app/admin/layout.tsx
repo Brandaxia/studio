@@ -11,12 +11,12 @@ import { Logo } from '@/components/logo';
 
 const navItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/admin/learning-paths', label: 'Rutas de Aprendizaje', icon: GitMerge },
-  { href: '/admin/programs', label: 'Programas', icon: Book },
-  { href: '/admin/courses', label: 'Cursos', icon: SwatchBook },
-  { href: '/admin/instructors', label: 'Instructores', icon: Users },
-  { href: '/admin/students', label: 'Alumnos', icon: GraduationCap },
-  { href: '/admin/testimonials', label: 'Testimonios', icon: MessageSquareQuote },
+  { href: '/admin/learning-paths', label: 'Learning Paths', icon: GitMerge },
+  { href: '/admin/programs', label: 'Programs', icon: Book },
+  { href: '/admin/courses', label: 'Courses', icon: SwatchBook },
+  { href: '/admin/instructors', label: 'Instructors', icon: Users },
+  { href: '/admin/students', label: 'Students', icon: GraduationCap },
+  { href: '/admin/testimonials', label: 'Testimonials', icon: MessageSquareQuote },
   { href: '/admin/faq', label: 'FAQ', icon: HelpCircle },
 ];
 
@@ -74,7 +74,7 @@ export default function AdminLayout({
         </nav>
         <Button variant="ghost" className="justify-start gap-2" onClick={handleLogout}>
           <LogOut className="h-4 w-4" />
-          Cerrar Sesión
+          Log Out
         </Button>
       </aside>
       <div className="flex flex-1 flex-col">
@@ -83,7 +83,7 @@ export default function AdminLayout({
           <div className="sm:hidden">
              <Logo />
           </div>
-          <p className="text-sm text-muted-foreground">Bienvenido, Admin</p>
+          <p className="text-sm text-muted-foreground">Welcome, Admin</p>
         </header>
         <main className="flex-1 p-4 md:p-8">
           {children}

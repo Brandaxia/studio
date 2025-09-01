@@ -34,7 +34,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     // Simulate a successful login for a specific user
-    if (email === 'admin@ainsophic.com' && pass === 'password') {
+    if (email === 'admin@ai-academy.com' && pass === 'password') {
       const mockUser: User = { id: '1', name: 'Admin User', email: email };
       setUser(mockUser);
       setLoading(false);

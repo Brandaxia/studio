@@ -30,27 +30,27 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 const initialTestimonials: Testimonial[] = [
     {
       id: '1',
-      quote: "Este curso abrió portales de percepción que no sabía que existían. Una experiencia verdaderamente transformadora.",
-      name: 'Anaïs',
-      program: 'Alquimia Cuántica',
+      quote: "The NLP course opened my eyes to the power of language models. Truly transformational.",
+      name: 'Alex C.',
+      program: 'Natural Language Processing',
       avatar: 'https://picsum.photos/100/100?random=7',
       aiHint: 'happy person'
     },
     {
       id: '2',
-      quote: "La claridad y profundidad de las enseñanzas son incomparables. Ascenso Ainsophic es un faro en la oscuridad.",
-      name: 'Leo',
-      program: 'Fundamentos de la Sabiduría Antigua',
+      quote: "The foundational knowledge from the ML course is invaluable. AI Academy is a beacon for aspiring engineers.",
+      name: 'Brenda K.',
+      program: 'Machine Learning Foundations',
       avatar: 'https://picsum.photos/100/100?random=8',
       aiHint: 'smiling student'
     },
     {
       id: '3',
-      quote: "Apliqué la geometría sagrada en mi arte y los resultados han sido asombrosos. Mi creatividad ha florecido.",
-      name: 'Iris',
-      program: 'Geometría Sagrada Aplicada',
+      quote: "I applied the computer vision concepts to my startup and the results are amazing. My creativity has flourished.",
+      name: 'Carlos M.',
+      program: 'Computer Vision',
       avatar: 'https://picsum.photos/100/100?random=9',
-      aiHint: 'joyful woman'
+      aiHint: 'joyful man'
     },
 ];
 
@@ -89,21 +89,21 @@ export default function AdminTestimonialsPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Testimonios</CardTitle>
-            <CardDescription>Gestiona los testimonios de los estudiantes.</CardDescription>
+            <CardTitle>Testimonials</CardTitle>
+            <CardDescription>Manage student testimonials.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Añadir Testimonio
+                Add Testimonial
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedTestimonial ? 'Editar' : 'Añadir'} Testimonio</DialogTitle>
+                <DialogTitle>{selectedTestimonial ? 'Edit' : 'Add'} Testimonial</DialogTitle>
                 <DialogDescription>
-                  {selectedTestimonial ? 'Edita los detalles del testimonio.' : 'Añade un nuevo testimonio a la academia.'}
+                  {selectedTestimonial ? 'Edit the testimonial details.' : 'Add a new testimonial to the academy.'}
                 </DialogDescription>
               </DialogHeader>
               <TestimonialForm 
@@ -119,11 +119,11 @@ export default function AdminTestimonialsPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Autor</TableHead>
-              <TableHead>Cita</TableHead>
-              <TableHead>Programa</TableHead>
+              <TableHead>Author</TableHead>
+              <TableHead>Quote</TableHead>
+              <TableHead>Program</TableHead>
               <TableHead>
-                <span className="sr-only">Acciones</span>
+                <span className="sr-only">Actions</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -148,26 +148,26 @@ export default function AdminTestimonialsPage() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(testimonial)}>Editar</DropdownMenuItem>
+                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(testimonial)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
+                            <DialogTitle>Are you sure?</DialogTitle>
                             <DialogDescription>
-                              Esta acción no se puede deshacer. Esto eliminará permanentemente el testimonio.
+                              This action cannot be undone. This will permanently delete the testimonial.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
+                              <Button variant="outline">Cancel</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(testimonial.id)}>
-                                 Eliminar
+                                 Delete
                                </Button>
                             </DialogClose>
                           </DialogFooter>

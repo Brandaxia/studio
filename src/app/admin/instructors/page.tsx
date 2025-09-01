@@ -30,24 +30,24 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 const initialInstructors: Instructor[] = [
   {
     id: '1',
-    name: 'Elara Vex',
-    title: 'Maestra de Cosmología Antigua',
+    name: 'Dr. Evelyn Reed',
+    title: 'Principal AI Scientist',
     avatar: 'https://picsum.photos/100/100?random=4',
-    aiHint: 'wise woman',
+    aiHint: 'female scientist',
   },
   {
     id: '2',
-    name: 'Orion Kael',
-    title: 'Guía de Realidades Cuánticas',
+    name: 'Dr. Kenji Tanaka',
+    title: 'Head of NLP Research',
     avatar: 'https://picsum.photos/100/100?random=5',
-    aiHint: 'thoughtful man',
+    aiHint: 'male researcher',
   },
   {
     id: '3',
-    name: 'Lyra Solara',
-    title: 'Arquitecta de Geometría Sagrada',
+    name: 'Dr. Lena Petrova',
+    title: 'Computer Vision Architect',
     avatar: 'https://picsum.photos/100/100?random=6',
-    aiHint: 'creative artist',
+    aiHint: 'creative technologist',
   },
 ];
 
@@ -88,21 +88,21 @@ export default function AdminInstructorsPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Instructores</CardTitle>
-            <CardDescription>Gestiona los instructores de la academia.</CardDescription>
+            <CardTitle>Instructors</CardTitle>
+            <CardDescription>Manage the academy's instructors.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Añadir Instructor
+                Add Instructor
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedInstructor ? 'Editar' : 'Añadir'} Instructor</DialogTitle>
+                <DialogTitle>{selectedInstructor ? 'Edit' : 'Add'} Instructor</DialogTitle>
                 <DialogDescription>
-                  {selectedInstructor ? 'Edita los detalles del instructor.' : 'Añade un nuevo instructor a la academia.'}
+                  {selectedInstructor ? "Edit the instructor's details." : 'Add a new instructor to the academy.'}
                 </DialogDescription>
               </DialogHeader>
               <InstructorForm 
@@ -121,10 +121,10 @@ export default function AdminInstructorsPage() {
               <TableHead className="hidden w-[100px] sm:table-cell">
                 <span className="sr-only">Avatar</span>
               </TableHead>
-              <TableHead>Nombre</TableHead>
-              <TableHead>Título</TableHead>
+              <TableHead>Name</TableHead>
+              <TableHead>Title</TableHead>
               <TableHead>
-                <span className="sr-only">Acciones</span>
+                <span className="sr-only">Actions</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -151,26 +151,26 @@ export default function AdminInstructorsPage() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(instructor)}>Editar</DropdownMenuItem>
+                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(instructor)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
+                            <DialogTitle>Are you sure?</DialogTitle>
                             <DialogDescription>
-                              Esta acción no se puede deshacer. Esto eliminará permanentemente al instructor.
+                              This action cannot be undone. This will permanently delete the instructor.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
+                              <Button variant="outline">Cancel</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(instructor.id)}>
-                                 Eliminar
+                                 Delete
                                </Button>
                             </DialogClose>
                           </DialogFooter>

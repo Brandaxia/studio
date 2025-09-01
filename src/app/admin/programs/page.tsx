@@ -29,26 +29,26 @@ import { ProgramForm } from './program-form';
 const initialPrograms: Program[] = [
   {
     id: '1',
-    title: 'Fundamentos de la Sabiduría Antigua',
-    description: 'Un viaje a través de textos y filosofías milenarias que han moldeado el pensamiento humano.',
+    title: 'Machine Learning Foundations',
+    description: 'Explore core ML concepts, from supervised learning to neural networks.',
     image: 'https://picsum.photos/600/400?random=1',
-    aiHint: 'ancient library',
+    aiHint: 'machine learning',
     courseIds: ['c1', 'c2'],
   },
   {
     id: '2',
-    title: 'Alquimia Cuántica',
-    description: 'Fusiona la física cuántica con principios alquímicos para una transformación personal profunda.',
+    title: 'Natural Language Processing',
+    description: 'Build models that understand, process, and generate human language.',
     image: 'https://picsum.photos/600/400?random=2',
-    aiHint: 'quantum physics',
+    aiHint: 'natural language processing',
     courseIds: ['c3', 'c4'],
   },
   {
     id: '3',
-    title: 'Geometría Sagrada Aplicada',
-    description: 'Descubre y aplica los patrones universales de la creación en tu vida diaria y proyectos creativos.',
+    title: 'Computer Vision',
+    description: 'Teach computers to see and interpret the visual world with deep learning.',
     image: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'sacred geometry',
+    aiHint: 'computer vision',
     courseIds: ['c5'],
   },
 ];
@@ -90,21 +90,21 @@ export default function AdminProgramsPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Programas</CardTitle>
-            <CardDescription>Gestiona los programas de la academia.</CardDescription>
+            <CardTitle>Programs</CardTitle>
+            <CardDescription>Manage the main educational programs.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Añadir Programa
+                Add Program
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedProgram ? 'Editar' : 'Añadir'} Programa</DialogTitle>
+                <DialogTitle>{selectedProgram ? 'Edit' : 'Add'} Program</DialogTitle>
                 <DialogDescription>
-                  {selectedProgram ? 'Edita los detalles del programa.' : 'Crea un nuevo programa para la academia.'}
+                  {selectedProgram ? 'Edit the program details.' : 'Create a new program for the academy.'}
                 </DialogDescription>
               </DialogHeader>
               <ProgramForm 
@@ -120,11 +120,11 @@ export default function AdminProgramsPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Título</TableHead>
-              <TableHead className="hidden md:table-cell">Descripción</TableHead>
-              <TableHead>Cursos</TableHead>
+              <TableHead>Title</TableHead>
+              <TableHead className="hidden md:table-cell">Description</TableHead>
+              <TableHead>Courses</TableHead>
               <TableHead>
-                <span className="sr-only">Acciones</span>
+                <span className="sr-only">Actions</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -143,26 +143,26 @@ export default function AdminProgramsPage() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(program)}>Editar</DropdownMenuItem>
+                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(program)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
+                            <DialogTitle>Are you sure?</DialogTitle>
                             <DialogDescription>
-                              Esta acción no se puede deshacer. Esto eliminará permanentemente el programa.
+                              This action cannot be undone. This will permanently delete the program.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
+                              <Button variant="outline">Cancel</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(program.id)}>
-                                 Eliminar
+                                 Delete
                                </Button>
                             </DialogClose>
                           </DialogFooter>

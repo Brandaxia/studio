@@ -20,9 +20,9 @@ export function Programs({ programs }: ProgramsProps) {
     <section id="programas" className="w-full py-16 md:py-24">
       <div className="container px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">Nuestros Programas</h2>
+          <h2 className="font-headline text-3xl font-bold md:text-4xl">Our Programs</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Caminos de conocimiento diseñados para iluminar tu mente y espíritu.
+            Paths of knowledge designed to illuminate your mind and spirit.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -45,7 +45,7 @@ export function Programs({ programs }: ProgramsProps) {
               </CardContent>
               <CardFooter>
                 <Button variant="link" className="p-0 text-primary hover:text-primary/80">
-                  Saber más <ArrowRight className="ml-2 h-4 w-4" />
+                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardFooter>
             </Card>

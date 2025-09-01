@@ -23,12 +23,12 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
   };
   
   return (
-    <section id="rutas" className="w-full bg-primary/5 py-16 md:py-24">
+    <section id="rutas" className="w-full bg-muted py-16 md:py-24">
       <div className="container px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">Rutas de Aprendizaje Sugeridas</h2>
+          <h2 className="font-headline text-3xl font-bold md:text-4xl">Curated Learning Paths</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Secuencias curadas de programas para guiar tu viaje desde la iniciación hasta la maestría.
+            Follow our curated program sequences to guide your journey from beginner to expert.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -45,7 +45,7 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
               <CardContent className="flex flex-1 flex-col">
                 <CardDescription className="mt-2 flex-1">{path.description}</CardDescription>
                  <div className="mt-4">
-                    <h4 className="mb-2 text-sm font-semibold text-foreground">Programas Incluidos:</h4>
+                    <h4 className="mb-2 text-sm font-semibold text-foreground">Included Programs:</h4>
                     <div className="flex flex-wrap gap-2">
                         {path.programIds.map(programId => (
                             <Badge key={programId} variant="secondary">{getProgramTitle(programId)}</Badge>
@@ -55,7 +55,7 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
               </CardContent>
               <CardFooter>
                 <Button variant="link" className="p-0 text-primary hover:text-primary/80">
-                  Ver Ruta Completa <ArrowRight className="ml-2 h-4 w-4" />
+                  View Full Path <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardFooter>
             </Card>

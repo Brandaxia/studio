@@ -14,7 +14,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
-  content: z.string().min(50, { message: "El contenido debe tener al menos 50 caracteres." }),
+  content: z.string().min(50, { message: "Content must be at least 50 characters." }),
 });
 
 export function AiSummary() {
@@ -38,8 +38,8 @@ export function AiSummary() {
     } catch (error) {
       console.error("Error generating summary:", error);
       toast({
-        title: "Error al generar resumen",
-        description: "Hubo un problema al contactar la IA. Por favor, inténtalo de nuevo más tarde.",
+        title: "Error Generating Summary",
+        description: "There was a problem contacting the AI. Please try again later.",
         variant: "destructive",
       });
     } finally {
@@ -51,9 +51,9 @@ export function AiSummary() {
     <section id="ai-summary" className="w-full py-16 md:py-24">
       <div className="container grid gap-12 md:grid-cols-2 md:items-start">
         <div className="flex flex-col">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">Resumen con IA</h2>
+          <h2 className="font-headline text-3xl font-bold md:text-4xl">AI-Powered Summarizer</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Pega un texto educativo y deja que nuestra IA Ainsophic extraiga la esencia del conocimiento para ti.
+            Paste any technical text and let our AI extract the key insights for you.
           </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="mt-8 space-y-6">
@@ -62,10 +62,10 @@ export function AiSummary() {
                 name="content"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Contenido a resumir</FormLabel>
+                    <FormLabel>Content to summarize</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Pega aquí tu texto, artículo o notas de clase..."
+                        placeholder="Paste your text, article, or class notes here..."
                         className="min-h-[200px]"
                         {...field}
                       />
@@ -76,7 +76,7 @@ export function AiSummary() {
               />
               <Button type="submit" disabled={isLoading}>
                 <Wand2 className="mr-2 h-4 w-4" />
-                {isLoading ? "Generando..." : "Generar Resumen"}
+                {isLoading ? "Generating..." : "Generate Summary"}
               </Button>
             </form>
           </Form>
@@ -84,7 +84,7 @@ export function AiSummary() {
         <div className="md:pt-16">
           <Card className="min-h-[300px]">
             <CardHeader>
-              <CardTitle>Tu Resumen</CardTitle>
+              <CardTitle>Your Summary</CardTitle>
             </CardHeader>
             <CardContent>
               {isLoading && (
@@ -97,7 +97,7 @@ export function AiSummary() {
               )}
               {summary && <p className="text-muted-foreground">{summary}</p>}
               {!isLoading && !summary && (
-                <p className="text-muted-foreground">El resumen generado por la IA aparecerá aquí.</p>
+                <p className="text-muted-foreground">The AI-generated summary will appear here.</p>
               )}
             </CardContent>
           </Card>

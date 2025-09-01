@@ -8,12 +8,12 @@ interface InstructorsProps {
 
 export function Instructors({ instructors }: InstructorsProps) {
   return (
-    <section id="instructores" className="w-full bg-primary/5 py-16 md:py-24">
+    <section id="instructores" className="w-full bg-muted py-16 md:py-24">
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">Conoce a los Guías</h2>
+          <h2 className="font-headline text-3xl font-bold md:text-4xl">Meet the Instructors</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Mentores iluminados que te acompañarán en tu ascenso.
+            Industry experts and leading researchers who will guide you on your journey.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">

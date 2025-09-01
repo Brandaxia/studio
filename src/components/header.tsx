@@ -7,11 +7,11 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '#rutas', label: 'Rutas' },
-  { href: '#programas', label: 'Programas' },
-  { href: '#instructores', label: 'Instructores' },
+  { href: '#rutas', label: 'Paths' },
+  { href: '#programas', label: 'Programs' },
+  { href: '#instructores', label: 'Instructors' },
   { href: '#faq', label: 'FAQ' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '#contacto', label: 'Contact' },
 ];
 
 export function Header() {
@@ -37,7 +37,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Abrir menú</span>
+                <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
@@ -46,7 +46,7 @@ export function Header() {
                   <Logo />
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                     <X className="h-6 w-6" />
-                    <span className="sr-only">Cerrar menú</span>
+                    <span className="sr-only">Close menu</span>
                   </Button>
                 </div>
                 <nav className="mt-6 flex flex-col gap-4">

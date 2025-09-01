@@ -12,9 +12,9 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Loader2 } from "lucide-react";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
-  email: z.string().email({ message: "Por favor, introduce un correo electrónico válido." }),
-  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }),
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
 export function ContactForm() {
@@ -50,8 +50,8 @@ export function ContactForm() {
       }
       
       toast({
-        title: "Mensaje Enviado",
-        description: "Gracias por contactarnos. Te responderemos pronto.",
+        title: "Message Sent",
+        description: "Thanks for contacting us. We'll get back to you soon.",
       });
       form.reset();
 
@@ -59,8 +59,8 @@ export function ContactForm() {
       console.error("Form submission error:", error);
       setSubmissionError(true);
       toast({
-        title: "Error al enviar",
-        description: "No se pudo enviar tu mensaje. Por favor, inténtalo por correo electrónico.",
+        title: "Submission Error",
+        description: "Could not send your message. Please try sending an email directly.",
         variant: "destructive",
       });
     } finally {
@@ -77,9 +77,9 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nombre</FormLabel>
+                <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Tu nombre completo" {...field} />
+                  <Input placeholder="Your full name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,9 +90,9 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Correo Electrónico</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="tu@email.com" {...field} />
+                  <Input type="email" placeholder="your@email.com" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,9 +103,9 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Mensaje</FormLabel>
+                <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tu consulta o mensaje..." className="min-h-[120px]" {...field} />
+                  <Textarea placeholder="Your question or message..." className="min-h-[120px]" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -113,7 +113,7 @@ export function ContactForm() {
           />
           <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+            {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </Form>
@@ -121,17 +121,17 @@ export function ContactForm() {
       <div className="mt-6 text-center text-sm text-muted-foreground">
         {submissionError ? (
             <p>
-                O si prefieres, envíanos un correo directamente.
+                Or if you prefer, send us an email directly.
             </p>
         ) : (
-            <p>Si prefieres, también puedes enviarnos un correo electrónico.</p>
+            <p>If you prefer, you can also send us an email.</p>
         )}
         <a
-          href="mailto:contacto@ascensoainsophic.com"
+          href="mailto:contact@ai-academy.com"
           className="mt-1 inline-flex items-center text-primary underline-offset-4 hover:underline"
         >
           <Mail className="mr-2 h-4 w-4" />
-          contacto@ascensoainsophic.com
+          contact@ai-academy.com
         </a>
       </div>
     </div>

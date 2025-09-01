@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/componentsui/table';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,14 +27,14 @@ import type { LearningPath, Program } from '@/lib/types';
 import { LearningPathForm } from './learning-path-form';
 
 const initialPrograms: Program[] = [
-  { id: '1', title: 'Fundamentos de la Sabiduría Antigua', description: 'desc', image: 'url', aiHint: '' },
-  { id: '2', title: 'Alquimia Cuántica', description: 'desc', image: 'url', aiHint: '' },
-  { id: '3', title: 'Geometría Sagrada Aplicada', description: 'desc', image: 'url', aiHint: '' },
+  { id: '1', title: 'Machine Learning Foundations', description: 'desc', image: 'url', aiHint: '' },
+  { id: '2', title: 'Natural Language Processing', description: 'desc', image: 'url', aiHint: '' },
+  { id: '3', title: 'Computer Vision', description: 'desc', image: 'url', aiHint: '' },
 ];
 
 const initialLearningPaths: LearningPath[] = [
-  { id: 'lp1', title: 'Iniciación a la Sabiduría', description: 'Un primer paso en el conocimiento esotérico.', programIds: ['1'] },
-  { id: 'lp2', title: 'Maestría Transformadora', description: 'Combina la ciencia y la espiritualidad.', programIds: ['2', '3'] },
+  { id: 'lp1', title: 'AI Engineer Path', description: 'A comprehensive path to becoming an AI Engineer.', programIds: ['1'] },
+  { id: 'lp2', title: 'Data Scientist with Python', description: 'Combines ML and data analysis skills.', programIds: ['1', '2'] },
 ];
 
 export default function AdminLearningPathsPage() {
@@ -72,21 +72,21 @@ export default function AdminLearningPathsPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Rutas de Aprendizaje</CardTitle>
-            <CardDescription>Gestiona las secuencias de programas para los estudiantes.</CardDescription>
+            <CardTitle>Learning Paths</CardTitle>
+            <CardDescription>Manage curated sequences of programs for students.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Añadir Ruta
+                Add Path
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedLearningPath ? 'Editar' : 'Añadir'} Ruta de Aprendizaje</DialogTitle>
+                <DialogTitle>{selectedLearningPath ? 'Edit' : 'Add'} Learning Path</DialogTitle>
                 <DialogDescription>
-                  {selectedLearningPath ? 'Edita los detalles de la ruta.' : 'Crea una nueva ruta de aprendizaje.'}
+                  {selectedLearningPath ? 'Edit the path details.' : 'Create a new learning path.'}
                 </DialogDescription>
               </DialogHeader>
               <LearningPathForm 
@@ -103,11 +103,11 @@ export default function AdminLearningPathsPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Título</TableHead>
-              <TableHead className="hidden md:table-cell">Descripción</TableHead>
-              <TableHead>Programas</TableHead>
+              <TableHead>Title</TableHead>
+              <TableHead className="hidden md:table-cell">Description</TableHead>
+              <TableHead>Programs</TableHead>
               <TableHead>
-                <span className="sr-only">Acciones</span>
+                <span className="sr-only">Actions</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -126,26 +126,26 @@ export default function AdminLearningPathsPage() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(lp)}>Editar</DropdownMenuItem>
+                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(lp)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
+                            <DialogTitle>Are you sure?</DialogTitle>
                             <DialogDescription>
-                              Esta acción no se puede deshacer. Esto eliminará permanentemente la ruta.
+                              This action cannot be undone. This will permanently delete the path.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
+                              <Button variant="outline">Cancel</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(lp.id)}>
-                                 Eliminar
+                                 Delete
                                </Button>
                             </DialogClose>
                           </DialogFooter>
