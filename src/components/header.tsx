@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
+  { href: '#rutas', label: 'Rutas' },
   { href: '#programas', label: 'Programas' },
   { href: '#instructores', label: 'Instructores' },
   { href: '#faq', label: 'FAQ' },

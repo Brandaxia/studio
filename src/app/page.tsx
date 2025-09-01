@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { LearningPaths } from "@/components/learning-paths";
 import { Programs } from "@/components/programs";
 import { AiSummary } from "@/components/ai-summary";
 import { Instructors } from "@/components/instructors";
@@ -9,7 +10,7 @@ import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { CookieBanner } from "@/components/cookie-banner";
-import type { Program, Instructor, Testimonial, FaqItem } from "@/lib/types";
+import type { Program, Instructor, Testimonial, FaqItem, LearningPath } from "@/lib/types";
 
 const programsData: Program[] = [
   {
@@ -33,6 +34,11 @@ const programsData: Program[] = [
     image: 'https://picsum.photos/600/400?random=3',
     aiHint: 'sacred geometry'
   },
+];
+
+const learningPathsData: LearningPath[] = [
+  { id: 'lp1', title: 'Iniciación a la Sabiduría', description: 'Un primer paso en el conocimiento esotérico, comenzando con los fundamentos.', programIds: ['1'] },
+  { id: 'lp2', title: 'Maestría Transformadora', description: 'Combina la ciencia de vanguardia y la espiritualidad ancestral para una evolución integral.', programIds: ['2', '3'] },
 ];
 
 const instructorsData: Instructor[] = [
@@ -116,6 +122,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <LearningPaths learningPaths={learningPathsData} programs={programsData} />
         <Programs programs={programsData} />
         <AiSummary />
         <Instructors instructors={instructorsData} />
