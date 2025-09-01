@@ -72,10 +72,17 @@ export interface AcademyApiKey {
   status: 'active' | 'inactive';
 }
 
+export interface Notebook {
+    id: string;
+    title: string;
+    description: string;
+    url: string;
+}
 
 export interface AppContent {
   programs: Program[];
   instructors: Instructor[];
   testimonials: Testimonial[];
   faqs: FaqItem[];
+  notebooks: Notebook[];
 }

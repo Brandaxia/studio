@@ -1,5 +1,5 @@
 
-import type { Program, Course, LearningPath, Instructor, Testimonial, FaqItem, Student, Integration, AcademyApiKey } from './types';
+import type { Program, Course, LearningPath, Instructor, Testimonial, FaqItem, Student, Integration, AcademyApiKey, Notebook } from './types';
 
 // =================================================================
 // 1. PROGRAMS OF STUDY
@@ -330,7 +330,31 @@ export const initialLearningPaths: LearningPath[] = [
 ];
 
 // =================================================================
-// 4. INSTRUCTORS, TESTIMONIALS, FAQS, STUDENTS
+// 4. NOTEBOOKS
+// =================================================================
+export const initialNotebooks: Notebook[] = [
+    {
+      id: 'nb1',
+      title: 'Introduction to TensorFlow and Keras',
+      description: 'A hands-on introduction to the fundamental concepts of building neural networks using TensorFlow and its high-level API, Keras.',
+      url: 'https://colab.research.google.com/notebooks/intro.ipynb'
+    },
+    {
+      id: 'nb2',
+      title: 'Sentiment Analysis with BERT',
+      description: 'Learn how to fine-tune a pre-trained BERT model for a text classification task, specifically sentiment analysis on movie reviews.',
+      url: 'https://colab.research.google.com/github/google-research/bert/blob/master/predicting_movie_reviews_with_bert_on_tf_hub.ipynb'
+    },
+    {
+      id: 'nb3',
+      title: 'Image Generation with a Simple GAN',
+      description: 'Build a basic Generative Adversarial Network (GAN) from scratch to generate images of handwritten digits (MNIST).',
+      url: 'https://colab.research.google.com/drive/1_L_3w3-L6eAbk6R8kDj1_t4_g_dJ4eE-'
+    }
+];
+
+// =================================================================
+// 5. INSTRUCTORS, TESTIMONIALS, FAQS, STUDENTS
 // =================================================================
 // This is supporting content and remains largely unchanged for now.
 
