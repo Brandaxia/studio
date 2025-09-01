@@ -26,12 +26,16 @@ import { MoreHorizontal, PlusCircle } from 'lucide-react';
 import type { Testimonial } from '@/lib/types';
 import { TestimonialForm } from './testimonial-form';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { initialTestimonials } from '@/lib/data';
+import { initialTestimonials, initialPrograms } from '@/lib/data';
 
 export default function AdminTestimonialsPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>(initialTestimonials);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null);
+
+  const getProgramTitle = (programId: string) => {
+    return initialPrograms.find(p => p.id === programId)?.title || 'Unknown Program';
+  }
 
   const handleSaveTestimonial = (testimonial: Testimonial) => {
     if (selectedTestimonial) {
@@ -112,7 +116,7 @@ export default function AdminTestimonialsPage() {
                     {testimonial.name}
                 </TableCell>
                 <TableCell className="max-w-sm truncate italic">"{testimonial.quote}"</TableCell>
-                 <TableCell>{testimonial.program}</TableCell>
+                 <TableCell>{getProgramTitle(testimonial.program)}</TableCell>
                 <TableCell>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>

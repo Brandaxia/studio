@@ -5,7 +5,7 @@ export const initialPrograms: Program[] = [
   {
     id: 'p1',
     title: 'Machine Learning Engineering',
-    description: 'Build a solid foundation in machine learning, from statistical principles and core algorithms to model deployment and operation in production environments.',
+    description: 'Build a solid foundation in machine learning, from statistical principles and core algorithms to model deployment and operation in production environments. This program is ideal for aspiring AI engineers.',
     image: 'https://picsum.photos/600/400?random=1',
     aiHint: 'machine learning',
     courseIds: ['c1', 'c2', 'c3', 'c4'],
@@ -13,7 +13,7 @@ export const initialPrograms: Program[] = [
   {
     id: 'p2',
     title: 'NLP: From Text to Transformers',
-    description: 'Master the art of building models that understand and generate human language, starting with text preprocessing and culminating in the architecture of modern transformers.',
+    description: 'Master the art of building models that understand and generate human language. This program starts with text preprocessing and culminates in the architecture of modern transformers like BERT and GPT.',
     image: 'https://picsum.photos/600/400?random=2',
     aiHint: 'natural language processing',
     courseIds: ['c5', 'c6', 'c7'],
@@ -21,7 +21,7 @@ export const initialPrograms: Program[] = [
   {
     id: 'p3',
     title: 'Computer Vision & Image Analysis',
-    description: 'Teach computers to "see" and interpret the visual world. This program covers image processing fundamentals, convolutional neural networks (CNNs), and advanced object detection.',
+    description: 'Teach computers to "see" and interpret the visual world. This program covers image processing fundamentals, convolutional neural networks (CNNs), and advanced object detection and segmentation techniques.',
     image: 'https://picsum.photos/600/400?random=3',
     aiHint: 'computer vision',
     courseIds: ['c8', 'c9', 'c10'],
@@ -29,7 +29,7 @@ export const initialPrograms: Program[] = [
    {
     id: 'p4',
     title: 'Generative AI & Large Language Models',
-    description: 'Explore the cutting-edge of AI. This program covers the theory behind generative models like VAEs and GANs, the architecture of LLMs, and the art of prompt engineering.',
+    description: 'Explore the cutting-edge of AI. This program covers the theory behind generative models like VAEs and GANs, the architecture of LLMs, and the art of prompt engineering to create novel content.',
     image: 'https://picsum.photos/600/400?random=4',
     aiHint: 'generative ai',
     courseIds: ['c11', 'c12', 'c13'],
@@ -37,19 +37,26 @@ export const initialPrograms: Program[] = [
 ];
 
 export const initialCourses: Course[] = [
-  { id: 'c1', programId: 'p1', title: 'Statistical Foundations for Machine Learning', description: 'Core statistical concepts that underpin machine learning algorithms.'},
-  { id: 'c2', programId: 'p1', title: 'Supervised Learning: From Regression to Classification', description: 'A deep dive into supervised learning models and their applications.'},
-  { id: 'c3', programId: 'p1', title: 'Unsupervised Learning & Dimensionality Reduction', description: 'Explore clustering, anomaly detection, and feature reduction.'},
-  { id: 'c4', programId: 'p1', title: 'Introduction to Neural Networks & Deep Learning', description: 'Build your first neural networks from scratch.'},
-  { id: 'c5', programId: 'p2', title: 'Text Preprocessing & Vectorization Techniques', description: 'Learn how to process and represent text for ML models.'},
-  { id: 'c6', programId: 'p2', title: 'Understanding Transformers & the Attention Mechanism', description: 'The core architecture behind modern LLMs.'},
-  { id: 'c7', programId: 'p2', title: 'Fine-tuning Language Models for Downstream Tasks', description: 'Adapt pre-trained models for specific applications like sentiment analysis.'},
-  { id: 'c8', programId: 'p3', title: 'Fundamentals of Image Processing', description: 'Learn about pixels, filters, and transformations.'},
-  { id: 'c9', programId: 'p3', title: 'Convolutional Neural Networks (CNNs) for Image Recognition', description: 'Build and train models for classifying images.'},
-  { id: 'c10', programId: 'p3', title: 'Object Detection and Image Segmentation', description: 'Go beyond classification to identify and segment objects.'},
-  { id: 'c11', programId: 'p4', title: 'Introduction to Generative Models: VAEs and GANs', description: 'Understand the principles behind generative AI.'},
-  { id: 'c12', programId: 'p4', title: 'The Architecture of Large Language Models (LLMs)', description: 'A detailed look at what makes LLMs work.'},
-  { id: 'c13', programId: 'p4', title: 'Prompt Engineering & In-Context Learning', description: 'Master the art of crafting effective prompts for LLMs.'},
+  // Program p1: Machine Learning Engineering
+  { id: 'c1', programId: 'p1', title: 'Statistical Foundations for Machine Learning', description: 'Grasp the core statistical concepts—probability, inference, and regression—that underpin modern machine learning algorithms.'},
+  { id: 'c2', programId: 'p1', title: 'Supervised Learning: From Regression to Classification', description: 'A deep dive into supervised learning models, including linear/logistic regression, decision trees, and support vector machines.'},
+  { id: 'c3', programId: 'p1', title: 'Unsupervised Learning & Dimensionality Reduction', description: 'Explore clustering algorithms like K-Means, anomaly detection, and feature reduction techniques such as PCA.'},
+  { id: 'c4', programId: 'p1', title: 'Introduction to Neural Networks & Deep Learning', description: 'Build your first neural networks from scratch and understand the principles of deep learning with TensorFlow and PyTorch.'},
+  
+  // Program p2: NLP: From Text to Transformers
+  { id: 'c5', programId: 'p2', title: 'Text Preprocessing & Vectorization Techniques', description: 'Learn to clean, process, and represent text data for machine learning models using techniques like Bag-of-Words, TF-IDF, and Word2Vec.'},
+  { id: 'c6', programId: 'p2', title: 'Understanding Transformers & the Attention Mechanism', description: 'Uncover the core architecture behind modern LLMs, focusing on the self-attention mechanism that revolutionized NLP.'},
+  { id: 'c7', programId: 'p2', title: 'Fine-tuning Language Models for Downstream Tasks', description: 'Adapt pre-trained models like BERT for specific applications such as sentiment analysis, text classification, and named entity recognition.'},
+  
+  // Program p3: Computer Vision & Image Analysis
+  { id: 'c8', programId: 'p3', title: 'Fundamentals of Digital Image Processing', description: 'Learn about pixels, color spaces, filtering, and geometric transformations as the basis for all computer vision tasks.'},
+  { id: 'c9', programId: 'p3', title: 'Convolutional Neural Networks (CNNs) for Image Recognition', description: 'Build and train deep learning models for classifying images, understanding layers, and optimizing performance.'},
+  { id: 'c10', programId: 'p3', title: 'Object Detection and Image Segmentation', description: 'Go beyond classification to identify and segment objects within images using architectures like YOLO and Mask R-CNN.'},
+
+  // Program p4: Generative AI & Large Language Models
+  { id: 'c11', programId: 'p4', title: 'Introduction to Generative Models: VAEs and GANs', description: 'Understand the principles behind generative AI, including Variational Autoencoders and Generative Adversarial Networks.'},
+  { id: 'c12', programId: 'p4', title: 'The Architecture of Large Language Models (LLMs)', description: 'A detailed look at the internal workings of large-scale models like GPT, including training, scaling, and ethical considerations.'},
+  { id: 'c13', programId: 'p4', title: 'Prompt Engineering & In-Context Learning', description: 'Master the art and science of crafting effective prompts to control and steer the output of LLMs for a wide variety of creative and analytical tasks.'},
 ];
 
 export const initialLearningPaths: LearningPath[] = [
@@ -126,7 +133,7 @@ export const initialTestimonials: Testimonial[] = [
       id: '1',
       quote: "The NLP course opened my eyes to the power of language models. Truly transformational.",
       name: 'Alex C.',
-      program: 'Natural Language Processing',
+      program: 'NLP: From Text to Transformers',
       avatar: 'https://picsum.photos/100/100?random=7',
       aiHint: 'happy person'
     },
@@ -134,7 +141,7 @@ export const initialTestimonials: Testimonial[] = [
       id: '2',
       quote: "The foundational knowledge from the ML course is invaluable. Ainsophic Academy is a beacon for aspiring engineers.",
       name: 'Brenda K.',
-      program: 'Machine Learning Foundations',
+      program: 'Machine Learning Engineering',
       avatar: 'https://picsum.photos/100/100?random=8',
       aiHint: 'smiling student'
     },
@@ -142,7 +149,7 @@ export const initialTestimonials: Testimonial[] = [
       id: '3',
       quote: "I applied the computer vision concepts to my startup and the results are amazing. My creativity has flourished.",
       name: 'Carlos M.',
-      program: 'Computer Vision',
+      program: 'Computer Vision & Image Analysis',
       avatar: 'https://picsum.photos/100/100?random=9',
       aiHint: 'joyful man'
     },

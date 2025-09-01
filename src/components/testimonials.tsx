@@ -3,12 +3,16 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import type { Testimonial } from '@/lib/types';
+import { initialPrograms } from '@/lib/data';
 
 interface TestimonialsProps {
   testimonials: Testimonial[];
 }
 
 export function Testimonials({ testimonials }: TestimonialsProps) {
+  const getProgramTitle = (programId: string) => {
+    return initialPrograms.find(p => p.id === programId)?.title || programId;
+  };
   return (
     <section id="testimonials" className="w-full py-16 md:py-24">
       <div className="container px-4">
@@ -36,7 +40,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                         </Avatar>
                         <div className="ml-4 text-left">
                           <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.program}</p>
+                          <p className="text-sm text-muted-foreground">{getProgramTitle(testimonial.program)}</p>
                         </div>
                       </div>
                     </CardContent>
