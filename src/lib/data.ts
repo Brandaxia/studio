@@ -492,6 +492,12 @@ export const initialIntegrations: Integration[] = [
     apiKey: 'not-required-for-basic-usage',
     enabled: true,
   },
+  {
+    id: '5',
+    name: 'NotebookLM',
+    apiKey: 'not-required-for-basic-usage',
+    enabled: false,
+  },
 ];
 
 export const initialApiKeys: AcademyApiKey[] = [
