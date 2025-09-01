@@ -461,7 +461,13 @@ export const initialIntegrations: Integration[] = [
     name: 'n8n',
     apiKey: 'n8n-token-xxxxxxxxxxxxxxxx',
     enabled: false,
-  }
+  },
+  {
+    id: '4',
+    name: 'Google Colab',
+    apiKey: 'not-required-for-basic-usage',
+    enabled: true,
+  },
 ];
 
 export const initialApiKeys: AcademyApiKey[] = [
