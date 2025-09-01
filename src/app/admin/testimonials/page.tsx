@@ -26,33 +26,7 @@ import { MoreHorizontal, PlusCircle } from 'lucide-react';
 import type { Testimonial } from '@/lib/types';
 import { TestimonialForm } from './testimonial-form';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-
-const initialTestimonials: Testimonial[] = [
-    {
-      id: '1',
-      quote: "The NLP course opened my eyes to the power of language models. Truly transformational.",
-      name: 'Alex C.',
-      program: 'Natural Language Processing',
-      avatar: 'https://picsum.photos/100/100?random=7',
-      aiHint: 'happy person'
-    },
-    {
-      id: '2',
-      quote: "The foundational knowledge from the ML course is invaluable. Ainsophic Academy is a beacon for aspiring engineers.",
-      name: 'Brenda K.',
-      program: 'Machine Learning Foundations',
-      avatar: 'https://picsum.photos/100/100?random=8',
-      aiHint: 'smiling student'
-    },
-    {
-      id: '3',
-      quote: "I applied the computer vision concepts to my startup and the results are amazing. My creativity has flourished.",
-      name: 'Carlos M.',
-      program: 'Computer Vision',
-      avatar: 'https://picsum.photos/100/100?random=9',
-      aiHint: 'joyful man'
-    },
-];
+import { initialTestimonials } from '@/lib/data';
 
 export default function AdminTestimonialsPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>(initialTestimonials);

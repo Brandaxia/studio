@@ -26,30 +26,7 @@ import { MoreHorizontal, PlusCircle } from 'lucide-react';
 import type { Instructor } from '@/lib/types';
 import { InstructorForm } from './instructor-form';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-
-const initialInstructors: Instructor[] = [
-  {
-    id: '1',
-    name: 'Dr. Evelyn Reed',
-    title: 'Principal AI Scientist',
-    avatar: 'https://picsum.photos/100/100?random=4',
-    aiHint: 'female scientist',
-  },
-  {
-    id: '2',
-    name: 'Dr. Kenji Tanaka',
-    title: 'Head of NLP Research',
-    avatar: 'https://picsum.photos/100/100?random=5',
-    aiHint: 'male researcher',
-  },
-  {
-    id: '3',
-    name: 'Dr. Lena Petrova',
-    title: 'Computer Vision Architect',
-    avatar: 'https://picsum.photos/100/100?random=6',
-    aiHint: 'creative technologist',
-  },
-];
+import { initialInstructors } from '@/lib/data';
 
 export default function AdminInstructorsPage() {
   const [instructors, setInstructors] = useState<Instructor[]>(initialInstructors);

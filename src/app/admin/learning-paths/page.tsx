@@ -25,58 +25,8 @@ import {
 import { MoreHorizontal, PlusCircle } from 'lucide-react';
 import type { LearningPath, Program } from '@/lib/types';
 import { LearningPathForm } from './learning-path-form';
+import { initialLearningPaths, initialPrograms } from '@/lib/data';
 
-const initialPrograms: Program[] = [
-  { id: 'p1', title: 'Machine Learning Engineering', description: 'desc', image: 'url', aiHint: ''},
-  { id: 'p2', title: 'NLP: From Text to Transformers', description: 'desc', image: 'url', aiHint: ''},
-  { id: 'p3', title: 'Computer Vision & Image Analysis', description: 'desc', image: 'url', aiHint: ''},
-  { id: 'p4', title: 'Generative AI & Large Language Models', description: 'desc', image: 'url', aiHint: ''},
-];
-
-const initialLearningPaths: LearningPath[] = [
-  { 
-    id: 'lp1', 
-    title: 'Foundations of AI Engineering', 
-    description: 'A comprehensive path covering foundational ML and NLP to start your career in AI.', 
-    programIds: ['p1', 'p2'] 
-  },
-  { 
-    id: 'lp2', 
-    title: 'Advanced AI Specialization', 
-    description: 'Deepen your expertise with advanced topics in computer vision and generative AI.', 
-    programIds: ['p3', 'p4'] 
-  },
-  {
-    id: 'lp3',
-    title: 'AI for Business & Product Leaders',
-    description: 'Understand the strategic implications of AI and how to lead AI-driven projects without deep technical expertise.',
-    programIds: ['p1', 'p4']
-  },
-  {
-    id: 'lp4',
-    title: 'Prompt Engineering & LLM Apps',
-    description: 'Master the art of prompt design and build applications on top of Large Language Models.',
-    programIds: ['p2', 'p4']
-  },
-  {
-    id: 'lp5',
-    title: 'Deep Learning for Computer Vision',
-    description: 'A specialized path for creating advanced computer vision systems, from image recognition to segmentation.',
-    programIds: ['p1', 'p3']
-  },
-  {
-    id: 'lp6',
-    title: 'Natural Language Processing Specialist',
-    description: 'Become an expert in text analysis, from classic techniques to the latest transformer models.',
-    programIds: ['p1', 'p2']
-  },
-  {
-    id: 'lp7',
-    title: 'Full-Stack AI Developer',
-    description: 'A complete journey covering ML, NLP, and Generative AI to prepare you for building end-to-end AI products.',
-    programIds: ['p1', 'p2', 'p3', 'p4']
-  }
-];
 
 export default function AdminLearningPathsPage() {
   const [learningPaths, setLearningPaths] = useState<LearningPath[]>(initialLearningPaths);

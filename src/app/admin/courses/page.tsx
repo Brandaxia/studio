@@ -26,30 +26,7 @@ import { MoreHorizontal, PlusCircle } from 'lucide-react';
 import type { Course, Program } from '@/lib/types';
 import { CourseForm } from './course-form';
 import { Badge } from '@/components/ui/badge';
-
-const initialPrograms: Program[] = [
-  { id: 'p1', title: 'Machine Learning Engineering', description: 'desc', image: 'url', aiHint: '', courseIds: ['c1', 'c2', 'c3', 'c4']},
-  { id: 'p2', title: 'NLP: From Text to Transformers', description: 'desc', image: 'url', aiHint: '', courseIds: ['c5', 'c6', 'c7']},
-  { id: 'p3', title: 'Computer Vision & Image Analysis', description: 'desc', image: 'url', aiHint: '', courseIds: ['c8', 'c9', 'c10']},
-  { id: 'p4', title: 'Generative AI & Large Language Models', description: 'desc', image: 'url', aiHint: '', courseIds: ['c11', 'c12', 'c13']},
-];
-
-const initialCourses: Course[] = [
-  { id: 'c1', programId: 'p1', title: 'Statistical Foundations for Machine Learning', description: 'Core statistical concepts that underpin machine learning algorithms.'},
-  { id: 'c2', programId: 'p1', title: 'Supervised Learning: From Regression to Classification', description: 'A deep dive into supervised learning models and their applications.'},
-  { id: 'c3', programId: 'p1', title: 'Unsupervised Learning & Dimensionality Reduction', description: 'Explore clustering, anomaly detection, and feature reduction.'},
-  { id: 'c4', programId: 'p1', title: 'Introduction to Neural Networks & Deep Learning', description: 'Build your first neural networks from scratch.'},
-  { id: 'c5', programId: 'p2', title: 'Text Preprocessing & Vectorization Techniques', description: 'Learn how to process and represent text for ML models.'},
-  { id: 'c6', programId: 'p2', title: 'Understanding Transformers & the Attention Mechanism', description: 'The core architecture behind modern LLMs.'},
-  { id: 'c7', programId: 'p2', title: 'Fine-tuning Language Models for Downstream Tasks', description: 'Adapt pre-trained models for specific applications like sentiment analysis.'},
-  { id: 'c8', programId: 'p3', title: 'Fundamentals of Image Processing', description: 'Learn about pixels, filters, and transformations.'},
-  { id: 'c9', programId: 'p3', title: 'Convolutional Neural Networks (CNNs) for Image Recognition', description: 'Build and train models for classifying images.'},
-  { id: 'c10', programId: 'p3', title: 'Object Detection and Image Segmentation', description: 'Go beyond classification to identify and segment objects.'},
-  { id: 'c11', programId: 'p4', title: 'Introduction to Generative Models: VAEs and GANs', description: 'Understand the principles behind generative AI.'},
-  { id: 'c12', programId: 'p4', title: 'The Architecture of Large Language Models (LLMs)', description: 'A detailed look at what makes LLMs work.'},
-  { id: 'c13', programId: 'p4', title: 'Prompt Engineering & In-Context Learning', description: 'Master the art of crafting effective prompts for LLMs.'},
-];
-
+import { initialCourses, initialPrograms } from '@/lib/data';
 
 export default function AdminCoursesPage() {
   const [courses, setCourses] = useState<Course[]>(initialCourses);

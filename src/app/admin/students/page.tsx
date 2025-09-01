@@ -27,41 +27,7 @@ import type { Student } from '@/lib/types';
 import { StudentForm } from './student-form';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-
-const initialStudents: Student[] = [
-  {
-    id: '1',
-    name: 'Kaelen',
-    email: 'kaelen@email.com',
-    avatar: 'https://picsum.photos/100/100?random=11',
-    enrolledDate: '2023-10-15',
-    aiHint: 'male student',
-  },
-  {
-    id: '2',
-    name: 'Seraphina',
-    email: 'seraphina@email.com',
-    avatar: 'https://picsum.photos/100/100?random=12',
-    enrolledDate: '2023-11-01',
-    aiHint: 'female student',
-  },
-   {
-    id: '3',
-    name: 'Max',
-    email: 'max@email.com',
-    avatar: 'https://picsum.photos/100/100?random=13',
-    enrolledDate: '2023-11-20',
-    aiHint: 'focused student',
-  },
-   {
-    id: '4',
-    name: 'Elara',
-    email: 'elara@email.com',
-    avatar: 'https://picsum.photos/100/100?random=14',
-    enrolledDate: '2024-01-05',
-    aiHint: 'smiling woman',
-  },
-];
+import { initialStudents } from '@/lib/data';
 
 export default function AdminStudentsPage() {
   const [students, setStudents] = useState<Student[]>(initialStudents);

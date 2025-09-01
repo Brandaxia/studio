@@ -25,41 +25,7 @@ import {
 import { MoreHorizontal, PlusCircle } from 'lucide-react';
 import type { Program } from '@/lib/types';
 import { ProgramForm } from './program-form';
-
-const initialPrograms: Program[] = [
-  {
-    id: 'p1',
-    title: 'Machine Learning Engineering',
-    description: 'Build a solid foundation in machine learning, from algorithms to deployment.',
-    image: 'https://picsum.photos/600/400?random=1',
-    aiHint: 'machine learning',
-    courseIds: ['c1', 'c2', 'c3', 'c4'],
-  },
-  {
-    id: 'p2',
-    title: 'NLP: From Text to Transformers',
-    description: 'Master the art of building models that understand and generate human language.',
-    image: 'https://picsum.photos/600/400?random=2',
-    aiHint: 'natural language processing',
-    courseIds: ['c5', 'c6', 'c7'],
-  },
-  {
-    id: 'p3',
-    title: 'Computer Vision & Image Analysis',
-    description: 'Teach computers to "see" and interpret the visual world.',
-    image: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'computer vision',
-    courseIds: ['c8', 'c9', 'c10'],
-  },
-   {
-    id: 'p4',
-    title: 'Generative AI & Large Language Models',
-    description: 'Explore the cutting-edge of AI with generative models and LLMs.',
-    image: 'https://picsum.photos/600/400?random=4',
-    aiHint: 'generative ai',
-    courseIds: ['c11', 'c12', 'c13'],
-  },
-];
+import { initialPrograms } from '@/lib/data';
 
 
 export default function AdminProgramsPage() {

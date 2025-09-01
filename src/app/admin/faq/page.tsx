@@ -25,29 +25,7 @@ import {
 import { MoreHorizontal, PlusCircle } from 'lucide-react';
 import type { FaqItem } from '@/lib/types';
 import { FaqForm } from './faq-form';
-
-const initialFaqs: FaqItem[] = [
-  {
-    id: '1',
-    question: 'What is "Ainsophic Academy"?',
-    answer: 'Ainsophic Academy is a learning platform dedicated to providing cutting-edge education in Artificial Intelligence, from foundational concepts to advanced specializations.',
-  },
-  {
-    id: '2',
-    question: 'Do I need a background in programming to enroll?',
-    answer: 'While our foundational courses are designed to be accessible, a basic understanding of Python is recommended to get the most out of the material. We offer prep courses for beginners.',
-  },
-  {
-    id: '3',
-    question: 'Are the programs online or in-person?',
-    answer: 'Currently, all our programs are offered in a flexible online format, allowing students from around the world to join. We use a combination of recorded content, live sessions, and interactive notebooks.',
-  },
-  {
-    id: '4',
-    question: 'What kind of support do I get as a student?',
-    answer: 'We offer comprehensive support through community forums, Q&A sessions with instructors, and access to a personal mentor to guide you on your learning journey.',
-  },
-];
+import { initialFaqs } from '@/lib/data';
 
 export default function AdminFaqPage() {
   const [faqs, setFaqs] = useState<FaqItem[]>(initialFaqs);
