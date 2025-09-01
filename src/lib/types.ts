@@ -15,7 +15,7 @@ export interface Program {
   description: string;
   image: string;
   aiHint: string;
-  courseIds?: string[];
+  courseIds: string[];
   moodleCourseId?: number;
 }
 
@@ -27,7 +27,7 @@ export interface Course {
 }
 
 export interface Instructor {
-  id: string;
+  id:string;
   name: string;
   title: string;
   avatar: string;
