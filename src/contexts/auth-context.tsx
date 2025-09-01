@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
@@ -14,6 +15,7 @@ interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
   login: (email: string, pass: string) => Promise<boolean>;
+  register: (name: string, email: string, pass: string) => Promise<boolean>;
   logout: () => void;
   loading: boolean;
 }
@@ -47,6 +49,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return false;
   };
 
+  const register = async (name: string, email: string, pass: string): Promise<boolean> => {
+    setLoading(true);
+    console.log("Registering new user:", { name, email });
+    
+    // Simulate an API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    // For this mock, we'll assume registration is always successful
+    // In a real app, you would handle potential errors (e.g., email already exists)
+    
+    setLoading(false);
+    return true;
+  };
+
+
   const logout = () => {
     setUser(null);
   };
@@ -55,6 +72,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     user,
     isAuthenticated: !!user,
     login,
+    register,
     logout,
     loading,
   };
