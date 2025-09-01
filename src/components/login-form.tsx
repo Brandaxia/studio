@@ -81,7 +81,7 @@ export function LoginForm() {
                     <Input type="password" placeholder="********" {...field} />
                   </FormControl>
                   <FormMessage />
-                </Item>
+                </FormItem>
               )}
             />
             <Button type="submit" className="w-full" disabled={loading}>
