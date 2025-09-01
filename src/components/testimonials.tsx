@@ -11,7 +11,7 @@ interface TestimonialsProps {
 
 export function Testimonials({ testimonials }: TestimonialsProps) {
   const getProgramTitle = (programId: string) => {
-    return initialPrograms.find(p => p.id === programId)?.title || programId;
+    return initialPrograms.find(p => p.id === programId)?.title || 'Related Program';
   };
   return (
     <section id="testimonials" className="w-full py-16 md:py-24">

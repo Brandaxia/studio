@@ -80,7 +80,7 @@ export function InstructorForm({ instructor, onSave, onCancel }: InstructorFormP
             <FormItem>
               <FormLabel>Título</FormLabel>
               <FormControl>
-                <Input placeholder="Título o especialidad" {...field} />
+                <Input placeholder="Título o especialidad, ej: Principal AI Scientist" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
