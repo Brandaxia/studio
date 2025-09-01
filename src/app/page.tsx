@@ -4,7 +4,7 @@ import { Hero } from "@/components/hero";
 import { LearningPaths } from "@/components/learning-paths";
 import { Programs } from "@/components/programs";
 import { AiSummary } from "@/components/ai-summary";
-import { Instructors } from "@/components/instructors";
+import { AboutUs } from "@/components/about-us";
 import { NotebookPreview } from "@/components/notebook-preview";
 import { Testimonials } from "@/components/testimonials";
 import { Faq } from "@/components/faq";
@@ -22,7 +22,7 @@ export default function Home() {
         <LearningPaths learningPaths={initialLearningPaths} programs={initialPrograms} />
         <Programs programs={initialPrograms} />
         <AiSummary />
-        <Instructors instructors={initialInstructors} />
+        <AboutUs instructors={initialInstructors} />
         <NotebookPreview />
         <Testimonials testimonials={initialTestimonials} programs={initialPrograms} />
         <Faq faqs={initialFaqs} />
