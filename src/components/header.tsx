@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/#rutas', label: 'Paths' },
   { href: '/#programas', label: 'Programs' },
+  { href: '/#courses', label: 'Courses' },
   { href: '/#about', label: 'About' },
   { href: '/#contacto', label: 'Contact' },
 ];
