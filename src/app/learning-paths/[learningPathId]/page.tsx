@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import type { LearningPath, Program } from "@/lib/types";
@@ -66,26 +67,26 @@ export default function LearningPathDetailPage({ params }: { params: { learningP
     <div className="flex min-h-screen w-full flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="w-full bg-muted py-16 md:py-24">
-            <div className="container text-center">
+        <section className="w-full bg-muted py-12 md:py-24">
+            <div className="container px-4 text-center">
                 <Badge>Learning Path</Badge>
-                <h1 className="font-headline mt-2 text-4xl font-bold md:text-5xl">
+                <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-5xl">
                 {learningPath.title}
                 </h1>
-                <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
+                <p className="mx-auto mt-4 max-w-3xl text-base text-muted-foreground md:text-lg">
                     {learningPath.description}
                 </p>
             </div>
         </section>
 
         <section className="w-full py-16 md:py-24">
-            <div className="container">
+            <div className="container px-4">
                  <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Programs in this Path</h2>
                 <div className="mx-auto grid max-w-5xl gap-8">
                     {includedPrograms.map((program, index) => (
                         <Card key={program.id} className="overflow-hidden rounded-2xl shadow-lg">
                             <div className="grid md:grid-cols-2">
-                                <div className="relative h-64 w-full md:h-full">
+                                <div className="relative h-60 w-full md:h-full">
                                     <Image
                                         src={program.image}
                                         alt={program.title}
@@ -95,8 +96,8 @@ export default function LearningPathDetailPage({ params }: { params: { learningP
                                     />
                                 </div>
                                 <div className="flex flex-col p-6">
-                                     <Badge variant="secondary" className="mb-2 w-fit-content">Step {index + 1}</Badge>
-                                    <h3 className="font-headline text-2xl font-bold">{program.title}</h3>
+                                     <Badge variant="secondary" className="mb-2 w-fit">Step {index + 1}</Badge>
+                                    <h3 className="text-2xl font-bold">{program.title}</h3>
                                     <p className="mt-2 flex-1 text-muted-foreground">{program.description}</p>
                                     <div className="mt-6">
                                         <Link href={`/programs/${program.id}`} className="font-semibold text-primary hover:text-primary/80">

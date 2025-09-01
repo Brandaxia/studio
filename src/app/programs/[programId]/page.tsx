@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import type { Program, Course } from "@/lib/types";
@@ -68,7 +69,7 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
     <div className="flex min-h-screen w-full flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="relative h-[40vh] min-h-[300px] w-full">
+        <section className="relative h-[30vh] min-h-[250px] w-full md:h-[40vh] md:min-h-[300px]">
             <div className="absolute inset-0 bg-black/50" />
             <Image 
                 src={program.image}
@@ -77,19 +78,19 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
                 className="object-cover"
                 data-ai-hint={program.aiHint}
             />
-            <div className="container relative z-10 flex h-full flex-col items-start justify-end pb-12 text-primary-foreground">
+            <div className="container relative z-10 flex h-full flex-col items-start justify-end px-4 pb-8 md:pb-12">
                 <Badge>Program</Badge>
-                <h1 className="font-headline mt-2 text-4xl font-bold md:text-5xl">
+                <h1 className="mt-2 text-3xl font-bold text-primary-foreground md:text-5xl">
                 {program.title}
                 </h1>
             </div>
         </section>
 
-        <section className="w-full py-16 md:py-24">
-            <div className="container grid gap-12 md:grid-cols-3">
+        <section className="w-full py-12 md:py-24">
+            <div className="container grid gap-8 px-4 md:grid-cols-3 md:gap-12">
                 <div className="md:col-span-2">
                     <h2 className="text-2xl font-bold tracking-tight">About this Program</h2>
-                    <p className="mt-4 text-lg text-muted-foreground">{program.description}</p>
+                    <p className="mt-4 text-base text-muted-foreground md:text-lg">{program.description}</p>
                 </div>
                 <div className="md:col-span-1">
                     <Card>
@@ -100,7 +101,7 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
                         <CardContent className="space-y-4">
                             {programCourses.map(course => (
                                 <div key={course.id} className="flex items-start gap-4">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0 mt-1">
+                                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary mt-1">
                                         <BookOpen className="h-5 w-5" />
                                     </div>
                                     <div>

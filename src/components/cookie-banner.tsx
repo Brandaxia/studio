@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -9,7 +10,6 @@ export function CookieBanner() {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Check if the user has already consented
     const consent = localStorage.getItem('cookie_consent');
     if (!consent) {
       setIsVisible(true);
@@ -17,7 +17,6 @@ export function CookieBanner() {
   }, []);
 
   const handleAccept = () => {
-    // In a real app, you would set a cookie or use a more robust storage
     localStorage.setItem('cookie_consent', 'true');
     setIsVisible(false);
     toast({
@@ -27,7 +26,6 @@ export function CookieBanner() {
   };
 
   const handleDecline = () => {
-    // Handle decline logic if necessary
     setIsVisible(false);
     toast({
       title: "Consentimiento Rechazado",
@@ -41,8 +39,8 @@ export function CookieBanner() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 border-t p-4 shadow-lg">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t bg-background/95 p-4 shadow-lg">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
         <p className="text-sm text-foreground/80">
           Este sitio web utiliza cookies para mejorar tu experiencia. Al continuar, aceptas nuestro uso de cookies.
         </p>

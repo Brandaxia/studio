@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import {
   Card,
@@ -25,10 +26,10 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
   
   return (
     <section id="rutas" className="w-full bg-muted py-16 md:py-24">
-      <div className="container px-6">
+      <div className="container px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">Curated Learning Paths</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Curated Learning Paths</h2>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
             Follow our curated program sequences to guide your journey from beginner to expert.
           </p>
         </div>
@@ -40,7 +41,7 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                         <GitMerge className="h-6 w-6" />
                     </div>
-                    <CardTitle className="font-headline text-xl">{path.title}</CardTitle>
+                    <CardTitle className="text-xl">{path.title}</CardTitle>
                   </div>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col">

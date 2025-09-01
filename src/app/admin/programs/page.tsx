@@ -60,10 +60,8 @@ export default function AdminProgramsPage() {
 
   const handleSaveProgram = (program: Program) => {
     if (selectedProgram) {
-      // Update
       setPrograms(programs.map(p => p.id === program.id ? program : p));
     } else {
-      // Create
       setPrograms([...programs, { ...program, id: (programs.length + 1).toString() }]);
     }
     setSelectedProgram(null);
@@ -88,14 +86,14 @@ export default function AdminProgramsPage() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <CardTitle>Programs</CardTitle>
             <CardDescription>Manage the main educational programs.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
-              <Button size="sm" className="gap-1" onClick={handleAddNew}>
+              <Button size="sm" className="gap-1 w-full sm:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 Add Program
               </Button>
@@ -132,7 +130,7 @@ export default function AdminProgramsPage() {
             {programs.map(program => (
               <TableRow key={program.id}>
                 <TableCell className="font-medium">{program.title}</TableCell>
-                <TableCell className="hidden md:table-cell max-w-sm truncate">{program.description}</TableCell>
+                <TableCell className="hidden md:table-cell max-w-xs truncate">{program.description}</TableCell>
                 <TableCell>{program.courseIds?.length || 0}</TableCell>
                 <TableCell>
                   <DropdownMenu>

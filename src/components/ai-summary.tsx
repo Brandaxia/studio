@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -49,10 +50,10 @@ export function AiSummary() {
 
   return (
     <section id="ai-summary" className="w-full py-16 md:py-24">
-      <div className="container grid gap-12 md:grid-cols-2 md:items-start">
+      <div className="container grid gap-8 px-4 md:grid-cols-2 md:items-start md:gap-12">
         <div className="flex flex-col">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl">AI-Powered Summarizer</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">AI-Powered Summarizer</h2>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
             Paste any technical text and let our AI extract the key insights for you.
           </p>
           <Form {...form}>

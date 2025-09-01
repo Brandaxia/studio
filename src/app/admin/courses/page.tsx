@@ -78,14 +78,14 @@ export default function AdminCoursesPage() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <CardTitle>Courses</CardTitle>
             <CardDescription>Manage individual courses within each program.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
-              <Button size="sm" className="gap-1" onClick={handleAddNew}>
+              <Button size="sm" className="gap-1 w-full sm:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 Add Course
               </Button>
@@ -126,7 +126,7 @@ export default function AdminCoursesPage() {
                 <TableCell>
                   <Badge variant="outline">{getProgramName(course.programId)}</Badge>
                 </TableCell>
-                <TableCell className="hidden md:table-cell max-w-sm truncate">{course.description}</TableCell>
+                <TableCell className="hidden md:table-cell max-w-xs truncate">{course.description}</TableCell>
                 <TableCell>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>

@@ -7,12 +7,12 @@ import { BookOpen, Users, MessageSquareQuote, HelpCircle, GraduationCap, GitMerg
 export default function AdminDashboardPage() {
   return (
     <div>
-      <h1 className="text-3xl font-bold tracking-tight">Admin Dashboard</h1>
+      <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Admin Dashboard</h1>
       <p className="mt-2 text-muted-foreground">
         Welcome to the control center for Ainsophic Academy. Manage content and users from here.
       </p>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-6">
          <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Learning Paths</CardTitle>
