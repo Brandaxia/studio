@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Menu, X } from 'lucide-react';
@@ -7,11 +8,12 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '#rutas', label: 'Paths' },
-  { href: '#programas', label: 'Programs' },
-  { href: '#instructores', label: 'Instructors' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#contacto', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/#rutas', label: 'Paths' },
+  { href: '/#programas', label: 'Programs' },
+  { href: '/#instructores', label: 'Instructors' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/#contacto', label: 'Contact' },
 ];
 
 export function Header() {
