@@ -7,6 +7,7 @@ import type { Program, Course, LearningPath, Instructor, Testimonial, FaqItem, S
 // These are the core academic programs. Each represents a major discipline within AI.
 
 export const initialPrograms: Program[] = [
+  // --- Technical & Specialization Programs ---
   {
     id: 'p1',
     title: 'Machine Learning Engineering',
@@ -63,6 +64,39 @@ export const initialPrograms: Program[] = [
     aiHint: 'ai finance',
     courseIds: ['c20', 'c21'],
   },
+  {
+    id: 'p11',
+    title: 'AI for Health (HealthTech)',
+    description: 'Discover how AI is revolutionizing healthcare, from diagnostic imaging and drug discovery to personalized medicine. This program is designed for medical professionals, data scientists, and engineers looking to innovate in the HealthTech space. Audience: Clinicians, researchers, medical informaticists, developers.',
+    image: 'https://picsum.photos/600/400?random=21',
+    aiHint: 'ai healthcare',
+    courseIds: ['c28', 'c29'],
+  },
+  // --- General Audience & Introductory Programs ---
+  {
+    id: 'p8',
+    title: 'AI Fundamentals: A Practical Introduction',
+    description: 'A program for everyone. Demystify artificial intelligence and understand its real-world impact on society, business, and daily life. No coding background required. Learn the key concepts, recognize different types of AI, and discuss its future. Audience: General public, students, non-technical professionals.',
+    image: 'https://picsum.photos/600/400?random=18',
+    aiHint: 'abstract shapes',
+    courseIds: ['c22', 'c23'],
+  },
+  {
+    id: 'p9',
+    title: 'Creative AI: Art, Design, and Storytelling',
+    description: 'Unleash your creativity with AI. This program is for artists, designers, writers, and marketers who want to leverage generative tools for image creation, music composition, and narrative generation. Focus is on practical application and creative workflows. Audience: Artists, designers, marketers, storytellers.',
+    image: 'https://picsum.photos/600/400?random=19',
+    aiHint: 'digital art',
+    courseIds: ['c24', 'c25', 'c26'],
+  },
+  {
+    id: 'p10',
+    title: 'AI for Young Innovators',
+    description: 'A fun, interactive introduction to the world of AI for younger learners. Through visual programming tools and engaging projects, students will learn the basic ideas behind machine learning, build simple models, and see how AI can be used to solve problems. Audience: Middle and high school students (Ages 12-17).',
+    image: 'https://picsum.photos/600/400?random=20',
+    aiHint: 'kids learning code',
+    courseIds: ['c27'],
+  },
 ];
 
 
@@ -106,6 +140,22 @@ export const initialCourses: Course[] = [
   // P7: AI for Finance (FinTech)
   { id: 'c20', programId: 'p7', title: 'C20: Time-Series Analysis & Forecasting for Finance', description: 'Apply statistical and machine learning models (ARIMA, LSTMs) to predict financial market trends. (Intermediate)'},
   { id: 'c21', programId: 'p7', title: 'C21: ML for Algorithmic Trading & Fraud Detection', description: 'Design and backtest trading strategies and build robust systems to detect fraudulent financial activities using machine learning. (Advanced)'},
+  
+  // P8: AI Fundamentals
+  { id: 'c22', programId: 'p8', title: 'C22: AI in Everyday Life', description: 'Discover the AI you already use, from streaming recommendations to navigation apps, and understand the basic concepts that power them. (Introductory)'},
+  { id: 'c23', programId: 'p8', title: 'C23: The Big Picture: AI, Ethics, and the Future', description: 'Discuss the societal impact of AI, the importance of ethical considerations, and what the future might hold for an AI-powered world. (Introductory)'},
+  
+  // P9: Creative AI
+  { id: 'c24', programId: 'p9', title: 'C24: Visual Art with AI: From Prompts to Masterpieces', description: 'Learn to use text-to-image models like Midjourney and Stable Diffusion to create stunning visual art, illustrations, and designs. (Introductory/Creative)'},
+  { id: 'c25', programId: 'p9', title: 'C25: AI for Writers: Co-writing with Language Models', description: 'Explore how to use LLMs as creative partners for brainstorming, drafting, and refining written content, from marketing copy to fiction. (Introductory/Creative)'},
+  { id: 'c26', programId: 'p9', title: 'C26: Introduction to AI-Powered Music and Sound', description: 'Experiment with tools that generate melodies, beats, and soundscapes, opening new avenues for musical creativity. (Introductory/Creative)'},
+  
+  // P10: AI for Young Innovators
+  { id: 'c27', programId: 'p10', title: 'C27: Build Your First AI Project', description: 'A project-based course where students will use block-based coding and simple AI tools to create a fun, interactive project, like a game or a chatbot. (Introductory/Youth)'},
+
+  // P11: AI for Health (HealthTech)
+  { id: 'c28', programId: 'p11', title: 'C28: Medical Data & AI: Challenges and Opportunities', description: 'Understand the unique types of data in healthcare (EHRs, imaging) and the ethical and regulatory challenges of using AI in medicine. (Intermediate/Specialization)'},
+  { id: 'c29', programId: 'p11', title: 'C29: ML for Medical Imaging and Diagnostics', description: 'Apply computer vision techniques to analyze medical images like X-rays and MRIs to assist in diagnostics. (Advanced/Specialization)'},
 ];
 
 
@@ -120,19 +170,19 @@ export const initialLearningPaths: LearningPath[] = [
     id: 'lp1', 
     title: 'AI Literacy for All', 
     description: 'For the general public, students, and non-technical professionals. This path demystifies AI, focusing on core concepts, real-world applications, and ethical considerations without requiring programming knowledge. Ideal for anyone curious about the AI revolution. (Introductory)', 
-    programIds: ['p4', 'p5'] 
+    programIds: ['p8', 'p5'] 
   },
   {
     id: 'lp2',
     title: 'AI for Business & Product Leaders',
     description: 'For managers, executives, and entrepreneurs. This path focuses on the strategic implications of AI, how to identify opportunities for innovation, and how to lead AI-driven projects without getting lost in the technical weeds. (Introductory / Strategic)',
-    programIds: ['p1', 'p4']
+    programIds: ['p8', 'p1', 'p4']
   },
   {
     id: 'lp8',
     title: 'AI for Creatives & Artists',
     description: 'A path for artists, designers, writers, and marketers. Learn to use generative AI tools for text, image, and sound creation. This path focuses on practical application and creative workflows, not deep coding. (Introductory / Creative)',
-    programIds: ['p4', 'p3']
+    programIds: ['p9', 'p4']
   },
   
   // --- Professional / Engineering Level ---
@@ -184,7 +234,7 @@ export const initialLearningPaths: LearningPath[] = [
     id: 'lp10',
     title: 'AI Ethics & Risk Officer',
     description: 'For professionals in governance, risk, and compliance. This path combines foundational ML and NLP with a deep dive into ethical frameworks, bias auditing, and governance, preparing leaders to navigate the complex landscape of responsible AI. (Advanced / Strategic)',
-    programIds: ['p1', 'p2', 'p5'],
+    programIds: ['p8', 'p5', 'p1'],
   },
   {
     id: 'lp11',
@@ -307,3 +357,5 @@ export const initialStudents: Student[] = [
     aiHint: 'smiling woman',
   },
 ];
+
+    
