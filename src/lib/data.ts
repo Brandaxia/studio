@@ -56,7 +56,7 @@ export const initialPrograms: Program[] = [
     description: 'For aspiring engineers and developers. This program provides a comprehensive foundation in building, deploying, and maintaining machine learning systems at scale. It covers the end-to-end ML lifecycle, from data ingestion and model training to MLOps and production monitoring. Audience: Developers, software engineers, aspiring ML engineers.',
     image: 'https://picsum.photos/600/400?random=1',
     aiHint: 'machine learning engineer',
-    courseIds: ['c1', 'c2', 'c3', 'c4'],
+    courseIds: ['c1', 'c2', 'c3', 'c4', 'c46'],
   },
   {
     id: 'p2',
@@ -88,7 +88,7 @@ export const initialPrograms: Program[] = [
     description: 'A critical program for a new generation of responsible AI practitioners. It covers frameworks for fairness, accountability, transparency, and the societal impact of AI systems, preparing students to lead and implement responsible AI policies. Audience: Ethicists, policy makers, product managers, AI engineers.',
     image: 'https://picsum.photos/600/400?random=15',
     aiHint: 'ethics governance',
-    courseIds: ['c14', 'c15', 'c16'],
+    courseIds: ['c14', 'c15', 'c16', 'c48'],
   },
   {
     id: 'p6',
@@ -104,7 +104,7 @@ export const initialPrograms: Program[] = [
     description: 'A specialized program applying AI to the financial industry. It covers algorithmic trading, credit scoring, fraud detection, and risk management using machine learning and time-series analysis. Audience: Financial analysts, data scientists, FinTech developers.',
     image: 'https://picsum.photos/600/400?random=17',
     aiHint: 'ai finance',
-    courseIds: ['c20', 'c21'],
+    courseIds: ['c20', 'c21', 'c47'],
   },
   {
     id: 'p11',
@@ -112,7 +112,7 @@ export const initialPrograms: Program[] = [
     description: 'Discover how AI is revolutionizing healthcare, from diagnostic imaging and drug discovery to personalized medicine. This program is designed for medical professionals, data scientists, and engineers looking to innovate in the HealthTech space. Audience: Clinicians, researchers, medical informaticists, developers.',
     image: 'https://picsum.photos/600/400?random=21',
     aiHint: 'ai healthcare',
-    courseIds: ['c28', 'c29'],
+    courseIds: ['c28', 'c29', 'c44', 'c45'],
   },
   {
     id: 'p13',
@@ -128,7 +128,7 @@ export const initialPrograms: Program[] = [
     description: 'Explore the intersection of AI and robotics. This program focuses on algorithms for perception, navigation, manipulation, and control, enabling the creation of intelligent physical systems. Audience: Robotics engineers, PhD students in robotics/AI.',
     image: 'https://picsum.photos/600/400?random=24',
     aiHint: 'robotics arm',
-    courseIds: ['c37', 'c38', 'c39'],
+    courseIds: ['c37', 'c38', 'c39', 'c40', 'c41', 'c49'],
   },
 ];
 
@@ -144,7 +144,8 @@ export const initialCourses: Course[] = [
   { id: 'c2', programId: 'p1', title: 'C2: Supervised & Unsupervised Learning Models', description: 'A deep dive into classic models, from regression and classification to clustering and dimensionality reduction. (Intermediate)'},
   { id: 'c3', programId: 'p1', title: 'C3: Deep Learning & Neural Network Architectures', description: 'Build and understand deep neural networks, including ANNs, CNNs, and RNNs, using modern frameworks. (Intermediate)'},
   { id: 'c4', programId: 'p1', title: 'C4: MLOps: Deployment & Productionization', description: 'Learn to deploy, monitor, and maintain ML models in production environments using CI/CD pipelines and cloud infrastructure. (Advanced)'},
-  
+  { id: 'c46', programId: 'p1', title: 'C46: Graph Models and Graph Neural Networks (GNNs)', description: 'A specialization in modeling and learning from relational and graph-structured data, crucial for social networks, molecular biology, and recommendation systems. (Advanced/Specialization)' },
+
   // P2: Natural Language Processing (NLP)
   { id: 'c5', programId: 'p2', title: 'C5: Text Processing & Representation', description: 'Master techniques to clean, process, and represent text data for machine learning models, from Bag-of-Words and TF-IDF to Word2Vec and GloVe. (Introductory)'},
   { id: 'c6', programId: 'p2', title: 'C6: Transformers & the Attention Mechanism', description: 'Uncover the core architecture behind modern LLMs, focusing on the self-attention mechanism that revolutionized NLP. (Intermediate)'},
@@ -164,6 +165,7 @@ export const initialCourses: Course[] = [
   { id: 'c14', programId: 'p5', title: 'C14: Foundations of AI Ethics', description: 'Explore the philosophical and practical foundations of ethical AI, including bias, fairness, and accountability. (Introductory)'},
   { id: 'c15', programId: 'p5', title: 'C15: Auditing & Mitigating Algorithmic Bias', description: 'Learn technical methods to detect and mitigate bias in datasets and models to ensure equitable outcomes. (Advanced)'},
   { id: 'c16', programId: 'p5', title: 'C16: AI Governance & Regulatory Frameworks', description: 'Understand the global landscape of AI regulation, risk management, and how to implement governance structures within an organization. (Intermediate)'},
+  { id: 'c48', programId: 'p5', title: 'C48: Differential Privacy and Secure Computation', description: 'Explore cutting-edge techniques to train AI models on sensitive data while providing mathematical guarantees of privacy. (Advanced/Research)' },
 
   // P6: Reinforcement Learning (RL)
   { id: 'c17', programId: 'p6', title: 'C17: Markov Decision Processes & Dynamic Programming', description: 'Master the mathematical framework that underpins modern RL, including value and policy iteration. (Intermediate)'},
@@ -173,6 +175,7 @@ export const initialCourses: Course[] = [
   // P7: AI for Finance (FinTech)
   { id: 'c20', programId: 'p7', title: 'C20: Time-Series Analysis & Forecasting for Finance', description: 'Apply statistical and machine learning models (ARIMA, LSTMs) to predict financial market trends. (Intermediate)'},
   { id: 'c21', programId: 'p7', title: 'C21: ML for Algorithmic Trading & Fraud Detection', description: 'Design and backtest trading strategies and build robust systems to detect fraudulent financial activities using machine learning. (Advanced)'},
+  { id: 'c47', programId: 'p7', title: 'C47: NLP for Financial Analysis', description: 'Utilize NLP to analyze financial news, earnings reports, and social media sentiment to gain a competitive market edge. (Advanced/Specialization)' },
   
   // P8: AI Fundamentals
   { id: 'c22', programId: 'p8', title: 'C22: AI in Everyday Life', description: 'Discover the AI you already use, from streaming recommendations to navigation apps, and understand the basic concepts that power them. (Introductory)'},
@@ -190,6 +193,8 @@ export const initialCourses: Course[] = [
   // P11: AI for Health (HealthTech)
   { id: 'c28', programId: 'p11', title: 'C28: Medical Data & AI: Challenges and Opportunities', description: 'Understand the unique types of data in healthcare (EHRs, imaging) and the ethical and regulatory challenges of using AI in medicine. (Intermediate/Specialization)'},
   { id: 'c29', programId: 'p11', title: 'C29: ML for Medical Imaging and Diagnostics', description: 'Apply computer vision techniques to analyze medical images like X-rays and MRIs to assist in diagnostics. (Advanced/Specialization)'},
+  { id: 'c44', programId: 'p11', title: 'C44: Computational Genomics and Drug Discovery', description: 'Learn how AI is used to analyze genomic data and accelerate the development of new medicines. (Advanced/Research)' },
+  { id: 'c45', programId: 'p11', title: 'C45: Predictive Models for Clinical Outcomes', description: 'Develop machine learning models to predict patient outcomes and support clinical decision-making. (Advanced/Specialization)' },
 
   // P12: Computational Thinking Foundations
   { id: 'c31', programId: 'p12', title: 'C31: Logic and Algorithmic Thinking', description: 'Learn to think like a programmer by breaking down complex problems into logical steps and sequences. (Absolute Beginner)' },
@@ -207,6 +212,7 @@ export const initialCourses: Course[] = [
   { id: 'c39', programId: 'p14', title: 'C39: AI for Manipulation and Control', description: 'Develop intelligent systems for robotic arms and grippers to perform complex physical tasks. (PhD Level)' },
   { id: 'c40', programId: 'p14', title: 'C40: Cognitive Robotics & Human-Robot Interaction', description: 'Explore architectures for robot consciousness and how to design safe and intuitive interactions between humans and robots. (PhD Level)' },
   { id: 'c41', programId: 'p14', title: 'C41: Introduction to Quantum AI', description: 'A forward-looking course on the intersection of quantum computing and machine learning for solving currently intractable problems. (PhD Level/Research)' },
+  { id: 'c49', programId: 'p14', title: 'C49: Imitation and Transfer Learning for Robotics', description: 'Go beyond RL to train robots by demonstrating tasks, enabling them to acquire complex skills more efficiently. (PhD Level/Research)' },
 
   // P15: AI Strategy & Leadership
   { id: 'c42', programId: 'p15', title: 'C42: AI-Driven Business Transformation', description: 'Learn to identify opportunities for AI integration, build a business case, and manage large-scale AI projects. (Strategic)' },
