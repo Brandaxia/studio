@@ -32,21 +32,24 @@ const initialPrograms: Program[] = [
     title: 'Fundamentos de la Sabiduría Antigua',
     description: 'Un viaje a través de textos y filosofías milenarias que han moldeado el pensamiento humano.',
     image: 'https://picsum.photos/600/400?random=1',
-    aiHint: 'ancient library'
+    aiHint: 'ancient library',
+    courseIds: ['c1', 'c2'],
   },
   {
     id: '2',
     title: 'Alquimia Cuántica',
     description: 'Fusiona la física cuántica con principios alquímicos para una transformación personal profunda.',
     image: 'https://picsum.photos/600/400?random=2',
-    aiHint: 'quantum physics'
+    aiHint: 'quantum physics',
+    courseIds: ['c3', 'c4'],
   },
   {
     id: '3',
     title: 'Geometría Sagrada Aplicada',
     description: 'Descubre y aplica los patrones universales de la creación en tu vida diaria y proyectos creativos.',
     image: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'sacred geometry'
+    aiHint: 'sacred geometry',
+    courseIds: ['c5'],
   },
 ];
 
@@ -119,6 +122,7 @@ export default function AdminProgramsPage() {
             <TableRow>
               <TableHead>Título</TableHead>
               <TableHead className="hidden md:table-cell">Descripción</TableHead>
+              <TableHead>Cursos</TableHead>
               <TableHead>
                 <span className="sr-only">Acciones</span>
               </TableHead>
@@ -129,6 +133,7 @@ export default function AdminProgramsPage() {
               <TableRow key={program.id}>
                 <TableCell className="font-medium">{program.title}</TableCell>
                 <TableCell className="hidden md:table-cell max-w-sm truncate">{program.description}</TableCell>
+                <TableCell>{program.courseIds?.length || 0}</TableCell>
                 <TableCell>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
