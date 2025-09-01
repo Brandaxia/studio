@@ -7,7 +7,6 @@ import { AiSummary } from "@/components/ai-summary";
 import { AboutUs } from "@/components/about-us";
 import { NotebookPreview } from "@/components/notebook-preview";
 import { Testimonials } from "@/components/testimonials";
-import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/footer";
@@ -22,10 +21,9 @@ export default function Home() {
         <LearningPaths learningPaths={initialLearningPaths} programs={initialPrograms} />
         <Programs programs={initialPrograms} />
         <AiSummary />
-        <AboutUs instructors={initialInstructors} />
+        <AboutUs instructors={initialInstructors} faqs={initialFaqs} />
         <NotebookPreview />
         <Testimonials testimonials={initialTestimonials} programs={initialPrograms} />
-        <Faq faqs={initialFaqs} />
         <Contact />
       </main>
       <Footer />

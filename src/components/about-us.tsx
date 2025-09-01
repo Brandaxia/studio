@@ -1,11 +1,13 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
-import type { Instructor } from '@/lib/types';
-import { Users, BookOpen, Handshake, Code2, HeartHandshake, Box } from 'lucide-react';
+import type { Instructor, FaqItem } from '@/lib/types';
+import { Users, BookOpen, Handshake, Code2, HeartHandshake } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 interface AboutUsProps {
   instructors: Instructor[];
+  faqs: FaqItem[];
 }
 
 const collectiveBranches = [
@@ -16,9 +18,9 @@ const collectiveBranches = [
     { name: 'Ainsophic Volunteer', icon: HeartHandshake, description: 'Connecting AI experts with non-profits to create a positive impact.' },
 ];
 
-export function AboutUs({ instructors }: AboutUsProps) {
+export function AboutUs({ instructors, faqs }: AboutUsProps) {
   return (
-    <section id="sobre-nosotros" className="w-full bg-muted py-16 md:py-24">
+    <section id="about" className="w-full bg-muted py-16 md:py-24">
       <div className="container px-4">
         {/* Ainsophic Collective Introduction */}
         <div className="mx-auto max-w-3xl text-center">
@@ -61,6 +63,30 @@ export function AboutUs({ instructors }: AboutUsProps) {
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        {/* FAQ Section */}
+        <div className="mt-20">
+            <div className="mx-auto max-w-2xl text-center">
+                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Frequently Asked Questions</h2>
+                <p className="mt-4 text-base text-muted-foreground md:text-lg">
+                    Answers to common questions about our AI programs.
+                </p>
+            </div>
+            <div className="mx-auto mt-12 max-w-3xl">
+                <Accordion type="single" collapsible className="w-full">
+                    {faqs.map((faq) => (
+                    <AccordionItem key={faq.id} value={`item-${faq.id}`}>
+                        <AccordionTrigger className="text-left text-base font-semibold hover:no-underline md:text-lg">
+                        {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm text-muted-foreground md:text-base">
+                        {faq.answer}
+                        </AccordionContent>
+                    </AccordionItem>
+                    ))}
+                </Accordion>
+            </div>
         </div>
       </div>
     </section>
