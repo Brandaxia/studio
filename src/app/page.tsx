@@ -19,28 +19,32 @@ const programsData: Program[] = [
     title: 'Machine Learning Engineering',
     description: 'Build a solid foundation in machine learning, from algorithms to deployment.',
     image: 'https://picsum.photos/600/400?random=1',
-    aiHint: 'machine learning'
+    aiHint: 'machine learning',
+    courseIds: ['c1', 'c2', 'c3', 'c4'],
   },
   {
     id: 'p2',
     title: 'NLP: From Text to Transformers',
     description: 'Master the art of building models that understand and generate human language.',
     image: 'https://picsum.photos/600/400?random=2',
-    aiHint: 'natural language processing'
+    aiHint: 'natural language processing',
+    courseIds: ['c5', 'c6', 'c7'],
   },
   {
     id: 'p3',
     title: 'Computer Vision & Image Analysis',
     description: 'Teach computers to "see" and interpret the visual world.',
     image: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'computer vision'
+    aiHint: 'computer vision',
+    courseIds: ['c8', 'c9', 'c10'],
   },
    {
     id: 'p4',
     title: 'Generative AI & Large Language Models',
     description: 'Explore the cutting-edge of AI with generative models and LLMs.',
     image: 'https://picsum.photos/600/400?random=4',
-    aiHint: 'generative ai'
+    aiHint: 'generative ai',
+    courseIds: ['c11', 'c12', 'c13'],
   },
 ];
 
@@ -62,8 +66,33 @@ const learningPathsData: LearningPath[] = [
     title: 'AI for Business & Product Leaders',
     description: 'Understand the strategic implications of AI and how to lead AI-driven projects without deep technical expertise.',
     programIds: ['p1', 'p4']
+  },
+  {
+    id: 'lp4',
+    title: 'Prompt Engineering & LLM Apps',
+    description: 'Master the art of prompt design and build applications on top of Large Language Models.',
+    programIds: ['p2', 'p4']
+  },
+  {
+    id: 'lp5',
+    title: 'Deep Learning for Computer Vision',
+    description: 'A specialized path for creating advanced computer vision systems, from image recognition to segmentation.',
+    programIds: ['p1', 'p3']
+  },
+  {
+    id: 'lp6',
+    title: 'Natural Language Processing Specialist',
+    description: 'Become an expert in text analysis, from classic techniques to the latest transformer models.',
+    programIds: ['p1', 'p2']
+  },
+  {
+    id: 'lp7',
+    title: 'Full-Stack AI Developer',
+    description: 'A complete journey covering ML, NLP, and Generative AI to prepare you for building end-to-end AI products.',
+    programIds: ['p1', 'p2', 'p3', 'p4']
   }
 ];
+
 
 const instructorsData: Instructor[] = [
   {
