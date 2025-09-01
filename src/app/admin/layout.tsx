@@ -4,7 +4,7 @@
 import { useAuth } from '@/contexts/auth-context';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { Loader2, LayoutDashboard, Book, Users, MessageSquareQuote, HelpCircle, LogOut, GraduationCap, SwatchBook, GitMerge, PanelLeft, Menu } from 'lucide-react';
+import { Loader2, LayoutDashboard, Book, Users, MessageSquareQuote, HelpCircle, LogOut, GraduationCap, SwatchBook, GitMerge, PanelLeft, Menu, Puzzle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
@@ -19,6 +19,7 @@ const navItems = [
   { href: '/admin/students', label: 'Students', icon: GraduationCap },
   { href: '/admin/testimonials', label: 'Testimonials', icon: MessageSquareQuote },
   { href: '/admin/faq', label: 'FAQ', icon: HelpCircle },
+  { href: '/admin/integrations', label: 'Integrations', icon: Puzzle },
 ];
 
 export default function AdminLayout({

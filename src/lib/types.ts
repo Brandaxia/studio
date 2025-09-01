@@ -55,8 +55,16 @@ export interface Student {
   email: string;
   enrolledDate: string;
   avatar: string;
-  aiHint: string;
+aiHint: string;
 }
+
+export interface Integration {
+  id: string;
+  name: string;
+  apiKey: string;
+  enabled: boolean;
+}
+
 
 export interface AppContent {
   programs: Program[];
