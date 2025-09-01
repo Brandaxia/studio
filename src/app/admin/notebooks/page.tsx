@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import {
   Dialog,
@@ -22,10 +23,11 @@ import {
   DialogFooter,
   DialogClose,
 } from '@/components/ui/dialog';
-import { MoreHorizontal, PlusCircle } from 'lucide-react';
+import { MoreHorizontal, PlusCircle, ExternalLink } from 'lucide-react';
 import type { Notebook } from '@/lib/types';
 import { NotebookForm } from './notebook-form';
 import { initialNotebooks } from '@/lib/data';
+import Link from 'next/link';
 
 export default function AdminNotebooksPage() {
   const [notebooks, setNotebooks] = useState<Notebook[]>(initialNotebooks);
@@ -102,7 +104,12 @@ export default function AdminNotebooksPage() {
           <TableBody>
             {notebooks.map(notebook => (
               <TableRow key={notebook.id}>
-                <TableCell className="font-medium">{notebook.title}</TableCell>
+                <TableCell className="font-medium">
+                  <Link href={notebook.url} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2">
+                    {notebook.title}
+                    <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                  </Link>
+                </TableCell>
                 <TableCell className="hidden md:table-cell max-w-sm truncate">{notebook.description}</TableCell>
                 <TableCell>
                   <DropdownMenu>
@@ -115,6 +122,12 @@ export default function AdminNotebooksPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem onClick={() => handleEdit(notebook)}>Edit</DropdownMenuItem>
+                       <DropdownMenuItem asChild>
+                        <Link href={notebook.url} target="_blank" rel="noopener noreferrer">
+                          Open in Colab
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
                        <Dialog>
                         <DialogTrigger asChild>
                            <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
