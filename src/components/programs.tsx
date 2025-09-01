@@ -27,7 +27,7 @@ export function Programs({ programs }: ProgramsProps) {
             Paths of knowledge designed to illuminate your mind and spirit.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {programs.map((program) => (
             <Card key={program.id} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
               <CardHeader className="p-0">

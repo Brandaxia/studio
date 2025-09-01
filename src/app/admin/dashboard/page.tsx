@@ -19,7 +19,7 @@ export default function AdminDashboardPage() {
             <GitMerge className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">2</div>
+            <div className="text-2xl font-bold">3</div>
             <p className="text-xs text-muted-foreground">Active paths</p>
             <Button size="sm" className="mt-4" asChild>
               <Link href="/admin/learning-paths">Manage</Link>
@@ -32,7 +32,7 @@ export default function AdminDashboardPage() {
             <BookOpen className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">3</div>
+            <div className="text-2xl font-bold">4</div>
             <p className="text-xs text-muted-foreground">Active programs</p>
             <Button size="sm" className="mt-4" asChild>
               <Link href="/admin/programs">Manage</Link>
@@ -45,7 +45,7 @@ export default function AdminDashboardPage() {
             <SwatchBook className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">5</div>
+            <div className="text-2xl font-bold">13</div>
             <p className="text-xs text-muted-foreground">Available courses</p>
             <Button size="sm" className="mt-4" asChild>
               <Link href="/admin/courses">Manage</Link>

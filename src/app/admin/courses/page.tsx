@@ -28,18 +28,28 @@ import { CourseForm } from './course-form';
 import { Badge } from '@/components/ui/badge';
 
 const initialPrograms: Program[] = [
-  { id: '1', title: 'Machine Learning Foundations', description: 'desc', image: 'url', aiHint: '' },
-  { id: '2', title: 'Natural Language Processing', description: 'desc', image: 'url', aiHint: '' },
-  { id: '3', title: 'Computer Vision', description: 'desc', image: 'url', aiHint: '' },
+  { id: 'p1', title: 'Machine Learning Engineering', description: 'desc', image: 'url', aiHint: '', courseIds: ['c1', 'c2', 'c3', 'c4']},
+  { id: 'p2', title: 'NLP: From Text to Transformers', description: 'desc', image: 'url', aiHint: '', courseIds: ['c5', 'c6', 'c7']},
+  { id: 'p3', title: 'Computer Vision & Image Analysis', description: 'desc', image: 'url', aiHint: '', courseIds: ['c8', 'c9', 'c10']},
+  { id: 'p4', title: 'Generative AI & Large Language Models', description: 'desc', image: 'url', aiHint: '', courseIds: ['c11', 'c12', 'c13']},
 ];
 
 const initialCourses: Course[] = [
-  { id: 'c1', programId: '1', title: 'Introduction to Supervised Learning', description: 'Learn about regression and classification.'},
-  { id: 'c2', programId: '1', title: 'Unsupervised Learning Techniques', description: 'Explore clustering and dimensionality reduction.'},
-  { id: 'c3', programId: '2', title: 'Transformers and Attention Mechanism', description: 'Deep dive into the architecture that powers modern LLMs.'},
-  { id: 'c4', programId: '2', title: 'Text Generation and Summarization', description: 'Build models that can write and summarize.'},
-  { id: 'c5', programId: '3', title: 'Convolutional Neural Networks (CNNs)', description: 'Understand the building blocks of image recognition.'},
+  { id: 'c1', programId: 'p1', title: 'Statistical Foundations for Machine Learning', description: 'Core statistical concepts that underpin machine learning algorithms.'},
+  { id: 'c2', programId: 'p1', title: 'Supervised Learning: From Regression to Classification', description: 'A deep dive into supervised learning models and their applications.'},
+  { id: 'c3', programId: 'p1', title: 'Unsupervised Learning & Dimensionality Reduction', description: 'Explore clustering, anomaly detection, and feature reduction.'},
+  { id: 'c4', programId: 'p1', title: 'Introduction to Neural Networks & Deep Learning', description: 'Build your first neural networks from scratch.'},
+  { id: 'c5', programId: 'p2', title: 'Text Preprocessing & Vectorization Techniques', description: 'Learn how to process and represent text for ML models.'},
+  { id: 'c6', programId: 'p2', title: 'Understanding Transformers & the Attention Mechanism', description: 'The core architecture behind modern LLMs.'},
+  { id: 'c7', programId: 'p2', title: 'Fine-tuning Language Models for Downstream Tasks', description: 'Adapt pre-trained models for specific applications like sentiment analysis.'},
+  { id: 'c8', programId: 'p3', title: 'Fundamentals of Image Processing', description: 'Learn about pixels, filters, and transformations.'},
+  { id: 'c9', programId: 'p3', title: 'Convolutional Neural Networks (CNNs) for Image Recognition', description: 'Build and train models for classifying images.'},
+  { id: 'c10', programId: 'p3', title: 'Object Detection and Image Segmentation', description: 'Go beyond classification to identify and segment objects.'},
+  { id: 'c11', programId: 'p4', title: 'Introduction to Generative Models: VAEs and GANs', description: 'Understand the principles behind generative AI.'},
+  { id: 'c12', programId: 'p4', title: 'The Architecture of Large Language Models (LLMs)', description: 'A detailed look at what makes LLMs work.'},
+  { id: 'c13', programId: 'p4', title: 'Prompt Engineering & In-Context Learning', description: 'Master the art of crafting effective prompts for LLMs.'},
 ];
+
 
 export default function AdminCoursesPage() {
   const [courses, setCourses] = useState<Course[]>(initialCourses);
@@ -78,14 +88,14 @@ export default function AdminCoursesPage() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <CardTitle>Courses</CardTitle>
             <CardDescription>Manage individual courses within each program.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
-              <Button size="sm" className="gap-1 w-full sm:w-auto" onClick={handleAddNew}>
+              <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 Add Course
               </Button>
@@ -126,7 +136,7 @@ export default function AdminCoursesPage() {
                 <TableCell>
                   <Badge variant="outline">{getProgramName(course.programId)}</Badge>
                 </TableCell>
-                <TableCell className="hidden md:table-cell max-w-xs truncate">{course.description}</TableCell>
+                <TableCell className="hidden max-w-xs truncate md:table-cell">{course.description}</TableCell>
                 <TableCell>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -140,7 +150,7 @@ export default function AdminCoursesPage() {
                       <DropdownMenuItem onClick={() => handleEdit(course)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>

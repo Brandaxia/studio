@@ -11,34 +11,58 @@ import Link from 'next/link';
 // Mock data, in a real app this would be fetched from a DB/CMS
 const programsData: Program[] = [
   {
-    id: '1',
-    title: 'Machine Learning Foundations',
-    description: 'Explore core ML concepts, from supervised learning to neural networks.',
+    id: 'p1',
+    title: 'Machine Learning Engineering',
+    description: 'Build a solid foundation in machine learning, from algorithms to deployment.',
     image: 'https://picsum.photos/600/400?random=1',
     aiHint: 'machine learning',
-    courseIds: ['c1', 'c2'],
+    courseIds: ['c1', 'c2', 'c3', 'c4'],
   },
   {
-    id: '2',
-    title: 'Natural Language Processing',
-    description: 'Build models that understand, process, and generate human language.',
+    id: 'p2',
+    title: 'NLP: From Text to Transformers',
+    description: 'Master the art of building models that understand and generate human language.',
     image: 'https://picsum.photos/600/400?random=2',
     aiHint: 'natural language processing',
-    courseIds: ['c3', 'c4'],
+    courseIds: ['c5', 'c6', 'c7'],
   },
   {
-    id: '3',
-    title: 'Computer Vision',
-    description: 'Teach computers to see and interpret the visual world with deep learning.',
+    id: 'p3',
+    title: 'Computer Vision & Image Analysis',
+    description: 'Teach computers to "see" and interpret the visual world.',
     image: 'https://picsum.photos/600/400?random=3',
     aiHint: 'computer vision',
-    courseIds: ['c5'],
+    courseIds: ['c8', 'c9', 'c10'],
+  },
+   {
+    id: 'p4',
+    title: 'Generative AI & Large Language Models',
+    description: 'Explore the cutting-edge of AI with generative models and LLMs.',
+    image: 'https://picsum.photos/600/400?random=4',
+    aiHint: 'generative ai',
+    courseIds: ['c11', 'c12', 'c13'],
   },
 ];
 
 const learningPathsData: LearningPath[] = [
-  { id: 'lp1', title: 'AI Engineer Path', description: 'A comprehensive path to becoming an AI Engineer, covering ML, NLP, and deployment.', programIds: ['1', '2'] },
-  { id: 'lp2', title: 'Data Scientist with Python', description: 'Master the skills to extract insights from data, combining ML and data analysis.', programIds: ['1'] },
+  { 
+    id: 'lp1', 
+    title: 'Foundations of AI Engineering', 
+    description: 'A comprehensive path covering foundational ML and NLP to start your career in AI.', 
+    programIds: ['p1', 'p2'] 
+  },
+  { 
+    id: 'lp2', 
+    title: 'Advanced AI Specialization', 
+    description: 'Deepen your expertise with advanced topics in computer vision and generative AI.', 
+    programIds: ['p3', 'p4'] 
+  },
+  {
+    id: 'lp3',
+    title: 'AI for Business & Product Leaders',
+    description: 'Understand the strategic implications of AI and how to lead AI-driven projects without deep technical expertise.',
+    programIds: ['p1', 'p4']
+  }
 ];
 
 
@@ -51,8 +75,8 @@ export default function LearningPathDetailPage({ params }: { params: { learningP
         <div className="flex min-h-screen w-full flex-col bg-background">
             <Header />
             <main className="flex-1">
-                <div className="container flex min-h-[calc(100vh-12rem)] items-center justify-center py-16 md:py-24">
-                    <div className="text-center">
+                <div className="container flex min-h-[calc(100vh-12rem)] items-center justify-center py-16 text-center md:py-24">
+                    <div>
                         <h1 className="text-4xl font-bold">Learning Path Not Found</h1>
                         <p className="mt-4 text-muted-foreground">Sorry, we couldn't find the learning path you're looking for.</p>
                     </div>

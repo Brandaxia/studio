@@ -28,30 +28,39 @@ import { ProgramForm } from './program-form';
 
 const initialPrograms: Program[] = [
   {
-    id: '1',
-    title: 'Machine Learning Foundations',
-    description: 'Explore core ML concepts, from supervised learning to neural networks.',
+    id: 'p1',
+    title: 'Machine Learning Engineering',
+    description: 'Build a solid foundation in machine learning, from algorithms to deployment.',
     image: 'https://picsum.photos/600/400?random=1',
     aiHint: 'machine learning',
-    courseIds: ['c1', 'c2'],
+    courseIds: ['c1', 'c2', 'c3', 'c4'],
   },
   {
-    id: '2',
-    title: 'Natural Language Processing',
-    description: 'Build models that understand, process, and generate human language.',
+    id: 'p2',
+    title: 'NLP: From Text to Transformers',
+    description: 'Master the art of building models that understand and generate human language.',
     image: 'https://picsum.photos/600/400?random=2',
     aiHint: 'natural language processing',
-    courseIds: ['c3', 'c4'],
+    courseIds: ['c5', 'c6', 'c7'],
   },
   {
-    id: '3',
-    title: 'Computer Vision',
-    description: 'Teach computers to see and interpret the visual world with deep learning.',
+    id: 'p3',
+    title: 'Computer Vision & Image Analysis',
+    description: 'Teach computers to "see" and interpret the visual world.',
     image: 'https://picsum.photos/600/400?random=3',
     aiHint: 'computer vision',
-    courseIds: ['c5'],
+    courseIds: ['c8', 'c9', 'c10'],
+  },
+   {
+    id: 'p4',
+    title: 'Generative AI & Large Language Models',
+    description: 'Explore the cutting-edge of AI with generative models and LLMs.',
+    image: 'https://picsum.photos/600/400?random=4',
+    aiHint: 'generative ai',
+    courseIds: ['c11', 'c12', 'c13'],
   },
 ];
+
 
 export default function AdminProgramsPage() {
   const [programs, setPrograms] = useState<Program[]>(initialPrograms);
@@ -62,7 +71,7 @@ export default function AdminProgramsPage() {
     if (selectedProgram) {
       setPrograms(programs.map(p => p.id === program.id ? program : p));
     } else {
-      setPrograms([...programs, { ...program, id: (programs.length + 1).toString() }]);
+      setPrograms([...programs, { ...program, id: `p${programs.length + 1}` }]);
     }
     setSelectedProgram(null);
     setIsFormOpen(false);
@@ -86,14 +95,14 @@ export default function AdminProgramsPage() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <CardTitle>Programs</CardTitle>
             <CardDescription>Manage the main educational programs.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
-              <Button size="sm" className="gap-1 w-full sm:w-auto" onClick={handleAddNew}>
+              <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 Add Program
               </Button>
@@ -130,7 +139,7 @@ export default function AdminProgramsPage() {
             {programs.map(program => (
               <TableRow key={program.id}>
                 <TableCell className="font-medium">{program.title}</TableCell>
-                <TableCell className="hidden md:table-cell max-w-xs truncate">{program.description}</TableCell>
+                <TableCell className="hidden max-w-xs truncate md:table-cell">{program.description}</TableCell>
                 <TableCell>{program.courseIds?.length || 0}</TableCell>
                 <TableCell>
                   <DropdownMenu>
@@ -145,7 +154,7 @@ export default function AdminProgramsPage() {
                       <DropdownMenuItem onClick={() => handleEdit(program)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>

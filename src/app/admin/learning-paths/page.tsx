@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/componentsui/table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,14 +27,31 @@ import type { LearningPath, Program } from '@/lib/types';
 import { LearningPathForm } from './learning-path-form';
 
 const initialPrograms: Program[] = [
-  { id: '1', title: 'Machine Learning Foundations', description: 'desc', image: 'url', aiHint: '' },
-  { id: '2', title: 'Natural Language Processing', description: 'desc', image: 'url', aiHint: '' },
-  { id: '3', title: 'Computer Vision', description: 'desc', image: 'url', aiHint: '' },
+  { id: 'p1', title: 'Machine Learning Engineering', description: 'desc', image: 'url', aiHint: ''},
+  { id: 'p2', title: 'NLP: From Text to Transformers', description: 'desc', image: 'url', aiHint: ''},
+  { id: 'p3', title: 'Computer Vision & Image Analysis', description: 'desc', image: 'url', aiHint: ''},
+  { id: 'p4', title: 'Generative AI & Large Language Models', description: 'desc', image: 'url', aiHint: ''},
 ];
 
 const initialLearningPaths: LearningPath[] = [
-  { id: 'lp1', title: 'AI Engineer Path', description: 'A comprehensive path to becoming an AI Engineer.', programIds: ['1'] },
-  { id: 'lp2', title: 'Data Scientist with Python', description: 'Combines ML and data analysis skills.', programIds: ['1', '2'] },
+  { 
+    id: 'lp1', 
+    title: 'Foundations of AI Engineering', 
+    description: 'A comprehensive path covering foundational ML and NLP to start your career in AI.', 
+    programIds: ['p1', 'p2'] 
+  },
+  { 
+    id: 'lp2', 
+    title: 'Advanced AI Specialization', 
+    description: 'Deepen your expertise with advanced topics in computer vision and generative AI.', 
+    programIds: ['p3', 'p4'] 
+  },
+  {
+    id: 'lp3',
+    title: 'AI for Business & Product Leaders',
+    description: 'Understand the strategic implications of AI and how to lead AI-driven projects without deep technical expertise.',
+    programIds: ['p1', 'p4']
+  }
 ];
 
 export default function AdminLearningPathsPage() {
@@ -70,14 +87,14 @@ export default function AdminLearningPathsPage() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <CardTitle>Learning Paths</CardTitle>
             <CardDescription>Manage curated sequences of programs for students.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
-              <Button size="sm" className="gap-1" onClick={handleAddNew}>
+              <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 Add Path
               </Button>
@@ -115,7 +132,7 @@ export default function AdminLearningPathsPage() {
             {learningPaths.map(lp => (
               <TableRow key={lp.id}>
                 <TableCell className="font-medium">{lp.title}</TableCell>
-                <TableCell className="hidden md:table-cell max-w-sm truncate">{lp.description}</TableCell>
+                <TableCell className="hidden max-w-sm truncate md:table-cell">{lp.description}</TableCell>
                  <TableCell>{lp.programIds.length}</TableCell>
                 <TableCell>
                   <DropdownMenu>
@@ -130,7 +147,7 @@ export default function AdminLearningPathsPage() {
                       <DropdownMenuItem onClick={() => handleEdit(lp)}>Edit</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Delete</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
