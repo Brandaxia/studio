@@ -11,9 +11,9 @@ export function Hero() {
           Master the Future of AI
         </h1>
         <p className="mt-4 max-w-2xl text-base text-primary-foreground/80 md:text-xl">
-          Explore the frontiers of Artificial Intelligence with our expert-led programs, designed to build the next generation of AI leaders.
+          Explora las fronteras de la Inteligencia Artificial con nuestros programas dirigidos por expertos, diseñados para formar a la próxima generación de líderes en IA.
         </p>
-        <Button size="lg" className="mt-8" asChild>
+        <Button size="lg" className="mt-8 bg-primary text-primary-foreground transition-all hover:bg-primary/90" asChild>
           <Link href="#programas">Explore Programs</Link>
         </Button>
       </div>
