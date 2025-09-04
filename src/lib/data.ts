@@ -13,7 +13,7 @@ export const initialPrograms: Program[] = [
     title: 'AI Fundamentals: A Practical Introduction',
     description: 'A program for everyone. Demystify artificial intelligence and understand its real-world impact on society, business, and daily life. No coding background required. Learn the key concepts, recognize different types of AI, and discuss its future. Audience: General public, students, non-technical professionals.',
     image: 'https://picsum.photos/600/400?random=18',
-    aiHint: 'abstract shapes',
+    aiHint: 'abstract shapes technology',
     courseIds: ['c22', 'c23'],
   },
   {
@@ -21,7 +21,7 @@ export const initialPrograms: Program[] = [
     title: 'Creative AI: Art, Design, and Storytelling',
     description: 'Unleash your creativity with AI. This program is for artists, designers, writers, and marketers who want to leverage generative tools for image creation, music composition, and narrative generation. Focus is on practical application and creative workflows. Audience: Artists, designers, marketers, storytellers.',
     image: 'https://picsum.photos/600/400?random=19',
-    aiHint: 'digital art',
+    aiHint: 'digital art creative',
     courseIds: ['c24', 'c25', 'c26'],
   },
   {
@@ -37,7 +37,7 @@ export const initialPrograms: Program[] = [
     title: 'Computational Thinking Foundations',
     description: 'The essential prerequisite for a technical career in AI. This program builds the foundational mental models of computing, including logic, algorithms, data structures, and problem decomposition, without deep diving into a specific programming language. Audience: Aspiring programmers, pre-engineering students, anyone preparing for technical AI studies.',
     image: 'https://picsum.photos/600/400?random=22',
-    aiHint: 'flowchart diagram',
+    aiHint: 'flowchart diagram logic',
     courseIds: ['c31', 'c32', 'c33'],
   },
   {
@@ -71,7 +71,7 @@ export const initialPrograms: Program[] = [
     title: 'Computer Vision & Image Analysis',
     description: 'Learn to build systems that "see" and interpret the visual world. This program spans from fundamental image processing to advanced deep learning techniques for object detection, segmentation, and video analysis. Audience: Engineers, data scientists, robotics specialists.',
     image: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'computer vision',
+    aiHint: 'computer vision recognition',
     courseIds: ['c8', 'c9', 'c10'],
   },
    {
@@ -79,7 +79,7 @@ export const initialPrograms: Program[] = [
     title: 'Generative AI & Large Language Models',
     description: 'Explore the cutting-edge of content creation and reasoning. This program is for those who want to understand, build, and utilize generative models like VAEs, GANs, and especially LLMs for novel applications. Audience: AI researchers, creative technologists, product leaders.',
     image: 'https://picsum.photos/600/400?random=4',
-    aiHint: 'generative ai',
+    aiHint: 'generative ai abstract',
     courseIds: ['c11', 'c12', 'c13'],
   },
   {
@@ -87,7 +87,7 @@ export const initialPrograms: Program[] = [
     title: 'AI Ethics & Governance',
     description: 'A critical program for a new generation of responsible AI practitioners. It covers frameworks for fairness, accountability, transparency, and the societal impact of AI systems, preparing students to lead and implement responsible AI policies. Audience: Ethicists, policy makers, product managers, AI engineers.',
     image: 'https://picsum.photos/600/400?random=15',
-    aiHint: 'ethics governance',
+    aiHint: 'ethics governance balance',
     courseIds: ['c14', 'c15', 'c16', 'c48'],
   },
   {
@@ -95,7 +95,7 @@ export const initialPrograms: Program[] = [
     title: 'Reinforcement Learning (RL)',
     description: 'Master the science of building agents that learn to make optimal decisions through trial and error. This program covers everything from foundational Markov Decision Processes to deep RL algorithms like DQN and PPO. Audience: AI researchers, robotics engineers, game developers.',
     image: 'https://picsum.photos/600/400?random=16',
-    aiHint: 'reinforcement learning',
+    aiHint: 'reinforcement learning path',
     courseIds: ['c17', 'c18', 'c19'],
   },
   {
@@ -103,7 +103,7 @@ export const initialPrograms: Program[] = [
     title: 'AI for Finance (FinTech)',
     description: 'A specialized program applying AI to the financial industry. It covers algorithmic trading, credit scoring, fraud detection, and risk management using machine learning and time-series analysis. Audience: Financial analysts, data scientists, FinTech developers.',
     image: 'https://picsum.photos/600/400?random=17',
-    aiHint: 'ai finance',
+    aiHint: 'ai finance fintech',
     courseIds: ['c20', 'c21', 'c47'],
   },
   {
@@ -111,7 +111,7 @@ export const initialPrograms: Program[] = [
     title: 'AI for Health (HealthTech)',
     description: 'Discover how AI is revolutionizing healthcare, from diagnostic imaging and drug discovery to personalized medicine. This program is designed for medical professionals, data scientists, and engineers looking to innovate in the HealthTech space. Audience: Clinicians, researchers, medical informaticists, developers.',
     image: 'https://picsum.photos/600/400?random=21',
-    aiHint: 'ai healthcare',
+    aiHint: 'ai healthcare medical',
     courseIds: ['c28', 'c29', 'c44', 'c45'],
   },
   {
@@ -119,7 +119,7 @@ export const initialPrograms: Program[] = [
     title: 'AI for Science & Research',
     description: 'Accelerate discovery by applying AI to scientific challenges. This program covers the use of machine learning for data analysis, hypothesis generation, and simulation in fields like biology, physics, and climate science. Audience: PhDs, academic researchers, R&D scientists.',
     image: 'https://picsum.photos/600/400?random=23',
-    aiHint: 'scientific research',
+    aiHint: 'scientific research lab',
     courseIds: ['c34', 'c35', 'c36'],
   },
   {
@@ -127,7 +127,7 @@ export const initialPrograms: Program[] = [
     title: 'Advanced Robotics & Embodied AI',
     description: 'Explore the intersection of AI and robotics. This program focuses on algorithms for perception, navigation, manipulation, and control, enabling the creation of intelligent physical systems. Audience: Robotics engineers, PhD students in robotics/AI.',
     image: 'https://picsum.photos/600/400?random=24',
-    aiHint: 'robotics arm',
+    aiHint: 'robotics arm industrial',
     courseIds: ['c37', 'c38', 'c39', 'c40', 'c41', 'c49'],
   },
 ];
@@ -364,21 +364,21 @@ export const initialInstructors: Instructor[] = [
     name: 'Dr. Evelyn Reed',
     title: 'Principal AI Scientist, ML Engineering',
     avatar: 'https://picsum.photos/100/100?random=4',
-    aiHint: 'female scientist',
+    aiHint: 'female scientist portrait',
   },
   {
     id: '2',
     name: 'Dr. Kenji Tanaka',
     title: 'Head of NLP Research',
     avatar: 'https://picsum.photos/100/100?random=5',
-    aiHint: 'male researcher',
+    aiHint: 'male researcher asian',
   },
   {
     id: '3',
     name: 'Dr. Lena Petrova',
     title: 'Computer Vision Architect',
     avatar: 'https://picsum.photos/100/100?random=6',
-    aiHint: 'creative technologist',
+    aiHint: 'creative technologist woman',
   },
 ];
 
@@ -389,7 +389,7 @@ export const initialTestimonials: Testimonial[] = [
       name: 'Alex C.',
       program: 'p2',
       avatar: 'https://picsum.photos/100/100?random=7',
-      aiHint: 'happy person'
+      aiHint: 'happy person face'
     },
     {
       id: '2',
@@ -397,7 +397,7 @@ export const initialTestimonials: Testimonial[] = [
       name: 'Brenda K.',
       program: 'p1',
       avatar: 'https://picsum.photos/100/100?random=8',
-      aiHint: 'smiling student'
+      aiHint: 'smiling student female'
     },
     {
       id: '3',
@@ -405,7 +405,7 @@ export const initialTestimonials: Testimonial[] = [
       name: 'Carlos M.',
       program: 'p3',
       avatar: 'https://picsum.photos/100/100?random=9',
-      aiHint: 'joyful man'
+      aiHint: 'joyful man portrait'
     },
 ];
 
@@ -439,7 +439,7 @@ export const initialStudents: Student[] = [
     email: 'kaelen@email.com',
     avatar: 'https://picsum.photos/100/100?random=11',
     enrolledDate: '2023-10-15',
-    aiHint: 'male student',
+    aiHint: 'male student face',
   },
   {
     id: '2',
@@ -447,7 +447,7 @@ export const initialStudents: Student[] = [
     email: 'seraphina@email.com',
     avatar: 'https://picsum.photos/100/100?random=12',
     enrolledDate: '2023-11-01',
-    aiHint: 'female student',
+    aiHint: 'female student face',
   },
    {
     id: '3',
@@ -455,7 +455,7 @@ export const initialStudents: Student[] = [
     email: 'max@email.com',
     avatar: 'https://picsum.photos/100/100?random=13',
     enrolledDate: '2023-11-20',
-    aiHint: 'focused student',
+    aiHint: 'focused student male',
   },
    {
     id: '4',
@@ -463,7 +463,7 @@ export const initialStudents: Student[] = [
     email: 'elara@email.com',
     avatar: 'https://picsum.photos/100/100?random=14',
     enrolledDate: '2024-01-05',
-    aiHint: 'smiling woman',
+    aiHint: 'smiling woman portrait',
   },
 ];
 
@@ -480,7 +480,7 @@ export const initialIntegrations: Integration[] = [
     apiKey: 'moodle-token-xxxxxxxxxxxxxx',
     enabled: false,
   },
-  {
+    {
     id: '3',
     name: 'n8n',
     apiKey: 'n8n-token-xxxxxxxxxxxxxxxx',

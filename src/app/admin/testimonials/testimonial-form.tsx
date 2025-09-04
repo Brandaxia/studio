@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import type { Testimonial, Program } from '@/lib/types';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { initialPrograms } from '@/lib/data';
 
@@ -29,8 +29,9 @@ const formSchema = z.object({
 
 type TestimonialFormValues = z.infer<typeof formSchema>;
 
+const programs: Program[] = initialPrograms;
+
 export function TestimonialForm({ testimonial, onSave, onCancel }: TestimonialFormProps) {
-  const [programs] = useState<Program[]>(initialPrograms);
   const form = useForm<TestimonialFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {

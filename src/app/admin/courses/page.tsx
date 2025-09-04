@@ -111,7 +111,7 @@ export default function AdminCoursesPage() {
               <TableRow key={course.id}>
                 <TableCell className="font-medium">{course.title}</TableCell>
                 <TableCell>
-                  <Badge variant="outline" className="text-xs">{getProgramName(course.programId)}</Badge>
+                  <Badge variant="outline" className="font-semibold">{getProgramName(course.programId)}</Badge>
                 </TableCell>
                 <TableCell className="hidden max-w-xs truncate md:table-cell">{course.description}</TableCell>
                 <TableCell>
@@ -127,7 +127,7 @@ export default function AdminCoursesPage() {
                       <DropdownMenuItem onClick={() => handleEdit(course)}>Editar</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Eliminar</Button>
+                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600 relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>

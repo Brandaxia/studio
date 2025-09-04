@@ -115,14 +115,14 @@ export default function AdminIntegrationsPage() {
       {/* Third-Party Integrations Card */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <CardTitle>Integraciones con Terceros</CardTitle>
               <CardDescription>Gestioná las conexiones a servicios externos como Google AI y Moodle.</CardDescription>
             </div>
              <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
                 <DialogTrigger asChild>
-                    <Button size="sm" className="gap-1" onClick={handleAddNew}>
+                    <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                         <PlusCircle className="h-3.5 w-3.5" />
                         Añadir Integración
                     </Button>
@@ -199,12 +199,12 @@ export default function AdminIntegrationsPage() {
       {/* Academy API Keys Card */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <CardTitle>Claves API de la Academia</CardTitle>
               <CardDescription>Generá y gestioná claves API para acceso externo a la plataforma de la academia.</CardDescription>
             </div>
-            <Button size="sm" className="gap-1" onClick={handleGenerateNewKey}>
+            <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleGenerateNewKey}>
               <PlusCircle className="h-3.5 w-3.5" />
               Generar Nueva Clave API
             </Button>
@@ -247,7 +247,7 @@ export default function AdminIntegrationsPage() {
                         <DropdownMenuSeparator />
                         <Dialog>
                           <DialogTrigger asChild>
-                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Revocar</Button>
+                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Revocar</Button>
                           </DialogTrigger>
                            <DialogContent>
                             <DialogHeader>
