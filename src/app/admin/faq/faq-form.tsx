@@ -27,21 +27,17 @@ type FaqFormValues = z.infer<typeof formSchema>;
 export function FaqForm({ faq, onSave, onCancel }: FaqFormProps) {
   const form = useForm<FaqFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: faq || {
       question: '',
       answer: '',
     },
   });
   
   useEffect(() => {
-    if (faq) {
-        form.reset(faq);
-    } else {
-        form.reset({
-            question: '',
-            answer: '',
-        });
-    }
+    form.reset(faq || {
+        question: '',
+        answer: '',
+    });
   }, [faq, form]);
 
 

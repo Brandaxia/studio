@@ -32,7 +32,7 @@ type LearningPathFormValues = z.infer<typeof formSchema>;
 export function LearningPathForm({ learningPath, programs, onSave, onCancel }: LearningPathFormProps) {
   const form = useForm<LearningPathFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: learningPath || {
       title: '',
       description: '',
       programIds: [],
@@ -40,15 +40,11 @@ export function LearningPathForm({ learningPath, programs, onSave, onCancel }: L
   });
   
   useEffect(() => {
-    if (learningPath) {
-        form.reset(learningPath);
-    } else {
-        form.reset({
-            title: '',
-            description: '',
-            programIds: [],
-        });
-    }
+    form.reset(learningPath || {
+      title: '',
+      description: '',
+      programIds: [],
+    });
   }, [learningPath, form]);
 
 

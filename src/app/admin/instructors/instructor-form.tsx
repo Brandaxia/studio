@@ -28,7 +28,7 @@ type InstructorFormValues = z.infer<typeof formSchema>;
 export function InstructorForm({ instructor, onSave, onCancel }: InstructorFormProps) {
   const form = useForm<InstructorFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: instructor || {
       name: '',
       title: '',
       avatar: '',
@@ -37,16 +37,12 @@ export function InstructorForm({ instructor, onSave, onCancel }: InstructorFormP
   });
   
   useEffect(() => {
-    if (instructor) {
-        form.reset(instructor);
-    } else {
-        form.reset({
-            name: '',
-            title: '',
-            avatar: '',
-            aiHint: '',
-        });
-    }
+    form.reset(instructor || {
+      name: '',
+      title: '',
+      avatar: '',
+      aiHint: '',
+    });
   }, [instructor, form]);
 
 

@@ -29,7 +29,7 @@ type ProgramFormValues = z.infer<typeof formSchema>;
 export function ProgramForm({ program, onSave, onCancel }: ProgramFormProps) {
   const form = useForm<ProgramFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: program || {
       title: '',
       description: '',
       image: '',
@@ -38,16 +38,12 @@ export function ProgramForm({ program, onSave, onCancel }: ProgramFormProps) {
   });
   
   useEffect(() => {
-    if (program) {
-        form.reset(program);
-    } else {
-        form.reset({
-            title: '',
-            description: '',
-            image: '',
-            aiHint: '',
-        });
-    }
+    form.reset(program || {
+      title: '',
+      description: '',
+      image: '',
+      aiHint: '',
+    });
   }, [program, form]);
 
 

@@ -28,7 +28,7 @@ type NotebookFormValues = z.infer<typeof formSchema>;
 export function NotebookForm({ notebook, onSave, onCancel }: NotebookFormProps) {
   const form = useForm<NotebookFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: notebook || {
       title: '',
       description: '',
       url: '',
@@ -36,15 +36,11 @@ export function NotebookForm({ notebook, onSave, onCancel }: NotebookFormProps) 
   });
   
   useEffect(() => {
-    if (notebook) {
-        form.reset(notebook);
-    } else {
-        form.reset({
-            title: '',
-            description: '',
-            url: '',
-        });
-    }
+    form.reset(notebook || {
+        title: '',
+        description: '',
+        url: '',
+    });
   }, [notebook, form]);
 
 

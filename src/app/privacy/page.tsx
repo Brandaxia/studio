@@ -1,17 +1,9 @@
 
-'use client';
-
-import { useState, useEffect } from 'react';
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export default function PrivacyPolicyPage() {
-  const [lastUpdated, setLastUpdated] = useState('');
-
-  useEffect(() => {
-    setLastUpdated(new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }));
-  }, []);
-
+  const lastUpdated = new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' });
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-background">
@@ -60,7 +52,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <p className="text-sm text-muted-foreground">
-              {lastUpdated ? `Última actualización: ${lastUpdated}`: 'Cargando...'}
+              Última actualización: {lastUpdated}
             </p>
           </div>
         </div>

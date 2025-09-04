@@ -28,7 +28,7 @@ type StudentFormValues = z.infer<typeof formSchema>;
 export function StudentForm({ student, onSave, onCancel }: StudentFormProps) {
   const form = useForm<StudentFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: student || {
       name: '',
       email: '',
       avatar: '',
@@ -37,16 +37,12 @@ export function StudentForm({ student, onSave, onCancel }: StudentFormProps) {
   });
   
   useEffect(() => {
-    if (student) {
-        form.reset(student);
-    } else {
-        form.reset({
-            name: '',
-            email: '',
-            avatar: '',
-            aiHint: '',
-        });
-    }
+    form.reset(student || {
+      name: '',
+      email: '',
+      avatar: '',
+      aiHint: '',
+    });
   }, [student, form]);
 
 

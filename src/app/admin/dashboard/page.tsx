@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
-import { BookOpen, Users, MessageSquareQuote, HelpCircle, GraduationCap, GitMerge, SwatchBook, Puzzle, Notebook, LucideIcon } from "lucide-react";
+import { BookOpen, Users, HelpCircle, GraduationCap, GitMerge, SwatchBook, Puzzle, Notebook, LucideIcon } from "lucide-react";
 import { initialCourses, initialLearningPaths, initialPrograms, initialNotebooks, initialFaqs, initialInstructors, initialStudents, initialIntegrations } from "@/lib/data";
 
 interface DashboardCardProps {
@@ -37,7 +36,6 @@ export default function AdminDashboardPage() {
     { title: 'Notebooks', icon: Notebook, count: initialNotebooks.length, label: 'Notebooks de Colab', href: '/admin/notebooks' },
     { title: 'Instructores', icon: Users, count: initialInstructors.length, label: 'Instructores registrados', href: '/admin/instructors' },
     { title: 'Alumnos', icon: GraduationCap, count: initialStudents.length, label: 'Alumnos inscriptos', href: '/admin/students' },
-    { title: 'Testimonios', icon: MessageSquareQuote, count: initialTestimonials.length, label: 'Testimonios publicados', href: '/admin/testimonials' },
     { title: 'Preguntas Frecuentes', icon: HelpCircle, count: initialFaqs.length, label: 'Preguntas publicadas', href: '/admin/faq' },
     { title: 'Integraciones', icon: Puzzle, count: initialIntegrations.length, label: 'Integraciones activas', href: '/admin/integrations' },
   ];

@@ -30,7 +30,7 @@ type CourseFormValues = z.infer<typeof formSchema>;
 export function CourseForm({ course, programs, onSave, onCancel }: CourseFormProps) {
   const form = useForm<CourseFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: course || {
       title: '',
       description: '',
       programId: '',
@@ -38,15 +38,11 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
   });
   
   useEffect(() => {
-    if (course) {
-        form.reset(course);
-    } else {
-        form.reset({
-            title: '',
-            description: '',
-            programId: '',
-        });
-    }
+    form.reset(course || {
+      title: '',
+      description: '',
+      programId: '',
+    });
   }, [course, form]);
 
 
