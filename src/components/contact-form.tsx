@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useState } from "react";
@@ -36,9 +37,9 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmissionError(false);
     
+    // In a real app, this would be process.env.NEXT_PUBLIC_API_URL
+    const apiUrl = '/api/contact'; 
     try {
-      // In a real app, this would be process.env.NEXT_PUBLIC_API_URL
-      const apiUrl = '/api/contact'; 
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

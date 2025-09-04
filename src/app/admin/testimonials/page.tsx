@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState } from 'react';
@@ -23,14 +24,14 @@ import {
   DialogClose,
 } from '@/components/ui/dialog';
 import { MoreHorizontal, PlusCircle } from 'lucide-react';
-import type { Testimonial, Program } from '@/lib/types';
+import type { Testimonial } from '@/lib/types';
 import { TestimonialForm } from './testimonial-form';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { initialTestimonials, initialPrograms } from '@/lib/data';
+import Link from 'next/link';
 
 export default function AdminTestimonialsPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>(initialTestimonials);
-  const [programs] = useState<Program[]>(initialPrograms);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null);
 
@@ -87,7 +88,7 @@ export default function AdminTestimonialsPage() {
               </DialogHeader>
               <TestimonialForm 
                 testimonial={selectedTestimonial}
-                programs={programs}
+                programs={initialPrograms}
                 onSave={handleSaveTestimonial}
                 onCancel={() => setIsFormOpen(false)}
               />
@@ -119,7 +120,11 @@ export default function AdminTestimonialsPage() {
                       {testimonial.name}
                   </TableCell>
                   <TableCell className="max-w-sm truncate italic">"{testimonial.quote}"</TableCell>
-                   <TableCell>{getProgramTitle(testimonial.program)}</TableCell>
+                   <TableCell>
+                      <Link href={`/programs/${testimonial.program}`} className="hover:underline">
+                        {getProgramTitle(testimonial.program)}
+                      </Link>
+                    </TableCell>
                   <TableCell>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
