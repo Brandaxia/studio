@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import type { Notebook } from '@/lib/types';
@@ -63,6 +63,9 @@ export function NotebookForm({ notebook, onSave, onCancel }: NotebookFormProps) 
               <FormControl>
                 <Input placeholder="Ej: Introducción a Tensores" {...field} />
               </FormControl>
+              <FormDescription>
+                El nombre del notebook.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -76,6 +79,9 @@ export function NotebookForm({ notebook, onSave, onCancel }: NotebookFormProps) 
               <FormControl>
                 <Textarea placeholder="Describí el contenido y los objetivos del notebook..." {...field} />
               </FormControl>
+              <FormDescription>
+                Un resumen del contenido del notebook.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -89,6 +95,9 @@ export function NotebookForm({ notebook, onSave, onCancel }: NotebookFormProps) 
               <FormControl>
                 <Input placeholder="https://colab.research.google.com/..." {...field} />
               </FormControl>
+               <FormDescription>
+                El enlace directo al notebook en Google Colab.
+              </FormDescription>
                <FormMessage />
             </FormItem>
           )}

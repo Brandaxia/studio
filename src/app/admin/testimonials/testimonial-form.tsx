@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import type { Testimonial, Program } from '@/lib/types';
@@ -71,6 +71,9 @@ export function TestimonialForm({ testimonial, programs, onSave, onCancel }: Tes
               <FormControl>
                 <Textarea placeholder="El testimonio del alumno..." {...field} />
               </FormControl>
+              <FormDescription>
+                La cita textual del testimonio.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -84,6 +87,9 @@ export function TestimonialForm({ testimonial, programs, onSave, onCancel }: Tes
               <FormControl>
                 <Input placeholder="Nombre del alumno" {...field} />
               </FormControl>
+              <FormDescription>
+                El nombre de la persona que da el testimonio.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -106,6 +112,9 @@ export function TestimonialForm({ testimonial, programs, onSave, onCancel }: Tes
                   ))}
                 </SelectContent>
               </Select>
+              <FormDescription>
+                El programa al que se asocia el testimonio.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -119,6 +128,9 @@ export function TestimonialForm({ testimonial, programs, onSave, onCancel }: Tes
               <FormControl>
                 <Input placeholder="https://example.com/avatar.jpg" {...field} />
               </FormControl>
+              <FormDescription>
+                 Un enlace a una imagen de perfil (cuadrada).
+              </FormDescription>
                <FormMessage />
             </FormItem>
           )}
@@ -132,6 +144,9 @@ export function TestimonialForm({ testimonial, programs, onSave, onCancel }: Tes
               <FormControl>
                 <Input placeholder="Ej: happy person" {...field} />
               </FormControl>
+              <FormDescription>
+                Palabras clave para una posible generación de imagen por IA.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import type { Student } from '@/lib/types';
 import { useEffect } from 'react';
@@ -66,6 +66,9 @@ export function StudentForm({ student, onSave, onCancel }: StudentFormProps) {
               <FormControl>
                 <Input placeholder="Nombre del alumno" {...field} />
               </FormControl>
+              <FormDescription>
+                El nombre completo del alumno.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -79,6 +82,9 @@ export function StudentForm({ student, onSave, onCancel }: StudentFormProps) {
               <FormControl>
                 <Input type="email" placeholder="alumno@email.com" {...field} />
               </FormControl>
+              <FormDescription>
+                La dirección de correo del alumno.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -92,6 +98,9 @@ export function StudentForm({ student, onSave, onCancel }: StudentFormProps) {
               <FormControl>
                 <Input placeholder="https://example.com/avatar.jpg" {...field} />
               </FormControl>
+              <FormDescription>
+                Un enlace a una imagen de perfil (cuadrada).
+              </FormDescription>
                <FormMessage />
             </FormItem>
           )}
@@ -105,6 +114,9 @@ export function StudentForm({ student, onSave, onCancel }: StudentFormProps) {
               <FormControl>
                 <Input placeholder="Ej: male student" {...field} />
               </FormControl>
+              <FormDescription>
+                Palabras clave para una posible generación de imagen por IA.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

@@ -67,6 +67,9 @@ export function LearningPathForm({ learningPath, programs, onSave, onCancel }: L
               <FormControl>
                 <Input placeholder="Ej: Camino del Conocimiento Esotérico" {...field} />
               </FormControl>
+              <FormDescription>
+                El nombre de la ruta de aprendizaje.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -80,6 +83,9 @@ export function LearningPathForm({ learningPath, programs, onSave, onCancel }: L
               <FormControl>
                 <Textarea placeholder="Describí el objetivo de esta ruta de aprendizaje..." {...field} />
               </FormControl>
+              <FormDescription>
+                Un resumen del propósito y el público objetivo.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

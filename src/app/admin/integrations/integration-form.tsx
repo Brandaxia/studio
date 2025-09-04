@@ -13,7 +13,7 @@ import { Switch } from '@/components/ui/switch';
 
 interface IntegrationFormProps {
   integration: Integration | null;
-  onSave: (integration: Omit<Integration, 'id'>) => void;
+  onSave: (integrationData: Omit<Integration, 'id'>) => void;
   onCancel: () => void;
 }
 
@@ -61,7 +61,7 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
                 <Input placeholder="Ej: Zapier" {...field} disabled={!!integration}/>
               </FormControl>
               <FormDescription>
-                El nombre del servicio de terceros.
+                El nombre del servicio de terceros. No puede cambiarse.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -76,6 +76,9 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
               <FormControl>
                 <Input placeholder="Ingresá la clave API del servicio" {...field} />
               </FormControl>
+              <FormDescription>
+                La credencial para conectar con el servicio.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -87,6 +90,9 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
              <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
               <div className="space-y-0.5">
                 <FormLabel>Activar Integración</FormLabel>
+                 <FormDescription>
+                  Permitir que la academia utilice esta integración.
+                </FormDescription>
               </div>
               <FormControl>
                 <Switch

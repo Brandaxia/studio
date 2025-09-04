@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import type { FaqItem } from '@/lib/types';
@@ -60,6 +60,9 @@ export function FaqForm({ faq, onSave, onCancel }: FaqFormProps) {
               <FormControl>
                 <Input placeholder="¿Cuál es la pregunta?" {...field} />
               </FormControl>
+              <FormDescription>
+                La pregunta que un usuario podría tener.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -73,6 +76,9 @@ export function FaqForm({ faq, onSave, onCancel }: FaqFormProps) {
               <FormControl>
                 <Textarea placeholder="La respuesta a la pregunta..." {...field} />
               </FormControl>
+              <FormDescription>
+                La respuesta clara y concisa a la pregunta.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

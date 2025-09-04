@@ -58,6 +58,38 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
+          name="title"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Título del Curso</FormLabel>
+              <FormControl>
+                <Input placeholder="Ej: Introducción a Transformers" {...field} />
+              </FormControl>
+              <FormDescription>
+                El nombre principal del curso.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="description"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Descripción del Curso</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Describí brevemente el contenido del curso..." {...field} />
+              </FormControl>
+              <FormDescription>
+                Un resumen conciso de lo que se aprenderá.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="programId"
           render={({ field }) => (
             <FormItem>
@@ -77,32 +109,6 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
               <FormDescription>
                 El curso pertenecerá a este programa.
               </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="title"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Título del Curso</FormLabel>
-              <FormControl>
-                <Input placeholder="Ej: Introducción a Transformers" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="description"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Descripción del Curso</FormLabel>
-              <FormControl>
-                <Textarea placeholder="Describí brevemente el contenido del curso..." {...field} />
-              </FormControl>
               <FormMessage />
             </FormItem>
           )}

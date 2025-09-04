@@ -75,7 +75,7 @@ export default function AdminIntegrationsPage() {
   };
   
   const maskApiKey = (key: string) => {
-    if (key.length < 8) return key;
+    if (key.length <= 8) return '****';
     return `${key.substring(0, 4)}...${key.substring(key.length - 4)}`;
   }
 

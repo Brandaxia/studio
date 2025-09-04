@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import type { Program } from '@/lib/types';
@@ -67,6 +67,9 @@ export function ProgramForm({ program, onSave, onCancel }: ProgramFormProps) {
               <FormControl>
                 <Input placeholder="Título del programa" {...field} />
               </FormControl>
+              <FormDescription>
+                El nombre principal del programa.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -80,6 +83,9 @@ export function ProgramForm({ program, onSave, onCancel }: ProgramFormProps) {
               <FormControl>
                 <Textarea placeholder="Descripción detallada" {...field} />
               </FormControl>
+              <FormDescription>
+                Un resumen del contenido y objetivos del programa.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -93,6 +99,9 @@ export function ProgramForm({ program, onSave, onCancel }: ProgramFormProps) {
               <FormControl>
                 <Input placeholder="https://example.com/image.jpg" {...field} />
               </FormControl>
+              <FormDescription>
+                Un enlace a una imagen representativa.
+              </FormDescription>
                <FormMessage />
             </FormItem>
           )}
@@ -106,6 +115,9 @@ export function ProgramForm({ program, onSave, onCancel }: ProgramFormProps) {
               <FormControl>
                 <Input placeholder="Ej: ancient library" {...field} />
               </FormControl>
+              <FormDescription>
+                Palabras clave para una posible generación de imagen por IA.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
