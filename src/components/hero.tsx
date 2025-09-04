@@ -13,7 +13,7 @@ export function Hero() {
         <p className="mt-4 max-w-2xl text-base text-primary-foreground/80 md:text-xl">
           Explorá las fronteras de la Inteligencia Artificial con nuestros programas dirigidos por expertos, diseñados para formar a la próxima generación de líderes en IA.
         </p>
-        <Button size="lg" className="mt-8 bg-primary text-primary-foreground transition-all hover:bg-primary/90" asChild>
+        <Button size="lg" className="mt-8 transition-all" asChild>
           <Link href="#programas">Explorar Programas</Link>
         </Button>
       </div>

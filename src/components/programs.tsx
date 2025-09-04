@@ -29,7 +29,7 @@ export function Programs({ programs }: ProgramsProps) {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {programs.map((program) => (
-            <Card key={program.id} className="flex flex-col overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+            <Card key={program.id} className="flex flex-col overflow-hidden rounded-2xl shadow-2xl transition-all hover:scale-105">
               <CardHeader className="p-0">
                 <div className="relative h-56 w-full">
                   <Image
