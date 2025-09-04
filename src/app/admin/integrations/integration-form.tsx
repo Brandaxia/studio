@@ -13,7 +13,7 @@ import { Switch } from '@/components/ui/switch';
 
 interface IntegrationFormProps {
   integration: Integration | null;
-  onSave: (integration: Omit<Integration, 'id'> | Integration) => void;
+  onSave: (integration: Omit<Integration, 'id'>) => void;
   onCancel: () => void;
 }
 
@@ -45,14 +45,7 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
 
 
   const onSubmit = (values: IntegrationFormValues) => {
-    if (integration) {
-        onSave({
-            ...integration,
-            ...values,
-        });
-    } else {
-        onSave(values);
-    }
+    onSave(values);
   };
 
   return (

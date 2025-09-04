@@ -44,10 +44,10 @@ export default function AdminIntegrationsPage() {
   const [copied, setCopied] = useState(false);
 
   // Handlers for third-party integrations
-  const handleSaveIntegration = (integrationData: Omit<Integration, 'id'> | Integration) => {
-    if ('id' in integrationData) {
+  const handleSaveIntegration = (integrationData: Omit<Integration, 'id'>) => {
+    if (selectedIntegration) {
       // Editing existing integration
-      setIntegrations(integrations.map(i => i.id === integrationData.id ? integrationData : i));
+      setIntegrations(integrations.map(i => i.id === selectedIntegration.id ? { ...selectedIntegration, ...integrationData } : i));
     } else {
       // Adding new integration
       const newIntegration: Integration = {
