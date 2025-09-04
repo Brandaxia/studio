@@ -91,73 +91,83 @@ export default function AdminNotebooksPage() {
         </div>
       </CardHeader>
       <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Título</TableHead>
-              <TableHead className="hidden md:table-cell">Descripción</TableHead>
-              <TableHead>
-                <span className="sr-only">Acciones</span>
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {notebooks.map(notebook => (
-              <TableRow key={notebook.id}>
-                <TableCell className="font-medium">
-                  <Link href={notebook.url} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2">
-                    {notebook.title}
-                    <ExternalLink className="h-3 w-3 text-muted-foreground" />
-                  </Link>
-                </TableCell>
-                <TableCell className="hidden md:table-cell max-w-sm truncate">{notebook.description}</TableCell>
-                <TableCell>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button aria-haspopup="true" size="icon" variant="ghost">
-                        <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Menú de acciones</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(notebook)}>Editar</DropdownMenuItem>
-                       <DropdownMenuItem asChild>
-                        <Link href={notebook.url} target="_blank" rel="noopener noreferrer">
-                          Abrir en Colab
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuSeparator />
-                       <Dialog>
-                        <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
-                        </DialogTrigger>
-                         <DialogContent>
-                          <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
-                            <DialogDescription>
-                              Esta acción no se puede deshacer. Se eliminará permanentemente el notebook.
-                            </DialogDescription>
-                          </DialogHeader>
-                          <DialogFooter>
-                            <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
-                            </DialogClose>
-                            <DialogClose asChild>
-                               <Button variant="destructive" onClick={() => handleDelete(notebook.id)}>
-                                 Eliminar
-                               </Button>
-                            </DialogClose>
-                          </DialogFooter>
-                        </DialogContent>
-                      </Dialog>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </TableCell>
+        {notebooks.length > 0 ? (
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Título</TableHead>
+                <TableHead className="hidden md:table-cell">Descripción</TableHead>
+                <TableHead>
+                  <span className="sr-only">Acciones</span>
+                </TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {notebooks.map(notebook => (
+                <TableRow key={notebook.id}>
+                  <TableCell className="font-medium">
+                    <Link href={notebook.url} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2">
+                      {notebook.title}
+                      <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                    </Link>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell max-w-sm truncate">{notebook.description}</TableCell>
+                  <TableCell>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button aria-haspopup="true" size="icon" variant="ghost">
+                          <MoreHorizontal className="h-4 w-4" />
+                          <span className="sr-only">Menú de acciones</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                        <DropdownMenuItem onClick={() => handleEdit(notebook)}>Editar</DropdownMenuItem>
+                         <DropdownMenuItem asChild>
+                          <Link href={notebook.url} target="_blank" rel="noopener noreferrer">
+                            Abrir en Colab
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                         <Dialog>
+                          <DialogTrigger asChild>
+                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
+                          </DialogTrigger>
+                           <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>¿Estás seguro?</DialogTitle>
+                              <DialogDescription>
+                                Esta acción no se puede deshacer. Se eliminará permanentemente el notebook.
+                              </DialogDescription>
+                            </DialogHeader>
+                            <DialogFooter>
+                              <DialogClose asChild>
+                                <Button variant="outline">Cancelar</Button>
+                              </DialogClose>
+                              <DialogClose asChild>
+                                 <Button variant="destructive" onClick={() => handleDelete(notebook.id)}>
+                                   Eliminar
+                                 </Button>
+                              </DialogClose>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        ) : (
+            <div className="text-center py-10 border-2 border-dashed rounded-lg">
+                <p className="text-muted-foreground">No se encontraron notebooks.</p>
+                <Button size="sm" className="mt-4 gap-1" onClick={handleAddNew}>
+                <PlusCircle className="h-3.5 w-3.5" />
+                Añadir Primer Notebook
+                </Button>
+            </div>
+        )}
       </CardContent>
     </Card>
   );

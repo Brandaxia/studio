@@ -28,7 +28,7 @@ type IntegrationFormValues = z.infer<typeof formSchema>;
 export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFormProps) {
   const form = useForm<IntegrationFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: integration || {
       name: '',
       apiKey: '',
       enabled: false,
@@ -36,19 +36,11 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
   });
   
   useEffect(() => {
-    if (integration) {
-        form.reset({
-            name: integration.name,
-            apiKey: integration.apiKey,
-            enabled: integration.enabled,
-        });
-    } else {
-        form.reset({
-            name: '',
-            apiKey: '',
-            enabled: false,
-        });
-    }
+    form.reset(integration || {
+      name: '',
+      apiKey: '',
+      enabled: false,
+    });
   }, [integration, form]);
 
 

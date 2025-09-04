@@ -89,62 +89,72 @@ export default function AdminFaqPage() {
         </div>
       </CardHeader>
       <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Pregunta</TableHead>
-              <TableHead className="hidden md:table-cell">Respuesta</TableHead>
-              <TableHead>
-                <span className="sr-only">Acciones</span>
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {faqs.map(faq => (
-              <TableRow key={faq.id}>
-                <TableCell className="font-medium">{faq.question}</TableCell>
-                <TableCell className="hidden md:table-cell max-w-sm truncate">{faq.answer}</TableCell>
-                <TableCell>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button aria-haspopup="true" size="icon" variant="ghost">
-                        <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Menú de acciones</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(faq)}>Editar</DropdownMenuItem>
-                       <Dialog>
-                        <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
-                        </DialogTrigger>
-                         <DialogContent>
-                          <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
-                            <DialogDescription>
-                              Esta acción no se puede deshacer. Se eliminará permanentemente la pregunta.
-                            </DialogDescription>
-                          </DialogHeader>
-                          <DialogFooter>
-                            <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
-                            </DialogClose>
-                            <DialogClose asChild>
-                               <Button variant="destructive" onClick={() => handleDelete(faq.id)}>
-                                 Eliminar
-                               </Button>
-                            </DialogClose>
-                          </DialogFooter>
-                        </DialogContent>
-                      </Dialog>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </TableCell>
+        {faqs.length > 0 ? (
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Pregunta</TableHead>
+                <TableHead className="hidden md:table-cell">Respuesta</TableHead>
+                <TableHead>
+                  <span className="sr-only">Acciones</span>
+                </TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {faqs.map(faq => (
+                <TableRow key={faq.id}>
+                  <TableCell className="font-medium">{faq.question}</TableCell>
+                  <TableCell className="hidden md:table-cell max-w-sm truncate">{faq.answer}</TableCell>
+                  <TableCell>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button aria-haspopup="true" size="icon" variant="ghost">
+                          <MoreHorizontal className="h-4 w-4" />
+                          <span className="sr-only">Menú de acciones</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                        <DropdownMenuItem onClick={() => handleEdit(faq)}>Editar</DropdownMenuItem>
+                         <Dialog>
+                          <DialogTrigger asChild>
+                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
+                          </DialogTrigger>
+                           <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>¿Estás seguro?</DialogTitle>
+                              <DialogDescription>
+                                Esta acción no se puede deshacer. Se eliminará permanentemente la pregunta.
+                              </DialogDescription>
+                            </DialogHeader>
+                            <DialogFooter>
+                              <DialogClose asChild>
+                                <Button variant="outline">Cancelar</Button>
+                              </DialogClose>
+                              <DialogClose asChild>
+                                 <Button variant="destructive" onClick={() => handleDelete(faq.id)}>
+                                   Eliminar
+                                 </Button>
+                              </DialogClose>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        ) : (
+          <div className="text-center py-10 border-2 border-dashed rounded-lg">
+            <p className="text-muted-foreground">No se encontraron preguntas frecuentes.</p>
+            <Button size="sm" className="mt-4 gap-1" onClick={handleAddNew}>
+              <PlusCircle className="h-3.5 w-3.5" />
+              Añadir Primera Pregunta
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

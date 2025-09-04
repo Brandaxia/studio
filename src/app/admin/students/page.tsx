@@ -89,77 +89,87 @@ export default function AdminStudentsPage() {
         </div>
       </CardHeader>
       <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Nombre</TableHead>
-              <TableHead className="hidden md:table-cell">Email</TableHead>
-              <TableHead className="hidden md:table-cell">Fecha de Inscripción</TableHead>
-              <TableHead>
-                <span className="sr-only">Acciones</span>
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {students.map(student => (
-              <TableRow key={student.id}>
-                <TableCell className="font-medium">
-                  <div className="flex items-center gap-3">
-                    <Avatar className="hidden h-9 w-9 sm:flex">
-                      <AvatarImage src={student.avatar} alt={student.name} data-ai-hint={student.aiHint}/>
-                      <AvatarFallback>{student.name[0]}</AvatarFallback>
-                    </Avatar>
-                    <div className="grid gap-0.5">
-                      <span className="font-medium">{student.name}</span>
-                      <span className="text-muted-foreground text-xs md:hidden">{student.email}</span>
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell className="hidden md:table-cell">{student.email}</TableCell>
-                <TableCell className="hidden md:table-cell">
-                  {new Date(student.enrolledDate).toLocaleDateString()}
-                </TableCell>
-                <TableCell>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button aria-haspopup="true" size="icon" variant="ghost">
-                        <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Menú de acciones</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(student)}>Editar</DropdownMenuItem>
-                       <Dialog>
-                        <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
-                        </DialogTrigger>
-                         <DialogContent>
-                          <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
-                            <DialogDescription>
-                              Esta acción no se puede deshacer. Se eliminará permanentemente al alumno.
-                            </DialogDescription>
-                          </DialogHeader>
-                          <DialogFooter>
-                            <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
-                            </DialogClose>
-                            <DialogClose asChild>
-                               <Button variant="destructive" onClick={() => handleDelete(student.id)}>
-                                 Eliminar
-                               </Button>
-                            </DialogClose>
-                          </DialogFooter>
-                        </DialogContent>
-                      </Dialog>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </TableCell>
+        {students.length > 0 ? (
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Nombre</TableHead>
+                <TableHead className="hidden md:table-cell">Email</TableHead>
+                <TableHead className="hidden md:table-cell">Fecha de Inscripción</TableHead>
+                <TableHead>
+                  <span className="sr-only">Acciones</span>
+                </TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {students.map(student => (
+                <TableRow key={student.id}>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-3">
+                      <Avatar className="hidden h-9 w-9 sm:flex">
+                        <AvatarImage src={student.avatar} alt={student.name} data-ai-hint={student.aiHint}/>
+                        <AvatarFallback>{student.name[0]}</AvatarFallback>
+                      </Avatar>
+                      <div className="grid gap-0.5">
+                        <span className="font-medium">{student.name}</span>
+                        <span className="text-muted-foreground text-xs md:hidden">{student.email}</span>
+                      </div>
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell">{student.email}</TableCell>
+                  <TableCell className="hidden md:table-cell">
+                    {new Date(student.enrolledDate).toLocaleDateString()}
+                  </TableCell>
+                  <TableCell>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button aria-haspopup="true" size="icon" variant="ghost">
+                          <MoreHorizontal className="h-4 w-4" />
+                          <span className="sr-only">Menú de acciones</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                        <DropdownMenuItem onClick={() => handleEdit(student)}>Editar</DropdownMenuItem>
+                         <Dialog>
+                          <DialogTrigger asChild>
+                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
+                          </DialogTrigger>
+                           <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>¿Estás seguro?</DialogTitle>
+                              <DialogDescription>
+                                Esta acción no se puede deshacer. Se eliminará permanentemente al alumno.
+                              </DialogDescription>
+                            </DialogHeader>
+                            <DialogFooter>
+                              <DialogClose asChild>
+                                <Button variant="outline">Cancelar</Button>
+                              </DialogClose>
+                              <DialogClose asChild>
+                                 <Button variant="destructive" onClick={() => handleDelete(student.id)}>
+                                   Eliminar
+                                 </Button>
+                              </DialogClose>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        ) : (
+          <div className="text-center py-10 border-2 border-dashed rounded-lg">
+            <p className="text-muted-foreground">No se encontraron alumnos.</p>
+            <Button size="sm" className="mt-4 gap-1" onClick={handleAddNew}>
+              <PlusCircle className="h-3.5 w-3.5" />
+              Añadir Primer Alumno
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

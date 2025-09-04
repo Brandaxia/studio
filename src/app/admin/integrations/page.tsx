@@ -144,55 +144,65 @@ export default function AdminIntegrationsPage() {
           </div>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Servicio</TableHead>
-                <TableHead>Clave API</TableHead>
-                <TableHead className="text-center">Estado</TableHead>
-                <TableHead>
-                  <span className="sr-only">Acciones</span>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {integrations.map(item => (
-                <TableRow key={item.id}>
-                  <TableCell className="font-medium">{item.name}</TableCell>
-                  <TableCell className="font-mono text-xs">{maskApiKey(item.apiKey)}</TableCell>
-                  <TableCell className="text-center">
-                      <Badge variant={item.enabled ? 'default' : 'outline'}>
-                        {item.enabled ? 'Activa' : 'Inactiva'}
-                      </Badge>
-                  </TableCell>
-                  <TableCell>
-                     <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button aria-haspopup="true" size="icon" variant="ghost">
-                          <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">Menú de acciones</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                        <DropdownMenuItem onClick={() => handleEdit(item)}>Editar Clave API</DropdownMenuItem>
-                         <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                          <div className="flex items-center justify-between w-full">
-                            <span>{item.enabled ? 'Desactivar' : 'Activar'}</span>
-                            <Switch
-                              checked={item.enabled}
-                              onCheckedChange={(checked) => handleToggleIntegration(item.id, checked)}
-                              className="ml-4"
-                            />
-                          </div>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
+          {integrations.length > 0 ? (
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Servicio</TableHead>
+                  <TableHead>Clave API</TableHead>
+                  <TableHead className="text-center">Estado</TableHead>
+                  <TableHead>
+                    <span className="sr-only">Acciones</span>
+                  </TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {integrations.map(item => (
+                  <TableRow key={item.id}>
+                    <TableCell className="font-medium">{item.name}</TableCell>
+                    <TableCell className="font-mono text-xs">{maskApiKey(item.apiKey)}</TableCell>
+                    <TableCell className="text-center">
+                        <Badge variant={item.enabled ? 'default' : 'outline'}>
+                          {item.enabled ? 'Activa' : 'Inactiva'}
+                        </Badge>
+                    </TableCell>
+                    <TableCell>
+                       <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button aria-haspopup="true" size="icon" variant="ghost">
+                            <MoreHorizontal className="h-4 w-4" />
+                            <span className="sr-only">Menú de acciones</span>
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                          <DropdownMenuItem onClick={() => handleEdit(item)}>Editar Clave API</DropdownMenuItem>
+                           <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                            <div className="flex items-center justify-between w-full">
+                              <span>{item.enabled ? 'Desactivar' : 'Activar'}</span>
+                              <Switch
+                                checked={item.enabled}
+                                onCheckedChange={(checked) => handleToggleIntegration(item.id, checked)}
+                                className="ml-4"
+                              />
+                            </div>
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          ) : (
+            <div className="text-center py-10 border-2 border-dashed rounded-lg">
+                <p className="text-muted-foreground">No se encontraron integraciones.</p>
+                <Button size="sm" className="mt-4 gap-1" onClick={handleAddNew}>
+                <PlusCircle className="h-3.5 w-3.5" />
+                Añadir Primera Integración
+                </Button>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -211,70 +221,80 @@ export default function AdminIntegrationsPage() {
           </div>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Clave API</TableHead>
-                <TableHead>Creada</TableHead>
-                <TableHead className="text-center">Estado</TableHead>
-                <TableHead>
-                  <span className="sr-only">Acciones</span>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {apiKeys.map(apiKey => (
-                <TableRow key={apiKey.id}>
-                  <TableCell className="font-mono text-xs">{maskApiKey(apiKey.key)}</TableCell>
-                  <TableCell>{new Date(apiKey.createdAt).toLocaleDateString()}</TableCell>
-                  <TableCell className="text-center">
-                    <Badge variant={apiKey.status === 'active' ? 'default' : 'outline'}>
-                      {apiKey.status === 'active' ? 'Activa' : 'Inactiva'}
-                    </Badge>
-                  </TableCell>
-                  <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button aria-haspopup="true" size="icon" variant="ghost">
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                        <DropdownMenuItem onClick={() => handleToggleApiKeyStatus(apiKey.id)}>
-                          {apiKey.status === 'active' ? 'Desactivar' : 'Activar'}
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <Dialog>
-                          <DialogTrigger asChild>
-                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Revocar</Button>
-                          </DialogTrigger>
-                           <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>¿Estás seguro?</DialogTitle>
-                              <DialogDescription>
-                                Esta acción no se puede deshacer. Se eliminará permanentemente la clave API y se revocará todo acceso.
-                              </DialogDescription>
-                            </DialogHeader>
-                            <DialogFooter>
-                              <DialogClose asChild>
-                                <Button variant="outline">Cancelar</Button>
-                              </DialogClose>
-                              <DialogClose asChild>
-                                 <Button variant="destructive" onClick={() => handleRevokeApiKey(apiKey.id)}>
-                                   Revocar Clave
-                                 </Button>
-                              </DialogClose>
-                            </DialogFooter>
-                          </DialogContent>
-                        </Dialog>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
+          {apiKeys.length > 0 ? (
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Clave API</TableHead>
+                  <TableHead>Creada</TableHead>
+                  <TableHead className="text-center">Estado</TableHead>
+                  <TableHead>
+                    <span className="sr-only">Acciones</span>
+                  </TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {apiKeys.map(apiKey => (
+                  <TableRow key={apiKey.id}>
+                    <TableCell className="font-mono text-xs">{maskApiKey(apiKey.key)}</TableCell>
+                    <TableCell>{new Date(apiKey.createdAt).toLocaleDateString()}</TableCell>
+                    <TableCell className="text-center">
+                      <Badge variant={apiKey.status === 'active' ? 'default' : 'outline'}>
+                        {apiKey.status === 'active' ? 'Activa' : 'Inactiva'}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button aria-haspopup="true" size="icon" variant="ghost">
+                            <MoreHorizontal className="h-4 w-4" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                          <DropdownMenuItem onClick={() => handleToggleApiKeyStatus(apiKey.id)}>
+                            {apiKey.status === 'active' ? 'Desactivar' : 'Activar'}
+                          </DropdownMenuItem>
+                          <DropdownMenuSeparator />
+                          <Dialog>
+                            <DialogTrigger asChild>
+                               <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Revocar</Button>
+                            </DialogTrigger>
+                             <DialogContent>
+                              <DialogHeader>
+                                <DialogTitle>¿Estás seguro?</DialogTitle>
+                                <DialogDescription>
+                                  Esta acción no se puede deshacer. Se eliminará permanentemente la clave API y se revocará todo acceso.
+                                </DialogDescription>
+                              </DialogHeader>
+                              <DialogFooter>
+                                <DialogClose asChild>
+                                  <Button variant="outline">Cancelar</Button>
+                                </DialogClose>
+                                <DialogClose asChild>
+                                   <Button variant="destructive" onClick={() => handleRevokeApiKey(apiKey.id)}>
+                                     Revocar Clave
+                                   </Button>
+                                </DialogClose>
+                              </DialogFooter>
+                            </DialogContent>
+                          </Dialog>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          ) : (
+            <div className="text-center py-10 border-2 border-dashed rounded-lg">
+                <p className="text-muted-foreground">No se encontraron claves de API.</p>
+                <Button size="sm" className="mt-4 gap-1" onClick={handleGenerateNewKey}>
+                    <PlusCircle className="h-3.5 w-3.5" />
+                    Generar Primera Clave
+                </Button>
+            </div>
+          )}
         </CardContent>
       </Card>
 

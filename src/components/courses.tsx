@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
-import { Button } from './ui/button';
 
 interface CoursesProps {
   courses: Course[];

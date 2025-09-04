@@ -91,64 +91,74 @@ export default function AdminLearningPathsPage() {
         </div>
       </CardHeader>
       <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Título</TableHead>
-              <TableHead className="hidden md:table-cell">Descripción</TableHead>
-              <TableHead>Programas</TableHead>
-              <TableHead>
-                <span className="sr-only">Acciones</span>
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {learningPaths.map(lp => (
-              <TableRow key={lp.id}>
-                <TableCell className="font-medium">{lp.title}</TableCell>
-                <TableCell className="hidden max-w-sm truncate md:table-cell">{lp.description}</TableCell>
-                 <TableCell>{lp.programIds.length}</TableCell>
-                <TableCell>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button aria-haspopup="true" size="icon" variant="ghost">
-                        <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Menú de acciones</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(lp)}>Editar</DropdownMenuItem>
-                       <Dialog>
-                        <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600 relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
-                        </DialogTrigger>
-                         <DialogContent>
-                          <DialogHeader>
-                            <DialogTitle>¿Estás seguro?</DialogTitle>
-                            <DialogDescription>
-                              Esta acción no se puede deshacer. Se eliminará permanentemente la ruta.
-                            </DialogDescription>
-                          </DialogHeader>
-                          <DialogFooter>
-                            <DialogClose asChild>
-                              <Button variant="outline">Cancelar</Button>
-                            </DialogClose>
-                            <DialogClose asChild>
-                               <Button variant="destructive" onClick={() => handleDelete(lp.id)}>
-                                 Eliminar
-                               </Button>
-                            </DialogClose>
-                          </DialogFooter>
-                        </DialogContent>
-                      </Dialog>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </TableCell>
+        {learningPaths.length > 0 ? (
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Título</TableHead>
+                <TableHead className="hidden md:table-cell">Descripción</TableHead>
+                <TableHead>Programas</TableHead>
+                <TableHead>
+                  <span className="sr-only">Acciones</span>
+                </TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {learningPaths.map(lp => (
+                <TableRow key={lp.id}>
+                  <TableCell className="font-medium">{lp.title}</TableCell>
+                  <TableCell className="hidden max-w-sm truncate md:table-cell">{lp.description}</TableCell>
+                   <TableCell>{lp.programIds.length}</TableCell>
+                  <TableCell>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button aria-haspopup="true" size="icon" variant="ghost">
+                          <MoreHorizontal className="h-4 w-4" />
+                          <span className="sr-only">Menú de acciones</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                        <DropdownMenuItem onClick={() => handleEdit(lp)}>Editar</DropdownMenuItem>
+                         <Dialog>
+                          <DialogTrigger asChild>
+                             <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600 relative flex cursor-default select-none items-center rounded-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">Eliminar</Button>
+                          </DialogTrigger>
+                           <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>¿Estás seguro?</DialogTitle>
+                              <DialogDescription>
+                                Esta acción no se puede deshacer. Se eliminará permanentemente la ruta.
+                              </DialogDescription>
+                            </DialogHeader>
+                            <DialogFooter>
+                              <DialogClose asChild>
+                                <Button variant="outline">Cancelar</Button>
+                              </DialogClose>
+                              <DialogClose asChild>
+                                 <Button variant="destructive" onClick={() => handleDelete(lp.id)}>
+                                   Eliminar
+                                 </Button>
+                              </DialogClose>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        ) : (
+          <div className="text-center py-10 border-2 border-dashed rounded-lg">
+            <p className="text-muted-foreground">No se encontraron rutas de aprendizaje.</p>
+            <Button size="sm" className="mt-4 gap-1" onClick={handleAddNew}>
+              <PlusCircle className="h-3.5 w-3.5" />
+              Añadir Primera Ruta
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

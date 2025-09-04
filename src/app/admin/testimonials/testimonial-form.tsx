@@ -11,10 +11,10 @@ import { Textarea } from '@/components/ui/textarea';
 import type { Testimonial, Program } from '@/lib/types';
 import { useEffect } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { initialPrograms } from '@/lib/data';
 
 interface TestimonialFormProps {
   testimonial: Testimonial | null;
+  programs: Program[];
   onSave: (testimonial: Testimonial) => void;
   onCancel: () => void;
 }
@@ -29,12 +29,10 @@ const formSchema = z.object({
 
 type TestimonialFormValues = z.infer<typeof formSchema>;
 
-const programs: Program[] = initialPrograms;
-
-export function TestimonialForm({ testimonial, onSave, onCancel }: TestimonialFormProps) {
+export function TestimonialForm({ testimonial, programs, onSave, onCancel }: TestimonialFormProps) {
   const form = useForm<TestimonialFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
+    defaultValues: testimonial || {
       quote: '',
       name: '',
       program: '',
@@ -44,17 +42,13 @@ export function TestimonialForm({ testimonial, onSave, onCancel }: TestimonialFo
   });
   
   useEffect(() => {
-    if (testimonial) {
-        form.reset(testimonial);
-    } else {
-        form.reset({
-            quote: '',
-            name: '',
-            program: '',
-            avatar: '',
-            aiHint: '',
-        });
-    }
+    form.reset(testimonial || {
+        quote: '',
+        name: '',
+        program: '',
+        avatar: '',
+        aiHint: '',
+    });
   }, [testimonial, form]);
 
 
