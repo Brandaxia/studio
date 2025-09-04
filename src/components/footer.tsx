@@ -3,15 +3,10 @@
 
 import { Logo } from "./logo";
 import { Twitter, Youtube, Instagram } from "lucide-react";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export function Footer() {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full border-t bg-background">

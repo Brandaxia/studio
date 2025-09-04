@@ -35,10 +35,8 @@ export default function AdminInstructorsPage() {
 
   const handleSaveInstructor = (instructor: Instructor) => {
     if (selectedInstructor) {
-      // Update
       setInstructors(instructors.map(i => i.id === instructor.id ? instructor : i));
     } else {
-      // Create
       setInstructors([...instructors, { ...instructor, id: (instructors.length + 1).toString() }]);
     }
     setSelectedInstructor(null);
@@ -59,18 +57,17 @@ export default function AdminInstructorsPage() {
      setInstructors(instructors.filter(p => p.id !== id));
   };
 
-
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <CardTitle>Instructores</CardTitle>
             <CardDescription>Gestioná los instructores de la academia.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
-              <Button size="sm" className="gap-1" onClick={handleAddNew}>
+              <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 Añadir Instructor
               </Button>
@@ -113,6 +110,7 @@ export default function AdminInstructorsPage() {
                     <AvatarImage
                       src={instructor.avatar}
                       alt={instructor.name}
+                      data-ai-hint={instructor.aiHint}
                     />
                     <AvatarFallback>{instructor.name.charAt(0)}</AvatarFallback>
                   </Avatar>

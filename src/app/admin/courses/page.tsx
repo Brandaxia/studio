@@ -111,7 +111,7 @@ export default function AdminCoursesPage() {
               <TableRow key={course.id}>
                 <TableCell className="font-medium">{course.title}</TableCell>
                 <TableCell>
-                  <Badge variant="outline">{getProgramName(course.programId)}</Badge>
+                  <Badge variant="outline" className="text-xs">{getProgramName(course.programId)}</Badge>
                 </TableCell>
                 <TableCell className="hidden max-w-xs truncate md:table-cell">{course.description}</TableCell>
                 <TableCell>

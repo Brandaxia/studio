@@ -65,14 +65,14 @@ export default function AdminTestimonialsPage() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <CardTitle>Testimonios</CardTitle>
             <CardDescription>Gestioná los testimonios de los alumnos.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
-              <Button size="sm" className="gap-1" onClick={handleAddNew}>
+              <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 Añadir Testimonio
               </Button>
@@ -110,7 +110,7 @@ export default function AdminTestimonialsPage() {
               <TableRow key={testimonial.id}>
                 <TableCell className="font-medium flex items-center gap-2">
                     <Avatar className="hidden h-9 w-9 sm:flex">
-                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint}/>
                         <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     {testimonial.name}
