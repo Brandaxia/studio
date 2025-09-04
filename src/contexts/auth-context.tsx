@@ -15,7 +15,7 @@ interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
   login: (email: string, pass: string) => Promise<boolean>;
-  register: (name: string, email: string, pass: string) => Promise<boolean>;
+  register: (name: string, email: string, pass: string) => Promise<void>;
   logout: () => void;
   loading: boolean;
 }
@@ -48,7 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return false;
   };
 
-  const register = async (name: string, email: string, pass: string): Promise<boolean> => {
+  const register = async (name: string, email: string, pass: string): Promise<void> => {
     setLoading(true);
     
     // Simulate an API call
@@ -58,7 +58,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // In a real app, you would handle potential errors (e.g., email already exists)
     
     setLoading(false);
-    return true;
   };
 
 

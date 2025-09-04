@@ -63,20 +63,12 @@ export function LoginForm() {
   }
 
   async function onRegisterSubmit(values: RegisterFormValues) {
-    const success = await register(values.name, values.email, values.password);
-    if (success) {
-      toast({
-        title: "Registro Exitoso",
-        description: "Tu cuenta ha sido creada. Por favor, iniciá sesión.",
-      });
-      setAuthMode("login");
-    } else {
-      toast({
-        title: "Error de Registro",
-        description: "No se pudo crear tu cuenta. Por favor, intentá de nuevo.",
-        variant: "destructive",
-      });
-    }
+    await register(values.name, values.email, values.password);
+    toast({
+      title: "Registro Simulado Exitoso",
+      description: "Tu cuenta ha sido creada. Por favor, iniciá sesión.",
+    });
+    setAuthMode("login");
   }
   
   const handleTabChange = (value: string) => {
