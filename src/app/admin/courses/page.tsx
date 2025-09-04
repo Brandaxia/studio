@@ -35,7 +35,7 @@ export default function AdminCoursesPage() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   
   const getProgramName = (programId: string) => {
-    return programs.find(p => p.id === programId)?.title || 'Desconocido';
+    return initialPrograms.find(p => p.id === programId)?.title || 'Desconocido';
   }
 
   const handleSaveCourse = (course: Course) => {

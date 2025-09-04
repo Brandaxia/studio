@@ -62,8 +62,8 @@ export function LoginForm() {
     }
   }
 
-  async function onRegisterSubmit(values: RegisterFormValues) {
-    await register(values.name, values.email, values.password);
+  function onRegisterSubmit(values: RegisterFormValues) {
+    register(values.name, values.email, values.password);
     toast({
       title: "Registro Simulado Exitoso",
       description: "Tu cuenta ha sido creada. Por favor, iniciá sesión.",

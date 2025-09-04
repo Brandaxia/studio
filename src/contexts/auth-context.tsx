@@ -15,7 +15,7 @@ interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
   login: (email: string, pass: string) => Promise<boolean>;
-  register: (name: string, email: string, pass: string) => Promise<void>;
+  register: (name: string, email: string, pass: string) => void;
   logout: () => void;
   loading: boolean;
 }
@@ -48,16 +48,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return false;
   };
 
-  const register = async (name: string, email: string, pass: string): Promise<void> => {
+  const register = (name: string, email: string, pass: string): void => {
     setLoading(true);
     
     // Simulate an API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    // For this mock, we'll assume registration is always successful
-    // In a real app, you would handle potential errors (e.g., email already exists)
-    
-    setLoading(false);
+    new Promise(resolve => setTimeout(resolve, 1500)).then(() => {
+        // For this mock, we'll assume registration is always successful
+        // In a real app, you would handle potential errors (e.g., email already exists)
+        setLoading(false);
+    });
   };
 
 
