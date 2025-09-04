@@ -9,7 +9,7 @@ export default function PrivacyPolicyPage() {
   const [lastUpdated, setLastUpdated] = useState('');
 
   useEffect(() => {
-    setLastUpdated(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    setLastUpdated(new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }));
   }, []);
 
 
@@ -19,48 +19,48 @@ export default function PrivacyPolicyPage() {
       <main className="flex-1">
         <div className="container py-16 md:py-24">
           <div className="prose prose-lg mx-auto max-w-4xl text-foreground">
-            <h1 className="font-headline text-4xl font-bold">Privacy Policy</h1>
+            <h1 className="font-headline text-4xl font-bold">Política de Privacidad</h1>
             <p className="lead">
-              At Ainsophic Academy, your privacy is a manifestation of our commitment to respect and trust. This policy details how we protect the information you entrust to us.
+              En Ainsophic Academy, tu privacidad es una manifestación de nuestro compromiso con el respeto y la confianza. Esta política detalla cómo protegemos la información que nos confiás.
             </p>
 
-            <h2>1. The Information We Receive</h2>
+            <h2>1. La Información que Recibimos</h2>
             <p>
-              We collect information you provide to us directly, such as when you register for a course, contact us, or participate in our community. This may include your name, email, and learning history. We also automatically collect technical data, such as your IP address and browser type, to ensure the integrity of our platform.
+              Recopilamos la información que nos proporcionás directamente, como cuando te inscribís en un curso, nos contactás o participás en nuestra comunidad. Esto puede incluir tu nombre, correo electrónico e historial de aprendizaje. También recopilamos datos técnicos de forma automática, como tu dirección IP y tipo de navegador, para garantizar la integridad de nuestra plataforma.
             </p>
 
-            <h2>2. How We Use Your Data</h2>
+            <h2>2. Cómo Usamos tus Datos</h2>
             <p>
-              We use your information to personalize your learning journey, provide support, process your enrollments, and communicate with you about our programs. The data also helps us improve and optimize our platform for the entire community of learners.
+              Usamos tu información para personalizar tu recorrido de aprendizaje, brindarte soporte, procesar tus inscripciones y comunicarnos con vos sobre nuestros programas. Los datos también nos ayudan a mejorar y optimizar nuestra plataforma para toda la comunidad de estudiantes.
             </p>
 
-            <h2>3. Sharing Knowledge, Not Your Data</h2>
+            <h2>3. Compartimos Conocimiento, no tus Datos</h2>
             <p>
-              We do not sell or rent your personal information. We may share data with trusted service providers who assist us in operating the academy (such as payment processors or analytics platforms), always under strict confidentiality agreements. We may also disclose information if required by law.
+              No vendemos ni alquilamos tu información personal. Podemos compartir datos con proveedores de servicios de confianza que nos asisten en la operación de la academia (como procesadores de pago o plataformas de análisis), siempre bajo estrictos acuerdos de confidencialidad. También podemos divulgar información si la ley así lo requiere.
             </p>
 
-            <h2>4. Cookies and Connection Technologies</h2>
+            <h2>4. Cookies y Tecnologías de Conexión</h2>
             <p>
-              We use cookies to maintain your session, remember your preferences, and understand how you interact with our platform. These small beacons of light allow us to offer you a smooth and consistent experience. You can manage your cookie preferences through your browser settings.
+              Utilizamos cookies para mantener tu sesión, recordar tus preferencias y entender cómo interactuás con nuestra plataforma. Estas pequeñas balizas de luz nos permiten ofrecerte una experiencia fluida y coherente. Podés gestionar tus preferencias de cookies a través de la configuración de tu navegador.
             </p>
 
-            <h2>5. The Security of Your Learning</h2>
+            <h2>5. La Seguridad de tu Aprendizaje</h2>
             <p>
-              We implement technical and organizational security measures to protect your information against unauthorized access, alteration, or destruction. Your trust is the foundation of our academy, and we protect it with the utmost diligence.
+              Implementamos medidas de seguridad técnicas y organizativas para proteger tu información contra el acceso no autorizado, la alteración o la destrucción. Tu confianza es la base de nuestra academia, y la protegemos con la máxima diligencia.
             </p>
 
-            <h2>6. Your Rights and Choices</h2>
+            <h2>6. Tus Derechos y Opciones</h2>
             <p>
-              You have the right to access, correct, or delete your personal information. You can also object to the processing of your data. To exercise these rights, please contact us through the channels provided on our contact page.
+              Tenés derecho a acceder, corregir o eliminar tu información personal. También podés oponerte al tratamiento de tus datos. Para ejercer estos derechos, por favor contactanos a través de los canales proporcionados en nuestra página de contacto.
             </p>
 
-            <h2>7. Updates to this Policy</h2>
+            <h2>7. Actualizaciones de esta Política</h2>
             <p>
-              As our academy evolves, so will our privacy policy. We will notify you of any significant changes. The date of the last update will be reflected at the end of this page.
+              A medida que nuestra academia evolucione, también lo hará nuestra política de privacidad. Te notificaremos cualquier cambio significativo. La fecha de la última actualización se reflejará al final de esta página.
             </p>
 
             <p className="text-sm text-muted-foreground">
-              {lastUpdated ? `Last updated: ${lastUpdated}`: 'Loading...'}
+              {lastUpdated ? `Última actualización: ${lastUpdated}`: 'Cargando...'}
             </p>
           </div>
         </div>

@@ -11,15 +11,15 @@ interface TestimonialsProps {
 
 export function Testimonials({ testimonials, programs }: TestimonialsProps) {
   const getProgramTitle = (programId: string) => {
-    return programs.find(p => p.id === programId)?.title || 'Related Program';
+    return programs.find(p => p.id === programId)?.title || 'Programa Relacionado';
   };
   return (
     <section id="testimonials" className="w-full py-16 md:py-24">
       <div className="container px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Voices from the Field</h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Voces del Sector</h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
-            Success stories from our students.
+            Historias de éxito de nuestros alumnos.
           </p>
         </div>
         <Carousel

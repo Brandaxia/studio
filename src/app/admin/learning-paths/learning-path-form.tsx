@@ -23,7 +23,7 @@ const formSchema = z.object({
   title: z.string().min(3, { message: 'El título es requerido.' }),
   description: z.string().min(10, { message: 'La descripción es requerida.' }),
   programIds: z.array(z.string()).refine(value => value.some(item => item), {
-    message: 'Tienes que seleccionar al menos un programa.',
+    message: 'Tenés que seleccionar al menos un programa.',
   }),
 });
 
@@ -82,7 +82,7 @@ export function LearningPathForm({ learningPath, programs, onSave, onCancel }: L
             <FormItem>
               <FormLabel>Descripción de la Ruta</FormLabel>
               <FormControl>
-                <Textarea placeholder="Describe el objetivo de esta ruta de aprendizaje..." {...field} />
+                <Textarea placeholder="Describí el objetivo de esta ruta de aprendizaje..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -96,7 +96,7 @@ export function LearningPathForm({ learningPath, programs, onSave, onCancel }: L
               <div className="mb-4">
                 <FormLabel className="text-base">Programas Incluidos</FormLabel>
                 <FormDescription>
-                  Selecciona los programas que formarán parte de esta ruta de aprendizaje.
+                  Seleccioná los programas que formarán parte de esta ruta de aprendizaje.
                 </FormDescription>
               </div>
               {programs.map((program) => (

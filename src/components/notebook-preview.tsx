@@ -13,9 +13,9 @@ export function NotebookPreview() {
     <section id="notebook" className="w-full bg-muted py-16 md:py-24">
       <div className="container px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Interactive Lab</h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Laboratorio Interactivo</h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
-            Experiment directly with the concepts. Open our welcome notebook, run code, and learn by doing. No installation required.
+            Experimentá directamente con los conceptos. Abrí nuestro notebook de bienvenida, ejecutá código y aprendé haciendo. No se requiere instalación.
           </p>
         </div>
         <Card className="mx-auto mt-12 max-w-3xl overflow-hidden shadow-lg transition-transform hover:scale-105">
@@ -23,21 +23,21 @@ export function NotebookPreview() {
             <div className="relative aspect-video w-full overflow-hidden rounded-lg border">
               <Image 
                 src="https://picsum.photos/800/450?random=10"
-                alt="Colab Notebook Preview"
+                alt="Vista Previa de Notebook en Colab"
                 fill
                 className="object-cover"
                 data-ai-hint="code editor"
               />
               <div className="absolute inset-0 bg-black/40" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-4 text-center text-white">
-                <h3 className="text-xl font-bold md:text-2xl">Introduction Notebook</h3>
+                <h3 className="text-xl font-bold md:text-2xl">Notebook de Introducción</h3>
                 <p className="max-w-md text-sm md:text-base">
-                  An interactive tour of the fundamental concepts you'll see in our programs.
+                  Un recorrido interactivo por los conceptos fundamentales que verás en nuestros programas.
                 </p>
                 <Button size="lg" asChild className="bg-white text-blue-600 transition-all hover:bg-white/90">
                   <a href={colabUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-5 w-5" />
-                    Open in Google Colab
+                    Abrir en Google Colab
                   </a>
                 </Button>
               </div>

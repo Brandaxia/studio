@@ -34,7 +34,7 @@ export default function AdminTestimonialsPage() {
   const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null);
 
   const getProgramTitle = (programId: string) => {
-    return initialPrograms.find(p => p.id === programId)?.title || 'Unknown Program';
+    return initialPrograms.find(p => p.id === programId)?.title || 'Programa Desconocido';
   }
 
   const handleSaveTestimonial = (testimonial: Testimonial) => {
@@ -67,21 +67,21 @@ export default function AdminTestimonialsPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Testimonials</CardTitle>
-            <CardDescription>Manage student testimonials.</CardDescription>
+            <CardTitle>Testimonios</CardTitle>
+            <CardDescription>Gestioná los testimonios de los alumnos.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Add Testimonial
+                Añadir Testimonio
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedTestimonial ? 'Edit' : 'Add'} Testimonial</DialogTitle>
+                <DialogTitle>{selectedTestimonial ? 'Editar' : 'Añadir'} Testimonio</DialogTitle>
                 <DialogDescription>
-                  {selectedTestimonial ? 'Edit the testimonial details.' : 'Add a new testimonial to the academy.'}
+                  {selectedTestimonial ? 'Editá los detalles del testimonio.' : 'Añadí un nuevo testimonio a la academia.'}
                 </DialogDescription>
               </DialogHeader>
               <TestimonialForm 
@@ -97,11 +97,11 @@ export default function AdminTestimonialsPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Author</TableHead>
-              <TableHead>Quote</TableHead>
-              <TableHead>Program</TableHead>
+              <TableHead>Autor</TableHead>
+              <TableHead>Cita</TableHead>
+              <TableHead>Programa</TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">Acciones</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -122,30 +122,30 @@ export default function AdminTestimonialsPage() {
                     <DropdownMenuTrigger asChild>
                       <Button aria-haspopup="true" size="icon" variant="ghost">
                         <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Toggle menu</span>
+                        <span className="sr-only">Menú de acciones</span>
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(testimonial)}>Edit</DropdownMenuItem>
+                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(testimonial)}>Editar</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>Are you sure?</DialogTitle>
+                            <DialogTitle>¿Estás seguro?</DialogTitle>
                             <DialogDescription>
-                              This action cannot be undone. This will permanently delete the testimonial.
+                              Esta acción no se puede deshacer. Se eliminará permanentemente el testimonio.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancel</Button>
+                              <Button variant="outline">Cancelar</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(testimonial.id)}>
-                                 Delete
+                                 Eliminar
                                </Button>
                             </DialogClose>
                           </DialogFooter>

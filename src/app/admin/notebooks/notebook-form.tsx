@@ -78,7 +78,7 @@ export function NotebookForm({ notebook, onSave, onCancel }: NotebookFormProps) 
             <FormItem>
               <FormLabel>Descripción</FormLabel>
               <FormControl>
-                <Textarea placeholder="Describe el contenido y los objetivos del notebook..." {...field} />
+                <Textarea placeholder="Describí el contenido y los objetivos del notebook..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

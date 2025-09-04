@@ -63,21 +63,21 @@ export default function AdminLearningPathsPage() {
       <CardHeader>
         <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <CardTitle>Learning Paths</CardTitle>
-            <CardDescription>Manage curated sequences of programs for students.</CardDescription>
+            <CardTitle>Rutas de Aprendizaje</CardTitle>
+            <CardDescription>Gestioná las secuencias de programas curadas para los alumnos.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Add Path
+                Añadir Ruta
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedLearningPath ? 'Edit' : 'Add'} Learning Path</DialogTitle>
+                <DialogTitle>{selectedLearningPath ? 'Editar' : 'Añadir'} Ruta de Aprendizaje</DialogTitle>
                 <DialogDescription>
-                  {selectedLearningPath ? 'Edit the path details.' : 'Create a new learning path.'}
+                  {selectedLearningPath ? 'Editá los detalles de la ruta.' : 'Creá una nueva ruta de aprendizaje.'}
                 </DialogDescription>
               </DialogHeader>
               <LearningPathForm 
@@ -94,11 +94,11 @@ export default function AdminLearningPathsPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Title</TableHead>
-              <TableHead className="hidden md:table-cell">Description</TableHead>
-              <TableHead>Programs</TableHead>
+              <TableHead>Título</TableHead>
+              <TableHead className="hidden md:table-cell">Descripción</TableHead>
+              <TableHead>Programas</TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">Acciones</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -113,30 +113,30 @@ export default function AdminLearningPathsPage() {
                     <DropdownMenuTrigger asChild>
                       <Button aria-haspopup="true" size="icon" variant="ghost">
                         <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Toggle menu</span>
+                        <span className="sr-only">Menú de acciones</span>
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(lp)}>Edit</DropdownMenuItem>
+                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(lp)}>Editar</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Eliminar</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>Are you sure?</DialogTitle>
+                            <DialogTitle>¿Estás seguro?</DialogTitle>
                             <DialogDescription>
-                              This action cannot be undone. This will permanently delete the path.
+                              Esta acción no se puede deshacer. Se eliminará permanentemente la ruta.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancel</Button>
+                              <Button variant="outline">Cancelar</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(lp.id)}>
-                                 Delete
+                                 Eliminar
                                </Button>
                             </DialogClose>
                           </DialogFooter>

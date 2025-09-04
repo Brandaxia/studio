@@ -65,21 +65,21 @@ export default function AdminInstructorsPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Instructors</CardTitle>
-            <CardDescription>Manage the academy's instructors.</CardDescription>
+            <CardTitle>Instructores</CardTitle>
+            <CardDescription>Gestioná los instructores de la academia.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Add Instructor
+                Añadir Instructor
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedInstructor ? 'Edit' : 'Add'} Instructor</DialogTitle>
+                <DialogTitle>{selectedInstructor ? 'Editar' : 'Añadir'} Instructor</DialogTitle>
                 <DialogDescription>
-                  {selectedInstructor ? "Edit the instructor's details." : 'Add a new instructor to the academy.'}
+                  {selectedInstructor ? "Editá los detalles del instructor." : 'Añadí un nuevo instructor a la academia.'}
                 </DialogDescription>
               </DialogHeader>
               <InstructorForm 
@@ -98,10 +98,10 @@ export default function AdminInstructorsPage() {
               <TableHead className="hidden w-[100px] sm:table-cell">
                 <span className="sr-only">Avatar</span>
               </TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Title</TableHead>
+              <TableHead>Nombre</TableHead>
+              <TableHead>Título</TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">Acciones</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -124,30 +124,30 @@ export default function AdminInstructorsPage() {
                     <DropdownMenuTrigger asChild>
                       <Button aria-haspopup="true" size="icon" variant="ghost">
                         <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Toggle menu</span>
+                        <span className="sr-only">Menú de acciones</span>
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(instructor)}>Edit</DropdownMenuItem>
+                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(instructor)}>Editar</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>Are you sure?</DialogTitle>
+                            <DialogTitle>¿Estás seguro?</DialogTitle>
                             <DialogDescription>
-                              This action cannot be undone. This will permanently delete the instructor.
+                              Esta acción no se puede deshacer. Se eliminará permanentemente al instructor.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancel</Button>
+                              <Button variant="outline">Cancelar</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(instructor.id)}>
-                                 Delete
+                                 Eliminar
                                </Button>
                             </DialogClose>
                           </DialogFooter>

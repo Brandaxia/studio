@@ -9,7 +9,7 @@ export default function TermsAndConditionsPage() {
   const [lastUpdated, setLastUpdated] = useState('');
 
   useEffect(() => {
-    setLastUpdated(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    setLastUpdated(new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }));
   }, []);
 
   return (
@@ -18,48 +18,48 @@ export default function TermsAndConditionsPage() {
       <main className="flex-1">
         <div className="container py-16 md:py-24">
           <div className="prose prose-lg mx-auto max-w-4xl text-foreground">
-            <h1 className="font-headline text-4xl font-bold">Terms and Conditions of Use</h1>
+            <h1 className="font-headline text-4xl font-bold">Términos y Condiciones de Uso</h1>
             <p className="lead">
-              Welcome to Ainsophic Academy. By accessing our academy, you agree to be bound by these terms, which constitute a pact for the advancement of collective knowledge.
+              Bienvenido/a a Ainsophic Academy. Al acceder a nuestra academia, aceptás regirte por estos términos, que constituyen un pacto para el avance del conocimiento colectivo.
             </p>
 
-            <h2>1. Use of the Platform</h2>
+            <h2>1. Uso de la Plataforma</h2>
             <p>
-              We grant you a limited, non-exclusive, non-transferable license to access and make personal, non-commercial use of our programs and content. You agree not to use the platform for illegal purposes or in a way that infringes the rights of others.
+              Te otorgamos una licencia limitada, no exclusiva e intransferible para acceder y hacer un uso personal y no comercial de nuestros programas y contenidos. Aceptás no utilizar la plataforma para fines ilegales o de manera que infrinja los derechos de otros.
             </p>
 
-            <h2>2. Intellectual Property</h2>
+            <h2>2. Propiedad Intelectual</h2>
             <p>
-              All content in the academy, including courses, texts, graphics, logos, and software, is the property of Ainsophic Academy or its licensors and is protected by intellectual property laws. Reproduction, distribution, or modification without our explicit consent is not permitted.
+              Todo el contenido de la academia, incluyendo cursos, textos, gráficos, logos y software, es propiedad de Ainsophic Academy o sus licenciantes y está protegido por las leyes de propiedad intelectual. No se permite la reproducción, distribución o modificación sin nuestro consentimiento explícito.
             </p>
 
-            <h2>3. User Accounts</h2>
+            <h2>3. Cuentas de Usuario</h2>
             <p>
-              You are responsible for maintaining the confidentiality of your account and password. You accept responsibility for all activities that occur under your account. We reserve the right to suspend or terminate accounts if these terms are violated.
+              Sos responsable de mantener la confidencialidad de tu cuenta y contraseña. Aceptás la responsabilidad por todas las actividades que ocurran bajo tu cuenta. Nos reservamos el derecho de suspender o cancelar cuentas si se violan estos términos.
             </p>
 
-            <h2>4. Payments and Enrollments</h2>
+            <h2>4. Pagos e Inscripciones</h2>
             <p>
-              Program fees are clearly indicated at the time of enrollment. Payments are processed through secure gateways. Refund policies, if any, will be specified for each program individually.
+              Las tarifas de los programas se indican claramente en el momento de la inscripción. Los pagos se procesan a través de pasarelas seguras. Las políticas de reembolso, si las hubiera, se especificarán para cada programa individualmente.
             </p>
 
-            <h2>5. Limitation of Liability</h2>
+            <h2>5. Limitación de Responsabilidad</h2>
             <p>
-              Our programs are offered "as is." While we strive to offer the highest quality content, we do not guarantee specific learning outcomes. Our liability is limited to the amount paid for the program.
+              Nuestros programas se ofrecen "tal cual". Si bien nos esforzamos por ofrecer contenido de la más alta calidad, no garantizamos resultados de aprendizaje específicos. Nuestra responsabilidad se limita al monto pagado por el programa.
             </p>
 
-            <h2>6. Third-Party Links and Embedded Content</h2>
+            <h2>6. Enlaces de Terceros y Contenido Embebido</h2>
             <p>
-              The platform may contain links to third-party sites or embedded content (such as Colab notebooks or videos). We are not responsible for the content or privacy practices of these services.
+              La plataforma puede contener enlaces a sitios de terceros o contenido embebido (como notebooks de Colab o videos). No somos responsables del contenido ni de las prácticas de privacidad de estos servicios.
             </p>
 
-            <h2>7. Modification and Termination</h2>
+            <h2>7. Modificación y Terminación</h2>
             <p>
-              We reserve the right to modify these terms at any time. Your continued use of the platform after changes implies your acceptance. We may also, at our discretion, suspend or terminate your access to the academy.
+              Nos reservamos el derecho de modificar estos términos en cualquier momento. Tu uso continuado de la plataforma después de los cambios implica tu aceptación. También podemos, a nuestra discreción, suspender o cancelar tu acceso a la academia.
             </p>
             
             <p className="text-sm text-muted-foreground">
-               {lastUpdated ? `Last updated: ${lastUpdated}`: 'Loading...'}
+               {lastUpdated ? `Última actualización: ${lastUpdated}`: 'Cargando...'}
             </p>
           </div>
         </div>

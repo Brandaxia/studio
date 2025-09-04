@@ -18,8 +18,8 @@ interface IntegrationFormProps {
 }
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: 'Service name is required.' }),
-  apiKey: z.string().min(1, { message: 'API Key cannot be empty.' }),
+  name: z.string().min(2, { message: 'El nombre del servicio es requerido.' }),
+  apiKey: z.string().min(1, { message: 'La clave API no puede estar vacía.' }),
   enabled: z.boolean(),
 });
 
@@ -71,12 +71,12 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Service Name</FormLabel>
+              <FormLabel>Nombre del Servicio</FormLabel>
               <FormControl>
-                <Input placeholder="e.g., Zapier" {...field} disabled={!!integration}/>
+                <Input placeholder="Ej: Zapier" {...field} disabled={!!integration}/>
               </FormControl>
               <FormDescription>
-                The name of the third-party service.
+                El nombre del servicio de terceros.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -87,9 +87,9 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
           name="apiKey"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>API Key</FormLabel>
+              <FormLabel>Clave API</FormLabel>
               <FormControl>
-                <Input placeholder="Enter the service's API key" {...field} />
+                <Input placeholder="Ingresá la clave API del servicio" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -101,7 +101,7 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
           render={({ field }) => (
              <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
               <div className="space-y-0.5">
-                <FormLabel>Enable Integration</FormLabel>
+                <FormLabel>Activar Integración</FormLabel>
               </div>
               <FormControl>
                 <Switch
@@ -115,13 +115,11 @@ export function IntegrationForm({ integration, onSave, onCancel }: IntegrationFo
 
         <div className="flex justify-end gap-2 pt-4">
           <Button type="button" variant="ghost" onClick={onCancel}>
-            Cancel
+            Cancelar
           </Button>
-          <Button type="submit">Save Changes</Button>
+          <Button type="submit">Guardar Cambios</Button>
         </div>
       </form>
     </Form>
   );
 }
-
-    

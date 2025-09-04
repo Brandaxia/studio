@@ -19,8 +19,8 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
             <main className="flex-1">
                 <div className="container flex min-h-[calc(100vh-12rem)] items-center justify-center py-16 text-center md:py-24">
                     <div>
-                        <h1 className="text-4xl font-bold">Program Not Found</h1>
-                        <p className="mt-4 text-muted-foreground">Sorry, we couldn't find the program you're looking for.</p>
+                        <h1 className="text-4xl font-bold">Programa No Encontrado</h1>
+                        <p className="mt-4 text-muted-foreground">Lo sentimos, no pudimos encontrar el programa que estás buscando.</p>
                     </div>
                 </div>
             </main>
@@ -43,7 +43,7 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
                 data-ai-hint={program.aiHint}
             />
             <div className="container relative z-10 flex h-full flex-col items-start justify-end px-4 pb-8 md:pb-12">
-                <Badge>Program</Badge>
+                <Badge>Programa</Badge>
                 <h1 className="mt-2 text-3xl font-bold text-primary-foreground md:text-5xl">
                 {program.title}
                 </h1>
@@ -53,14 +53,14 @@ export default function ProgramDetailPage({ params }: { params: { programId: str
         <section className="w-full py-12 md:py-24">
             <div className="container grid gap-8 px-4 md:grid-cols-3 md:gap-12">
                 <div className="md:col-span-2">
-                    <h2 className="text-2xl font-bold tracking-tight">About this Program</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">Sobre este Programa</h2>
                     <p className="mt-4 text-base text-muted-foreground md:text-lg">{program.description}</p>
                 </div>
                 <div className="space-y-8 md:col-span-1">
                     <Card>
                         <CardHeader>
-                            <CardTitle>Courses Included</CardTitle>
-                            <CardDescription>This program includes the following courses.</CardDescription>
+                            <CardTitle>Cursos Incluidos</CardTitle>
+                            <CardDescription>Este programa incluye los siguientes cursos.</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             {programCourses.map(course => (

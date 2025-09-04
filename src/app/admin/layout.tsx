@@ -12,15 +12,15 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/admin/learning-paths', label: 'Learning Paths', icon: GitMerge },
-  { href: '/admin/programs', label: 'Programs', icon: Book },
-  { href: '/admin/courses', label: 'Courses', icon: SwatchBook },
-  { href: '/admin/instructors', label: 'Instructors', icon: Users },
-  { href: '/admin/students', label: 'Students', icon: GraduationCap },
+  { href: '/admin/learning-paths', label: 'Rutas de Aprendizaje', icon: GitMerge },
+  { href: '/admin/programs', label: 'Programas', icon: Book },
+  { href: '/admin/courses', label: 'Cursos', icon: SwatchBook },
   { href: '/admin/notebooks', label: 'Notebooks', icon: Notebook },
-  { href: '/admin/testimonials', label: 'Testimonials', icon: MessageSquareQuote },
-  { href: '/admin/faq', label: 'FAQ', icon: HelpCircle },
-  { href: '/admin/integrations', label: 'Integrations', icon: Puzzle },
+  { href: '/admin/instructors', label: 'Instructores', icon: Users },
+  { href: '/admin/students', label: 'Alumnos', icon: GraduationCap },
+  { href: '/admin/testimonials', label: 'Testimonios', icon: MessageSquareQuote },
+  { href: '/admin/faq', label: 'Preguntas Frecuentes', icon: HelpCircle },
+  { href: '/admin/integrations', label: 'Integraciones', icon: Puzzle },
 ];
 
 export default function AdminLayout({
@@ -74,7 +74,7 @@ export default function AdminLayout({
       <div className="mt-auto">
         <Button variant="ghost" className="w-full justify-start gap-2" onClick={handleLogout}>
           <LogOut className="h-4 w-4" />
-          Log Out
+          Cerrar Sesión
         </Button>
       </div>
     </>
@@ -96,7 +96,7 @@ export default function AdminLayout({
             <SheetTrigger asChild>
               <Button size="icon" variant="outline" className="sm:hidden">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
+                <span className="sr-only">Abrir Menú</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="sm:max-w-xs flex flex-col">
@@ -108,7 +108,7 @@ export default function AdminLayout({
               </div>
             </SheetContent>
           </Sheet>
-           <p className="text-sm text-muted-foreground">Welcome, Admin</p>
+           <p className="text-sm text-muted-foreground">Bienvenido, Admin</p>
         </header>
         <main className="flex-1 p-4 sm:p-6">
           {children}

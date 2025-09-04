@@ -17,12 +17,12 @@ export function Courses({ courses, programs }: CoursesProps) {
   };
 
   return (
-    <section id="courses" className="w-full bg-muted py-16 md:py-24">
+    <section id="cursos" className="w-full bg-muted py-16 md:py-24">
       <div className="container px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Featured Courses</h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Cursos Destacados</h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
-            Explore some of the individual courses that form the building blocks of our programs.
+            Explorá algunos de los cursos individuales que forman los pilares de nuestros programas.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -45,7 +45,7 @@ export function Courses({ courses, programs }: CoursesProps) {
                 </CardContent>
                 <CardFooter>
                     <div className="flex items-center text-sm font-semibold text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        View Program <ArrowRight className="ml-2 h-4 w-4" />
+                        Ver Programa <ArrowRight className="ml-2 h-4 w-4" />
                     </div>
                 </CardFooter>
                 </Card>

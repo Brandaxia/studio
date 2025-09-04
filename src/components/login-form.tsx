@@ -16,14 +16,14 @@ import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const loginSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
+  email: z.string().email({ message: "Por favor, ingresá una dirección de correo válida." }),
+  password: z.string().min(6, { message: "La contraseña debe tener al menos 6 caracteres." }),
 });
 
 const registerSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
+  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
+  email: z.string().email({ message: "Por favor, ingresá una dirección de correo válida." }),
+  password: z.string().min(6, { message: "La contraseña debe tener al menos 6 caracteres." }),
 });
 
 type LoginFormValues = z.infer<typeof loginSchema>;
@@ -49,14 +49,14 @@ export function LoginForm() {
     const success = await login(values.email, values.password);
     if (success) {
       toast({
-        title: "Login Successful",
-        description: "Welcome back.",
+        title: "Inicio de Sesión Exitoso",
+        description: "¡Bienvenido/a de vuelta!",
       });
       router.push("/admin");
     } else {
       toast({
-        title: "Authentication Error",
-        description: "Email or password incorrect.",
+        title: "Error de Autenticación",
+        description: "El correo o la contraseña son incorrectos.",
         variant: "destructive",
       });
     }
@@ -66,14 +66,14 @@ export function LoginForm() {
     const success = await register(values.name, values.email, values.password);
     if (success) {
       toast({
-        title: "Registration Successful",
-        description: "Your account has been created. Please log in.",
+        title: "Registro Exitoso",
+        description: "Tu cuenta ha sido creada. Por favor, iniciá sesión.",
       });
       setAuthMode("login");
     } else {
       toast({
-        title: "Registration Error",
-        description: "Could not create your account. Please try again.",
+        title: "Error de Registro",
+        description: "No se pudo crear tu cuenta. Por favor, intentá de nuevo.",
         variant: "destructive",
       });
     }
@@ -93,7 +93,7 @@ export function LoginForm() {
         <Card>
           <CardHeader>
             <CardTitle>Acceso a Ainsophic Academy</CardTitle>
-            <CardDescription>Ingresa tus credenciales para continuar.</CardDescription>
+            <CardDescription>Ingresá tus credenciales para continuar.</CardDescription>
           </CardHeader>
           <CardContent>
             <Form {...loginForm}>
@@ -140,8 +140,8 @@ export function LoginForm() {
       <TabsContent value="register">
         <Card>
           <CardHeader>
-            <CardTitle>Crea tu Cuenta</CardTitle>
-            <CardDescription>Únete a la academia para empezar a aprender.</CardDescription>
+            <CardTitle>Creá tu Cuenta</CardTitle>
+            <CardDescription>Unite a la academia para empezar a aprender.</CardDescription>
           </CardHeader>
           <CardContent>
             <Form {...registerForm}>

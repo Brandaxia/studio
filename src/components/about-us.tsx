@@ -11,11 +11,11 @@ interface AboutUsProps {
 }
 
 const collectiveBranches = [
-    { name: 'Ainsophic Academy', icon: BookOpen, description: 'Cutting-edge AI education to train the next generation of leaders.' },
-    { name: 'Ainsophic Community', icon: Users, description: 'A global network for collaboration, knowledge sharing, and networking.' },
-    { name: 'Ainsophic Foundation', icon: Handshake, description: 'Promoting ethical AI and ensuring technology serves humanity.' },
-    { name: 'Ainsophic OpenSource', icon: Code2, description: 'Developing and sharing open-source tools to democratize AI.' },
-    { name: 'Ainsophic Volunteer', icon: HeartHandshake, description: 'Connecting AI experts with non-profits to create a positive impact.' },
+    { name: 'Ainsophic Academy', icon: BookOpen, description: 'Educación de vanguardia en IA para formar a la próxima generación de líderes.' },
+    { name: 'Ainsophic Community', icon: Users, description: 'Una red global para colaboración, intercambio de conocimiento y networking.' },
+    { name: 'Ainsophic Foundation', icon: Handshake, description: 'Promoviendo una IA ética y asegurando que la tecnología sirva a la humanidad.' },
+    { name: 'Ainsophic OpenSource', icon: Code2, description: 'Desarrollando y compartiendo herramientas de código abierto para democratizar la IA.' },
+    { name: 'Ainsophic Volunteer', icon: HeartHandshake, description: 'Conectando expertos en IA con ONGs para crear un impacto positivo.' },
 ];
 
 export function AboutUs({ instructors, faqs }: AboutUsProps) {
@@ -24,9 +24,9 @@ export function AboutUs({ instructors, faqs }: AboutUsProps) {
       <div className="container px-4">
         {/* Ainsophic Collective Introduction */}
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">The Ainsophic Collective</h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">El Colectivo Ainsophic</h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
-            Ainsophic is more than an academy; it's a vast ecosystem dedicated to the advancement of Artificial Intelligence for the benefit of all.
+            Ainsophic es más que una academia; es un vasto ecosistema dedicado al avance de la Inteligencia Artificial para el beneficio de todos.
           </p>
         </div>
         <div className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -45,9 +45,9 @@ export function AboutUs({ instructors, faqs }: AboutUsProps) {
 
         {/* Instructors Section */}
         <div className="mx-auto mt-20 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Meet the Instructors</h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Conocé a los Instructores</h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
-            Industry experts and leading researchers who will guide you on your journey.
+            Expertos de la industria e investigadores líderes que te guiarán en tu viaje.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
@@ -68,9 +68,9 @@ export function AboutUs({ instructors, faqs }: AboutUsProps) {
         {/* FAQ Section */}
         <div className="mt-20">
             <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Frequently Asked Questions</h2>
+                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Preguntas Frecuentes</h2>
                 <p className="mt-4 text-base text-muted-foreground md:text-lg">
-                    Answers to common questions about our AI programs.
+                    Respuestas a las consultas más comunes sobre nuestros programas de IA.
                 </p>
             </div>
             <div className="mx-auto mt-12 max-w-3xl">

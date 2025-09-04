@@ -20,9 +20,9 @@ interface CourseFormProps {
 }
 
 const formSchema = z.object({
-  title: z.string().min(3, { message: 'Title is required.' }),
-  description: z.string().min(10, { message: 'Description is required.' }),
-  programId: z.string({ required_error: 'You must select a program.' }),
+  title: z.string().min(3, { message: 'El título es requerido.' }),
+  description: z.string().min(10, { message: 'La descripción es requerida.' }),
+  programId: z.string({ required_error: 'Tenés que seleccionar un programa.' }),
 });
 
 type CourseFormValues = z.infer<typeof formSchema>;
@@ -65,11 +65,11 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
           name="programId"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Program</FormLabel>
+              <FormLabel>Programa</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a program for this course" />
+                    <SelectValue placeholder="Seleccioná un programa para este curso" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -79,7 +79,7 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
                 </SelectContent>
               </Select>
               <FormDescription>
-                The course will belong to this program.
+                El curso pertenecerá a este programa.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -90,9 +90,9 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Course Title</FormLabel>
+              <FormLabel>Título del Curso</FormLabel>
               <FormControl>
-                <Input placeholder="e.g., Introduction to Transformers" {...field} />
+                <Input placeholder="Ej: Introducción a Transformers" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,9 +103,9 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Course Description</FormLabel>
+              <FormLabel>Descripción del Curso</FormLabel>
               <FormControl>
-                <Textarea placeholder="Briefly describe the course content..." {...field} />
+                <Textarea placeholder="Describí brevemente el contenido del curso..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -113,9 +113,9 @@ export function CourseForm({ course, programs, onSave, onCancel }: CourseFormPro
         />
         <div className="flex justify-end gap-2 pt-4">
           <Button type="button" variant="ghost" onClick={onCancel}>
-            Cancel
+            Cancelar
           </Button>
-          <Button type="submit">Save Course</Button>
+          <Button type="submit">Guardar Curso</Button>
         </div>
       </form>
     </Form>

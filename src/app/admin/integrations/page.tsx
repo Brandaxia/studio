@@ -117,21 +117,21 @@ export default function AdminIntegrationsPage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle>Third-Party Integrations</CardTitle>
-              <CardDescription>Manage connections to external services like Google AI and Moodle.</CardDescription>
+              <CardTitle>Integraciones con Terceros</CardTitle>
+              <CardDescription>Gestioná las conexiones a servicios externos como Google AI y Moodle.</CardDescription>
             </div>
              <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
                 <DialogTrigger asChild>
                     <Button size="sm" className="gap-1" onClick={handleAddNew}>
                         <PlusCircle className="h-3.5 w-3.5" />
-                        Add Integration
+                        Añadir Integración
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                    <DialogTitle>{selectedIntegration ? 'Edit Integration' : 'Add New Integration'}</DialogTitle>
+                    <DialogTitle>{selectedIntegration ? 'Editar Integración' : 'Añadir Nueva Integración'}</DialogTitle>
                     <DialogDescription>
-                        {selectedIntegration ? `Update the settings for ${selectedIntegration.name}.` : 'Connect a new third-party service.'}
+                        {selectedIntegration ? `Actualizá la configuración para ${selectedIntegration.name}.` : 'Conectá un nuevo servicio de terceros.'}
                     </DialogDescription>
                     </DialogHeader>
                     <IntegrationForm 
@@ -147,11 +147,11 @@ export default function AdminIntegrationsPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Service</TableHead>
-                <TableHead>API Key</TableHead>
-                <TableHead className="text-center">Status</TableHead>
+                <TableHead>Servicio</TableHead>
+                <TableHead>Clave API</TableHead>
+                <TableHead className="text-center">Estado</TableHead>
                 <TableHead>
-                  <span className="sr-only">Actions</span>
+                  <span className="sr-only">Acciones</span>
                 </TableHead>
               </TableRow>
             </TableHeader>
@@ -162,7 +162,7 @@ export default function AdminIntegrationsPage() {
                   <TableCell className="font-mono text-xs">{maskApiKey(item.apiKey)}</TableCell>
                   <TableCell className="text-center">
                       <Badge variant={item.enabled ? 'default' : 'outline'}>
-                        {item.enabled ? 'Active' : 'Inactive'}
+                        {item.enabled ? 'Activa' : 'Inactiva'}
                       </Badge>
                   </TableCell>
                   <TableCell>
@@ -170,15 +170,15 @@ export default function AdminIntegrationsPage() {
                       <DropdownMenuTrigger asChild>
                         <Button aria-haspopup="true" size="icon" variant="ghost">
                           <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">Toggle menu</span>
+                          <span className="sr-only">Menú de acciones</span>
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem onClick={() => handleEdit(item)}>Edit API Key</DropdownMenuItem>
+                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                        <DropdownMenuItem onClick={() => handleEdit(item)}>Editar Clave API</DropdownMenuItem>
                          <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                           <div className="flex items-center justify-between w-full">
-                            <span>{item.enabled ? 'Disable' : 'Enable'}</span>
+                            <span>{item.enabled ? 'Desactivar' : 'Activar'}</span>
                             <Switch
                               checked={item.enabled}
                               onCheckedChange={(checked) => handleToggleIntegration(item.id, checked)}
@@ -201,12 +201,12 @@ export default function AdminIntegrationsPage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle>Academy API Keys</CardTitle>
-              <CardDescription>Generate and manage API keys for external access to the academy's platform.</CardDescription>
+              <CardTitle>Claves API de la Academia</CardTitle>
+              <CardDescription>Generá y gestioná claves API para acceso externo a la plataforma de la academia.</CardDescription>
             </div>
             <Button size="sm" className="gap-1" onClick={handleGenerateNewKey}>
               <PlusCircle className="h-3.5 w-3.5" />
-              Generate New API Key
+              Generar Nueva Clave API
             </Button>
           </div>
         </CardHeader>
@@ -214,11 +214,11 @@ export default function AdminIntegrationsPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>API Key</TableHead>
-                <TableHead>Created</TableHead>
-                <TableHead className="text-center">Status</TableHead>
+                <TableHead>Clave API</TableHead>
+                <TableHead>Creada</TableHead>
+                <TableHead className="text-center">Estado</TableHead>
                 <TableHead>
-                  <span className="sr-only">Actions</span>
+                  <span className="sr-only">Acciones</span>
                 </TableHead>
               </TableRow>
             </TableHeader>
@@ -229,7 +229,7 @@ export default function AdminIntegrationsPage() {
                   <TableCell>{new Date(apiKey.createdAt).toLocaleDateString()}</TableCell>
                   <TableCell className="text-center">
                     <Badge variant={apiKey.status === 'active' ? 'default' : 'outline'}>
-                      {apiKey.status === 'active' ? 'Active' : 'Inactive'}
+                      {apiKey.status === 'active' ? 'Activa' : 'Inactiva'}
                     </Badge>
                   </TableCell>
                   <TableCell>
@@ -240,29 +240,29 @@ export default function AdminIntegrationsPage() {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                        <DropdownMenuLabel>Acciones</DropdownMenuLabel>
                         <DropdownMenuItem onClick={() => handleToggleApiKeyStatus(apiKey.id)}>
-                          {apiKey.status === 'active' ? 'Deactivate' : 'Activate'}
+                          {apiKey.status === 'active' ? 'Desactivar' : 'Activar'}
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <Dialog>
                           <DialogTrigger asChild>
-                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Revoke</Button>
+                             <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Revocar</Button>
                           </DialogTrigger>
                            <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Are you sure?</DialogTitle>
+                              <DialogTitle>¿Estás seguro?</DialogTitle>
                               <DialogDescription>
-                                This action cannot be undone. This will permanently delete the API key and revoke all access.
+                                Esta acción no se puede deshacer. Se eliminará permanentemente la clave API y se revocará todo acceso.
                               </DialogDescription>
                             </DialogHeader>
                             <DialogFooter>
                               <DialogClose asChild>
-                                <Button variant="outline">Cancel</Button>
+                                <Button variant="outline">Cancelar</Button>
                               </DialogClose>
                               <DialogClose asChild>
                                  <Button variant="destructive" onClick={() => handleRevokeApiKey(apiKey.id)}>
-                                   Revoke Key
+                                   Revocar Clave
                                  </Button>
                               </DialogClose>
                             </DialogFooter>
@@ -282,9 +282,9 @@ export default function AdminIntegrationsPage() {
       <Dialog open={isApiKeyDialogOpen} onOpenChange={setIsApiKeyDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>New API Key Generated</DialogTitle>
+            <DialogTitle>Nueva Clave API Generada</DialogTitle>
             <DialogDescription>
-              Please copy this key and store it in a safe place. You will not be able to see it again.
+              Por favor, copiá esta clave y guardala en un lugar seguro. No podrás volver a verla.
             </DialogDescription>
           </DialogHeader>
           <div className="flex items-center space-x-2">
@@ -297,14 +297,14 @@ export default function AdminIntegrationsPage() {
               />
             </div>
             <Button type="submit" size="sm" className="px-3" onClick={handleCopy}>
-              <span className="sr-only">Copy</span>
+              <span className="sr-only">Copiar</span>
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             </Button>
           </div>
           <DialogFooter className="sm:justify-end">
             <DialogClose asChild>
               <Button type="button" variant="secondary">
-                Close
+                Cerrar
               </Button>
             </DialogClose>
           </DialogFooter>
@@ -313,5 +313,3 @@ export default function AdminIntegrationsPage() {
     </div>
   );
 }
-
-    

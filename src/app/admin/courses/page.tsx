@@ -35,7 +35,7 @@ export default function AdminCoursesPage() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   
   const getProgramName = (programId: string) => {
-    return programs.find(p => p.id === programId)?.title || 'Unknown';
+    return programs.find(p => p.id === programId)?.title || 'Desconocido';
   }
 
   const handleSaveCourse = (course: Course) => {
@@ -67,21 +67,21 @@ export default function AdminCoursesPage() {
       <CardHeader>
         <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <CardTitle>Courses</CardTitle>
-            <CardDescription>Manage individual courses within each program.</CardDescription>
+            <CardTitle>Cursos</CardTitle>
+            <CardDescription>Gestioná los cursos individuales dentro de cada programa.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1 w-full md:w-auto" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Add Course
+                Añadir Curso
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedCourse ? 'Edit' : 'Add'} Course</DialogTitle>
+                <DialogTitle>{selectedCourse ? 'Editar' : 'Añadir'} Curso</DialogTitle>
                 <DialogDescription>
-                  {selectedCourse ? 'Edit the course details.' : 'Create a new course for a program.'}
+                  {selectedCourse ? 'Editá los detalles del curso.' : 'Creá un nuevo curso para un programa.'}
                 </DialogDescription>
               </DialogHeader>
               <CourseForm 
@@ -98,11 +98,11 @@ export default function AdminCoursesPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Course Title</TableHead>
-              <TableHead>Program</TableHead>
-              <TableHead className="hidden md:table-cell">Description</TableHead>
+              <TableHead>Título del Curso</TableHead>
+              <TableHead>Programa</TableHead>
+              <TableHead className="hidden md:table-cell">Descripción</TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">Acciones</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -119,30 +119,30 @@ export default function AdminCoursesPage() {
                     <DropdownMenuTrigger asChild>
                       <Button aria-haspopup="true" size="icon" variant="ghost">
                         <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Toggle menu</span>
+                        <span className="sr-only">Menú de acciones</span>
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(course)}>Edit</DropdownMenuItem>
+                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(course)}>Editar</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start px-2 py-1.5 h-auto text-sm font-normal text-red-600 hover:text-red-600">Eliminar</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>Are you sure?</DialogTitle>
+                            <DialogTitle>¿Estás seguro?</DialogTitle>
                             <DialogDescription>
-                              This action cannot be undone. This will permanently delete the course.
+                              Esta acción no se puede deshacer. Se eliminará permanentemente el curso.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancel</Button>
+                              <Button variant="outline">Cancelar</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(course.id)}>
-                                 Delete
+                                 Eliminar
                                </Button>
                             </DialogClose>
                           </DialogFooter>

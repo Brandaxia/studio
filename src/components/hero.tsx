@@ -8,13 +8,13 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-black" />
       <div className="container relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-primary-foreground">
         <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-          Master the Future of AI
+          Dominá el Futuro de la IA
         </h1>
         <p className="mt-4 max-w-2xl text-base text-primary-foreground/80 md:text-xl">
-          Explora las fronteras de la Inteligencia Artificial con nuestros programas dirigidos por expertos, diseñados para formar a la próxima generación de líderes en IA.
+          Explorá las fronteras de la Inteligencia Artificial con nuestros programas dirigidos por expertos, diseñados para formar a la próxima generación de líderes en IA.
         </p>
         <Button size="lg" className="mt-8 bg-primary text-primary-foreground transition-all hover:bg-primary/90" asChild>
-          <Link href="#programas">Explore Programs</Link>
+          <Link href="#programas">Explorar Programas</Link>
         </Button>
       </div>
     </section>

@@ -10,12 +10,12 @@ import Link from 'next/link';
 import { Separator } from './ui/separator';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/#rutas', label: 'Paths' },
-  { href: '/#programas', label: 'Programs' },
-  { href: '/#courses', label: 'Courses' },
-  { href: '/#about', label: 'About' },
-  { href: '/#contacto', label: 'Contact' },
+  { href: '/', label: 'Inicio' },
+  { href: '/#rutas', label: 'Rutas' },
+  { href: '/#programas', label: 'Programas' },
+  { href: '/#cursos', label: 'Cursos' },
+  { href: '/#about', label: 'Nosotros' },
+  { href: '/#contacto', label: 'Contacto' },
 ];
 
 export function Header() {
@@ -30,7 +30,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">Abrir menú</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
@@ -39,7 +39,7 @@ export function Header() {
                   <Logo />
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                     <X className="h-6 w-6" />
-                    <span className="sr-only">Close menu</span>
+                    <span className="sr-only">Cerrar menú</span>
                   </Button>
                 </div>
                 <nav className="mt-6 flex flex-1 flex-col gap-4">
@@ -59,7 +59,7 @@ export function Header() {
                     <Button asChild className="w-full">
                         <Link href="/login" onClick={() => setIsOpen(false)}>
                             <LogIn className="mr-2 h-4 w-4" />
-                            Login / Register
+                            Ingresar / Registrarse
                         </Link>
                     </Button>
                 </div>
@@ -87,7 +87,7 @@ export function Header() {
           <Button asChild>
             <Link href="/login">
               <LogIn className="mr-2 h-4 w-4" />
-              Login
+              Ingresar
             </Link>
           </Button>
         </div>

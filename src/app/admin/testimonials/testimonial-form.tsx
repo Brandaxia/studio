@@ -74,7 +74,7 @@ export function TestimonialForm({ testimonial, onSave, onCancel }: TestimonialFo
             <FormItem>
               <FormLabel>Cita</FormLabel>
               <FormControl>
-                <Textarea placeholder="El testimonio del estudiante..." {...field} />
+                <Textarea placeholder="El testimonio del alumno..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -87,7 +87,7 @@ export function TestimonialForm({ testimonial, onSave, onCancel }: TestimonialFo
             <FormItem>
               <FormLabel>Nombre del autor</FormLabel>
               <FormControl>
-                <Input placeholder="Nombre del estudiante" {...field} />
+                <Input placeholder="Nombre del alumno" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -102,7 +102,7 @@ export function TestimonialForm({ testimonial, onSave, onCancel }: TestimonialFo
                <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecciona el programa cursado" />
+                    <SelectValue placeholder="Seleccioná el programa cursado" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>

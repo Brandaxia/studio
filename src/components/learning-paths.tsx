@@ -28,9 +28,9 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
     <section id="rutas" className="w-full bg-muted py-16 md:py-24">
       <div className="container px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Curated Learning Paths</h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Rutas de Aprendizaje Curadas</h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
-            Follow our curated program sequences to guide your journey from beginner to expert.
+            Seguí nuestras secuencias de programas curadas para guiar tu viaje de principiante a experto.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -47,7 +47,7 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
               <CardContent className="flex flex-1 flex-col">
                 <CardDescription className="mt-2 flex-1">{path.description}</CardDescription>
                  <div className="mt-4">
-                    <h4 className="mb-2 text-sm font-semibold text-foreground">Included Programs:</h4>
+                    <h4 className="mb-2 text-sm font-semibold text-foreground">Programas Incluidos:</h4>
                     <div className="flex flex-wrap gap-2">
                         {path.programIds.map(programId => (
                             <Badge key={programId} variant="secondary">{getProgramTitle(programId)}</Badge>
@@ -58,7 +58,7 @@ export function LearningPaths({ learningPaths, programs }: LearningPathsProps) {
               <CardFooter>
                  <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
                   <Link href={`/learning-paths/${path.id}`}>
-                    View Full Path <ArrowRight className="ml-2 h-4 w-4" />
+                    Ver Ruta Completa <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>

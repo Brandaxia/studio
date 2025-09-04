@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -12,9 +13,9 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Loader2 } from "lucide-react";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
+  email: z.string().email({ message: "Por favor, ingresá una dirección de correo válida." }),
+  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }),
 });
 
 export function ContactForm() {
@@ -46,21 +47,21 @@ export function ContactForm() {
 
       if (!response.ok) {
         // This will be caught by the catch block
-        throw new Error("Network response was not ok");
+        throw new Error("La respuesta de la red no fue correcta");
       }
       
       toast({
-        title: "Message Sent",
-        description: "Thanks for contacting us. We'll get back to you soon.",
+        title: "Mensaje Enviado",
+        description: "Gracias por contactarnos. Te responderemos a la brevedad.",
       });
       form.reset();
 
     } catch (error) {
-      console.error("Form submission error:", error);
+      console.error("Error en el envío del formulario:", error);
       setSubmissionError(true);
       toast({
-        title: "Submission Error",
-        description: "Could not send your message. Please try sending an email directly.",
+        title: "Error de Envío",
+        description: "No se pudo enviar tu mensaje. Por favor, intentá enviar un correo directamente.",
         variant: "destructive",
       });
     } finally {
@@ -77,9 +78,9 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Nombre</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your full name" {...field} />
+                  <Input placeholder="Tu nombre completo" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -92,7 +93,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="your@email.com" {...field} />
+                  <Input type="email" placeholder="tu@email.com" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,9 +104,9 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel>Mensaje</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Your question or message..." className="min-h-[120px]" {...field} />
+                  <Textarea placeholder="Tu pregunta o mensaje..." className="min-h-[120px]" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -113,7 +114,7 @@ export function ContactForm() {
           />
           <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
           </Button>
         </form>
       </Form>
@@ -121,17 +122,17 @@ export function ContactForm() {
       <div className="mt-6 text-center text-sm text-muted-foreground">
         {submissionError ? (
             <p>
-                Or if you prefer, send us an email directly.
+                O si preferís, envianos un correo directamente.
             </p>
         ) : (
-            <p>If you prefer, you can also send us an email.</p>
+            <p>Si preferís, también podés enviarnos un correo.</p>
         )}
         <a
-          href="mailto:contact@ainsophic.com"
+          href="mailto:contacto@ainsophic.com"
           className="mt-1 inline-flex items-center text-primary underline-offset-4 hover:underline"
         >
           <Mail className="mr-2 h-4 w-4" />
-          contact@ainsophic.com
+          contacto@ainsophic.com
         </a>
       </div>
     </div>

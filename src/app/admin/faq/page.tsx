@@ -62,21 +62,21 @@ export default function AdminFaqPage() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-            <CardDescription>Manage the FAQs for the academy.</CardDescription>
+            <CardTitle>Preguntas Frecuentes</CardTitle>
+            <CardDescription>Gestioná las preguntas frecuentes de la academia.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
               <Button size="sm" className="gap-1" onClick={handleAddNew}>
                 <PlusCircle className="h-3.5 w-3.5" />
-                Add FAQ
+                Añadir Pregunta
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>{selectedFaq ? 'Edit' : 'Add'} FAQ</DialogTitle>
+                <DialogTitle>{selectedFaq ? 'Editar' : 'Añadir'} Pregunta Frecuente</DialogTitle>
                 <DialogDescription>
-                  {selectedFaq ? 'Edit the question details.' : 'Add a new frequently asked question.'}
+                  {selectedFaq ? 'Editá los detalles de la pregunta.' : 'Añadí una nueva pregunta frecuente.'}
                 </DialogDescription>
               </DialogHeader>
               <FaqForm 
@@ -92,10 +92,10 @@ export default function AdminFaqPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Question</TableHead>
-              <TableHead className="hidden md:table-cell">Answer</TableHead>
+              <TableHead>Pregunta</TableHead>
+              <TableHead className="hidden md:table-cell">Respuesta</TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">Acciones</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -109,30 +109,30 @@ export default function AdminFaqPage() {
                     <DropdownMenuTrigger asChild>
                       <Button aria-haspopup="true" size="icon" variant="ghost">
                         <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Toggle menu</span>
+                        <span className="sr-only">Menú de acciones</span>
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                      <DropdownMenuItem onClick={() => handleEdit(faq)}>Edit</DropdownMenuItem>
+                      <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                      <DropdownMenuItem onClick={() => handleEdit(faq)}>Editar</DropdownMenuItem>
                        <Dialog>
                         <DialogTrigger asChild>
-                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Delete</Button>
+                           <Button variant="ghost" className="w-full justify-start font-normal text-sm text-red-600 hover:text-red-600 px-2 py-1.5 h-auto">Eliminar</Button>
                         </DialogTrigger>
                          <DialogContent>
                           <DialogHeader>
-                            <DialogTitle>Are you sure?</DialogTitle>
+                            <DialogTitle>¿Estás seguro?</DialogTitle>
                             <DialogDescription>
-                              This action cannot be undone. This will permanently delete the question.
+                              Esta acción no se puede deshacer. Se eliminará permanentemente la pregunta.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
                             <DialogClose asChild>
-                              <Button variant="outline">Cancel</Button>
+                              <Button variant="outline">Cancelar</Button>
                             </DialogClose>
                             <DialogClose asChild>
                                <Button variant="destructive" onClick={() => handleDelete(faq.id)}>
-                                 Delete
+                                 Eliminar
                                </Button>
                             </DialogClose>
                           </DialogFooter>

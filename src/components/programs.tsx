@@ -22,9 +22,9 @@ export function Programs({ programs }: ProgramsProps) {
     <section id="programas" className="w-full py-16 md:py-24">
       <div className="container px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Our Programs</h2>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Nuestros Programas</h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
-            Paths of knowledge designed to illuminate your mind and spirit.
+            Caminos de conocimiento diseñados para iluminar tu mente y espíritu.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
@@ -48,7 +48,7 @@ export function Programs({ programs }: ProgramsProps) {
               <CardFooter>
                  <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
                   <Link href={`/programs/${program.id}`}>
-                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                    Conocé más <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>

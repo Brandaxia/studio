@@ -4,6 +4,7 @@
 import { Logo } from "./logo";
 import { Twitter, Youtube, Instagram } from "lucide-react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -34,11 +35,11 @@ export function Footer() {
         </div>
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Ainsophic Academy. All rights reserved.
+            &copy; {currentYear} Ainsophic Academy. Todos los derechos reservados.
           </p>
           <div className="flex gap-4 text-sm text-muted-foreground">
-            <a href="/privacy" className="hover:text-foreground">Privacy Policy</a>
-            <a href="/terms" className="hover:text-foreground">Terms & Conditions</a>
+            <Link href="/privacy" className="hover:text-foreground">Política de Privacidad</Link>
+            <Link href="/terms" className="hover:text-foreground">Términos y Condiciones</Link>
           </div>
         </div>
       </div>

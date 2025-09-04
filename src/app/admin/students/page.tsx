@@ -67,7 +67,7 @@ export default function AdminStudentsPage() {
         <div className="flex items-center justify-between">
           <div>
             <CardTitle>Alumnos</CardTitle>
-            <CardDescription>Gestiona los alumnos inscritos en la academia.</CardDescription>
+            <CardDescription>Gestioná los alumnos inscriptos en la academia.</CardDescription>
           </div>
           <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
             <DialogTrigger asChild>
@@ -80,7 +80,7 @@ export default function AdminStudentsPage() {
               <DialogHeader>
                 <DialogTitle>{selectedStudent ? 'Editar' : 'Añadir'} Alumno</DialogTitle>
                 <DialogDescription>
-                  {selectedStudent ? 'Edita los detalles del alumno.' : 'Inscribe un nuevo alumno en la academia.'}
+                  {selectedStudent ? 'Editá los detalles del alumno.' : 'Inscribí un nuevo alumno en la academia.'}
                 </DialogDescription>
               </DialogHeader>
               <StudentForm 
@@ -128,7 +128,7 @@ export default function AdminStudentsPage() {
                     <DropdownMenuTrigger asChild>
                       <Button aria-haspopup="true" size="icon" variant="ghost">
                         <MoreHorizontal className="h-4 w-4" />
-                        <span className="sr-only">Toggle menu</span>
+                        <span className="sr-only">Menú de acciones</span>
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
@@ -142,7 +142,7 @@ export default function AdminStudentsPage() {
                           <DialogHeader>
                             <DialogTitle>¿Estás seguro?</DialogTitle>
                             <DialogDescription>
-                              Esta acción no se puede deshacer. Esto eliminará permanentemente al alumno.
+                              Esta acción no se puede deshacer. Se eliminará permanentemente al alumno.
                             </DialogDescription>
                           </DialogHeader>
                           <DialogFooter>
