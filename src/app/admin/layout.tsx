@@ -4,11 +4,12 @@
 import { useAuth } from '@/contexts/auth-context';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { Loader2, LayoutDashboard, Book, Users, MessageSquareQuote, HelpCircle, LogOut, GraduationCap, SwatchBook, GitMerge, PanelLeft, Menu, Puzzle, Notebook } from 'lucide-react';
+import { Loader2, LayoutDashboard, Book, Users, MessageSquareQuote, HelpCircle, LogOut, GraduationCap, SwatchBook, GitMerge, PanelLeft, Menu, Puzzle, Notebook, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Separator } from '@/components/ui/separator';
 
 const navItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -71,7 +72,18 @@ export default function AdminLayout({
           </Button>
         ))}
       </nav>
-      <div className="mt-auto">
+      <div className="mt-auto flex flex-col gap-2">
+        <Separator />
+        <Button
+            variant="ghost"
+            className="justify-start gap-2 text-primary hover:text-primary"
+            asChild
+          >
+            <Link href="/download-guide" target="_blank">
+              <Download className="h-4 w-4" />
+              Guía de Descarga
+            </Link>
+          </Button>
         <Button variant="ghost" className="w-full justify-start gap-2" onClick={handleLogout}>
           <LogOut className="h-4 w-4" />
           Cerrar Sesión
